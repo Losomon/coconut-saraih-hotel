@@ -124,4 +124,28 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // Accommodations Slider
+    const slides = document.querySelectorAll('.room-slide');
+    const track = document.querySelector('.slider-track');
+    let index = 0;
+
+    function showSlide(i) {
+        track.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }
+
+    function prevSlide() {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    setInterval(nextSlide, 10000);
 });
