@@ -648,8 +648,23 @@ nav {
     }
 
     .accommodations-header {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         padding: 0 var(--space-sm);
+    }
+
+    .accommodations-title {
+        text-align: center;
+    }
+
+    .accommodations-title .section-subtitle,
+    .accommodations-title h2 {
+        text-align: center;
+    }
+
+    .explore-link {
+        margin-top: var(--space-sm);
     }
 
     .why-choose-text {
@@ -803,18 +818,31 @@ footer {
    ============================================ */
 /* Accommodations Header */
 .accommodations-header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: var(--space-lg);
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
-.accommodations-header .section-subtitle {
-    display: block;
-    text-align: center;
+.accommodations-title {
+    flex: 1;
+    min-width: 300px;
 }
 
-.accommodations-header h2 {
+.accommodations-title .section-subtitle {
     display: block;
-    text-align: center;
+    text-align: left;
+}
+
+.accommodations-title h2 {
+    display: block;
+    text-align: left;
+}
+
+.explore-link {
+    flex-shrink: 0;
 }
 
 /* Accommodations Slider */
