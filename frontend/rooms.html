@@ -3,561 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Rooms | The Coconut Grill Hotels - Accommodation in Thika</title>
-    <meta name="description" content="Explore our comfortable rooms at The Coconut Grill Hotels. From Standard to Family Suites, find perfect accommodation in Thika with modern amenities and authentic hospitality.">
-    
+    <title>Our Rooms | The Coconut Saraih - Beachfront Hotel in Coastal Kenya</title>
+    <meta name="description" content="Discover beachfront comfort at The Coconut Saraih. Choose from our luxurious rooms, suites, and villas with ocean views.">
+    <meta name="keywords" content="beachfront hotel Kenya, coastal accommodation Kenya, beach resort Kenya, ocean view hotel, seaside restaurant Kenya">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Main Styles -->
-    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/rooms.css">
 </head>
 <body>
     
-    <!-- Navigation -->
-    <div class="nav-wrapper">
-        <nav>
+     <!-- Navigation -->
+    <header class="nav-wrapper" id="navbar">
+    <nav class="nav-container">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li class="dropdown active">
+                    <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="rooms.html" class="active">Rooms Page</a></li>
+                        <li><a href="room-details.html">Room Details</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About the Hotel</a></li>
+                        <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                        <li><a href="restaurant.html">The Restaurant</a></li>
+                        <li><a href="menu.html">Menu Page</a></li>
+                        <li><a href="spa.html">Spa & Wellness</a></li>
+                        <li><a href="events.html">Events & Meetings</a></li>
+                        <li><a href="activities.html">Local Activities</a></li>
+                        <li><a href="activity-detail.html">Activity Detail Page</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="news.html">News</a></li>
+
+            </ul>
+        </div>
+
+        <!-- CENTER -->
+        <div class="nav-center">
             <a href="index.html" class="logo">
                 <span class="logo-icon">🥥</span>
                 <span>
-                    The Coconut Grill
+                    The Coconut Saraih
                     <span class="logo-subtitle">Hotels & Restaurant</span>
                 </span>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="rooms.html" class="active">Rooms</a></li>
-                <li><a href="restaurant.html">Restaurant</a></li>
-                <li><a href="amenities.html">Amenities</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://wa.me/254700000000" class="mobile-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
-            </ul>
-            <a href="tel:+254700000000" class="nav-cta">
-                <i class="fas fa-calendar-check"></i> Book Now
-            </a>
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </div>
+        </div>
 
-    <!-- Page Header -->
-    <section class="page-header rooms-header">
-        <div class="page-header-content">
-            <h1>Our Rooms & Suites</h1>
-            <p>Comfortable accommodation designed for your perfect stay in Thika</p>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> <span>/</span> <span>Rooms</span>
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <span class="nav-phone">Tel: +41 22 345 67 88</span>
+
+            <div class="nav-lang">
+                <a href="#">EN</a> / <a href="#">FR</a>
+            </div>
+
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+
+    </nav>
+</header>
+
+
+    <!-- Hero Section with Single Image -->
+    <section class="hero">
+        <!-- Single Background Image -->
+        <div class="hero-background" style="background-image: url('assets/images/b1.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <span class="hero-tag">Beachfront Luxury</span>
+            <h1 id="hero-title">Our Rooms & Suites</h1>
+            <p id="hero-text">
+                Experience coastal comfort in our beautifully appointed rooms, suites, and villas
+            </p>
+
+            <div class="hero-actions">
+                <a href="booking.html" class="btn-primary">Book Your Stay</a>
+                <a href="#rooms-grid" class="btn-secondary">View Rooms</a>
+            </div>
+        </div>
+
+        <!-- Booking Bar -->
+        <div class="hero-booking">
+            <div class="booking-container">
+                <form>
+                    <div class="form-group">
+                        <label>Check In</label>
+                        <input type="date" value="2026-02-09">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Check Out</label>
+                        <input type="date" value="2026-02-10">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rooms</label>
+                        <select>
+                            <option>1 Room</option>
+                            <option>2 Rooms</option>
+                            <option>3 Rooms</option>
+                            <option>4+ Rooms</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select>
+                            <option>1 Adult, 0 Children</option>
+                            <option>2 Adults, 0 Children</option>
+                            <option>2 Adults, 1 Child</option>
+                            <option>2 Adults, 2 Children</option>
+                            <option>3+ Adults</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-book">
+                        Check Availability
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Room Inclusions Banner -->
-    <section class="inclusions-banner">
-        <div class="inclusions-content">
-            <h3><i class="fas fa-check-circle"></i> Included with Every Room</h3>
-            <div class="inclusions-grid">
-                <div class="inclusion-item">
+    <!-- Room Amenities Banner -->
+    <section class="amenities-banner">
+        <div class="amenities-content">
+            <h3><i class="fas fa-star"></i> Included with Every Room</h3>
+            <div class="amenities-grid">
+                <div class="amenity-item">
                     <i class="fas fa-wifi"></i>
-                    <span>Free High-Speed WiFi</span>
+                    <span>Free WiFi</span>
                 </div>
-                <div class="inclusion-item">
-                    <i class="fas fa-parking"></i>
-                    <span>Free Secure Parking</span>
-                </div>
-                <div class="inclusion-item">
+                <div class="amenity-item">
                     <i class="fas fa-coffee"></i>
-                    <span>Complimentary Breakfast</span>
+                    <span>Breakfast</span>
                 </div>
-                <div class="inclusion-item">
+                <div class="amenity-item">
                     <i class="fas fa-swimming-pool"></i>
                     <span>Pool Access</span>
                 </div>
-                <div class="inclusion-item">
+                <div class="amenity-item">
                     <i class="fas fa-concierge-bell"></i>
-                    <span>24/7 Room Service</span>
+                    <span>Room Service</span>
                 </div>
-                <div class="inclusion-item">
-                    <i class="fas fa-shower"></i>
-                    <span>Hot Water 24/7</span>
+                <div class="amenity-item">
+                    <i class="fas fa-tv"></i>
+                    <span>Smart TV</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Rooms Section -->
-    <section class="rooms-detailed">
-        
-        <!-- Standard Room -->
-        <div class="room-detailed">
-            <div class="room-detailed-image">
-                <img src="assets/images/standard-room.jpg" alt="Standard Room at The Coconut Grill Hotels">
-                <div class="room-badge">Most Popular</div>
+    <!-- Elegant Rooms Section -->
+    <section class="rooms-elegant-section">
+        <div class="rooms-container">
+            <div class="rooms-header">
+                <small>Accommodations</small>
+                <h2>Rooms, Suites & Villas</h2>
+                <p>Discover our collection of beachfront rooms and suites, each designed for your comfort and relaxation</p>
             </div>
-            <div class="room-detailed-content">
-                <div class="room-header">
-                    <h2>Standard Room</h2>
-                    <div class="room-pricing">
-                        <span class="price-from">From</span>
-                        <span class="price-amount">KShs 3,500</span>
-                        <span class="price-period">/night</span>
-                    </div>
+
+            <!-- Room 1 - Standard Room (Image Left) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 3,500</span>
+                    <img src="assets/images/b1.jpg" alt="Standard Room">
                 </div>
-                
-                <p class="room-intro">
-                    Our Standard Rooms offer everything you need for a comfortable stay. Perfect for business 
-                    travelers and solo guests who appreciate quality and value.
+                <div class="room-content">
+                    <small class="room-category">Beach View / 24 m² / Queen Bed</small>
+                    <h3>Standard Room</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 24 m²</span>
+                        <span><i class="fas fa-user"></i> 1-2 Guests</span>
+                        <span><i class="fas fa-bed"></i> Queen Bed</span>
+                        <span><i class="fas fa-shower"></i> En-suite</span>
+                    </div>
+                    <p class="room-description">
+                        Comfortable and affordable accommodation with all essentials for a pleasant stay. Features modern amenities and a peaceful ambiance.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+
+            <!-- Room 2 - Deluxe Room (Image Right) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 5,500</span>
+                    <img src="assets/images/b2.jpg" alt="Deluxe Room">
+                </div>
+                <div class="room-content">
+                    <small class="room-category">Pool View / 32 m² / King Bed</small>
+                    <h3>Deluxe Room</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 32 m²</span>
+                        <span><i class="fas fa-user"></i> 2 Guests</span>
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-bath"></i> Bathtub</span>
+                    </div>
+                    <p class="room-description">
+                        Spacious luxury with stunning pool views and premium amenities. Perfect for couples seeking a romantic getaway.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+
+            <!-- Room 3 - Ocean View Suite (Image Left) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 7,500</span>
+                    <img src="assets/images/a2.jpg" alt="Ocean View Suite">
+                </div>
+                <div class="room-content">
+                    <small class="room-category">Ocean View / 42 m² / King Bed</small>
+                    <h3>Ocean View Suite</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 42 m²</span>
+                        <span><i class="fas fa-user"></i> 2 Guests</span>
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-eye"></i> Ocean View</span>
+                    </div>
+                    <p class="room-description">
+                        Breathtaking panoramic ocean views from your private suite. Wake up to stunning sunrises over the Indian Ocean.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+
+            <!-- Room 4 - Family Suite (Image Right) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 8,500</span>
+                    <img src="assets/images/b3.jpg" alt="Family Suite">
+                </div>
+                <div class="room-content">
+                    <small class="room-category">Garden View / 48 m² / Multiple Beds</small>
+                    <h3>Family Suite</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 48 m²</span>
+                        <span><i class="fas fa-user"></i> 4-5 Guests</span>
+                        <span><i class="fas fa-bed"></i> King + 2 Singles</span>
+                        <span><i class="fas fa-couch"></i> Living Area</span>
+                    </div>
+                    <p class="room-description">
+                        Perfect for families with separate bedrooms and living space. Features a private balcony and ample room for everyone.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+
+            <!-- Room 5 - Executive Suite (Image Left) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 12,000</span>
+                    <img src="assets/images/b4.jpg" alt="Executive Suite">
+                </div>
+                <div class="room-content">
+                    <small class="room-category">Ocean View / 55 m² / Private Balcony</small>
+                    <h3>Executive Suite</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 55 m²</span>
+                        <span><i class="fas fa-user"></i> 2-3 Guests</span>
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                    </div>
+                    <p class="room-description">
+                        Executive luxury with private balcony and premium ocean views. Includes dedicated workspace and mini bar.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+
+            <!-- Room 6 - Presidential Villa (Image Right) -->
+            <div class="room-row">
+                <div class="room-image">
+                    <span class="room-price-tag">From KShs 25,000</span>
+                    <img src="assets/images/b5.jpg" alt="Presidential Villa">
+                </div>
+                <div class="room-content">
+                    <small class="room-category">Beachfront / 120 m² / Private Pool</small>
+                    <h3>Presidential Villa</h3>
+                    <div class="room-meta">
+                        <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                        <span><i class="fas fa-user"></i> 6-8 Guests</span>
+                        <span><i class="fas fa-bed"></i> Multiple Beds</span>
+                        <span><i class="fas fa-swimming-pool"></i> Private Pool</span>
+                    </div>
+                    <p class="room-description">
+                        Ultimate beachfront luxury with private pool and butler service. The perfect retreat for special occasions.
+                    </p>
+                    <a href="booking.html" class="room-link">Discover More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities">
+        <div class="facilities-inner">
+            <div class="facilities-left">
+                <span class="eyebrow">Comfortable Stay Experience</span>
+                <h2>Most Popular Facilities</h2>
+                <p>
+                    Experience luxury and comfort with our premium amenities designed to make your stay memorable. From modern conveniences to thoughtful touches, we have everything you need.
                 </p>
-                
-                <div class="room-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-ruler-combined"></i>
-                        <div>
-                            <strong>Room Size</strong>
-                            <span>22 m²</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-bed"></i>
-                        <div>
-                            <strong>Bed Type</strong>
-                            <span>1 Queen Bed</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <strong>Occupancy</strong>
-                            <span>Max 2 Guests</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-eye"></i>
-                        <div>
-                            <strong>View</strong>
-                            <span>City or Garden</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-features-detailed">
-                    <h4>Room Features & Amenities</h4>
-                    <div class="features-columns">
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Air conditioning</li>
-                                <li><i class="fas fa-check"></i> DStv (48 channels)</li>
-                                <li><i class="fas fa-check"></i> Free WiFi</li>
-                                <li><i class="fas fa-check"></i> Work desk & chair</li>
-                                <li><i class="fas fa-check"></i> Telephone</li>
-                            </ul>
-                        </div>
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> En-suite bathroom</li>
-                                <li><i class="fas fa-check"></i> Hot shower 24/7</li>
-                                <li><i class="fas fa-check"></i> Toiletries provided</li>
-                                <li><i class="fas fa-check"></i> Wardrobe</li>
-                                <li><i class="fas fa-check"></i> Daily housekeeping</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-cta">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Book Standard Room
-                    </a>
-                    <a href="https://wa.me/254700000000?text=I'd%20like%20to%20book%20a%20Standard%20Room" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
-                    </a>
-                </div>
+                <a href="services.html" class="services-link">More About Services</a>
             </div>
-        </div>
 
-        <!-- Deluxe Room -->
-        <div class="room-detailed room-detailed-reverse">
-            <div class="room-detailed-image">
-                <img src="assets/images/deluxe-room.jpg" alt="Deluxe Room at The Coconut Grill Hotels">
-                <div class="room-badge badge-luxury">Premium Choice</div>
-            </div>
-            <div class="room-detailed-content">
-                <div class="room-header">
-                    <h2>Deluxe Room</h2>
-                    <div class="room-pricing">
-                        <span class="price-from">From</span>
-                        <span class="price-amount">KShs 5,500</span>
-                        <span class="price-period">/night</span>
-                    </div>
-                </div>
-                
-                <p class="room-intro">
-                    Experience elevated comfort in our spacious Deluxe Rooms. Featuring modern furnishings, 
-                    a relaxing bathtub, and extra space to unwind—perfect for couples and extended stays.
-                </p>
-                
-                <div class="room-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-ruler-combined"></i>
-                        <div>
-                            <strong>Room Size</strong>
-                            <span>32 m²</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-bed"></i>
-                        <div>
-                            <strong>Bed Type</strong>
-                            <span>1 King Bed</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <strong>Occupancy</strong>
-                            <span>Max 2 Guests</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-eye"></i>
-                        <div>
-                            <strong>View</strong>
-                            <span>Premium City View</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-features-detailed">
-                    <h4>Room Features & Amenities</h4>
-                    <div class="features-columns">
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Premium air conditioning</li>
-                                <li><i class="fas fa-check"></i> DStv Premium (78 channels)</li>
-                                <li><i class="fas fa-check"></i> High-speed WiFi</li>
-                                <li><i class="fas fa-check"></i> Executive work desk</li>
-                                <li><i class="fas fa-check"></i> Seating area with sofa</li>
-                                <li><i class="fas fa-check"></i> Mini refrigerator</li>
-                            </ul>
-                        </div>
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Luxury en-suite bathroom</li>
-                                <li><i class="fas fa-check"></i> Bathtub & rain shower</li>
-                                <li><i class="fas fa-check"></i> Premium toiletries</li>
-                                <li><i class="fas fa-check"></i> Bathrobes & slippers</li>
-                                <li><i class="fas fa-check"></i> Large wardrobe</li>
-                                <li><i class="fas fa-check"></i> Room safe</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-cta">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Book Deluxe Room
-                    </a>
-                    <a href="https://wa.me/254700000000?text=I'd%20like%20to%20book%20a%20Deluxe%20Room" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Family Suite -->
-        <div class="room-detailed">
-            <div class="room-detailed-image">
-                <img src="assets/images/family-suite.jpg" alt="Family Suite at The Coconut Grill Hotels">
-                <div class="room-badge badge-family">Family Friendly</div>
-            </div>
-            <div class="room-detailed-content">
-                <div class="room-header">
-                    <h2>Family Suite</h2>
-                    <div class="room-pricing">
-                        <span class="price-from">From</span>
-                        <span class="price-amount">KShs 8,500</span>
-                        <span class="price-period">/night</span>
-                    </div>
-                </div>
-                
-                <p class="room-intro">
-                    Our spacious Family Suites are designed with your whole family in mind. Two separate 
-                    sleeping areas, plenty of space for kids to play, and children under 13 stay free!
-                </p>
-                
-                <div class="room-specs">
-                    <div class="spec-item">
-                        <i class="fas fa-ruler-combined"></i>
-                        <div>
-                            <strong>Room Size</strong>
-                            <span>45 m²</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-bed"></i>
-                        <div>
-                            <strong>Bed Type</strong>
-                            <span>1 King + 2 Singles</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <strong>Occupancy</strong>
-                            <span>Max 4 Guests</span>
-                        </div>
-                    </div>
-                    <div class="spec-item">
-                        <i class="fas fa-eye"></i>
-                        <div>
-                            <strong>View</strong>
-                            <span>Garden or Pool View</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-features-detailed">
-                    <h4>Room Features & Amenities</h4>
-                    <div class="features-columns">
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Two-room layout</li>
-                                <li><i class="fas fa-check"></i> Dual air conditioning</li>
-                                <li><i class="fas fa-check"></i> Two DStv screens</li>
-                                <li><i class="fas fa-check"></i> High-speed WiFi</li>
-                                <li><i class="fas fa-check"></i> Living area with sofa</li>
-                                <li><i class="fas fa-check"></i> Dining table</li>
-                                <li><i class="fas fa-check"></i> Mini refrigerator</li>
-                            </ul>
-                        </div>
-                        <div class="feature-column">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Large en-suite bathroom</li>
-                                <li><i class="fas fa-check"></i> Bathtub & shower</li>
-                                <li><i class="fas fa-check"></i> Family toiletries pack</li>
-                                <li><i class="fas fa-check"></i> Extra towels provided</li>
-                                <li><i class="fas fa-check"></i> Children's amenities</li>
-                                <li><i class="fas fa-check"></i> Baby cot available</li>
-                                <li><i class="fas fa-check"></i> Kids under 13 free!</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="room-cta">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Book Family Suite
-                    </a>
-                    <a href="https://wa.me/254700000000?text=I'd%20like%20to%20book%20a%20Family%20Suite" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Booking
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Booking Policies -->
-    <section class="booking-policies">
-        <div class="section-header">
-            <h2>Booking Information</h2>
-            <p class="section-description">Everything you need to know for a smooth stay</p>
-        </div>
-        
-        <div class="policies-grid">
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h3>Check-in & Check-out</h3>
+            <div class="facilities-right">
                 <ul>
-                    <li><strong>Check-in:</strong> 2:00 PM</li>
-                    <li><strong>Check-out:</strong> 11:00 AM</li>
-                    <li>Early check-in subject to availability</li>
-                    <li>Late check-out available (extra charges apply)</li>
+                    <li>High Quality Bed</li>
+                    <li>Flat Screen TV</li>
+                    <li>Bathroom with Shower</li>
+                    <li>Spa Flip Flops</li>
+                    <li>Bathrobes</li>
+                    <li>Espresso Machine</li>
+                    <li>Free WiFi</li>
+                    <li>Furnished Balcony</li>
                 </ul>
-            </div>
-            
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-credit-card"></i>
-                </div>
-                <h3>Payment Methods</h3>
                 <ul>
-                    <li>Cash (KES, USD, GBP, EUR)</li>
-                    <li>M-Pesa</li>
-                    <li>Visa & Mastercard</li>
-                    <li>Bank transfer (advance booking)</li>
-                    <li>Deposit required for group bookings</li>
-                </ul>
-            </div>
-            
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-ban"></i>
-                </div>
-                <h3>Cancellation Policy</h3>
-                <ul>
-                    <li>Free cancellation up to 48 hours before arrival</li>
-                    <li>24-48 hours: 50% charge</li>
-                    <li>Less than 24 hours: Full night charge</li>
-                    <li>No-show: Full booking charge</li>
-                </ul>
-            </div>
-            
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-child"></i>
-                </div>
-                <h3>Children & Extra Beds</h3>
-                <ul>
-                    <li>Children under 13 stay free (existing beds)</li>
-                    <li>Baby cots available free of charge</li>
-                    <li>Extra bed: KShs 1,500 per night</li>
-                    <li>Maximum occupancy varies by room type</li>
-                </ul>
-            </div>
-            
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-paw"></i>
-                </div>
-                <h3>Pet Policy</h3>
-                <ul>
-                    <li>Pets allowed by prior arrangement</li>
-                    <li>Additional cleaning fee applies</li>
-                    <li>Small to medium pets only</li>
-                    <li>Pets must be supervised at all times</li>
-                </ul>
-            </div>
-            
-            <div class="policy-card">
-                <div class="policy-icon">
-                    <i class="fas fa-smoking-ban"></i>
-                </div>
-                <h3>Hotel Policies</h3>
-                <ul>
-                    <li>Non-smoking rooms available</li>
-                    <li>Valid ID required at check-in</li>
-                    <li>Guests responsible for room damages</li>
-                    <li>Quiet hours: 10:00 PM - 7:00 AM</li>
+                    <li>Air Conditioning</li>
+                    <li>Mini Bar</li>
+                    <li>Refrigerator</li>
+                    <li>Dining Table</li>
+                    <li>Laundry Service</li>
+                    <li>Safety Deposit Box</li>
+                    <li>24-Hour Security</li>
+                    <li>Room Service</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Special Offers -->
-    <section class="special-offers">
-        <div class="section-header">
-            <p class="section-subtitle">Limited Time Offers</p>
-            <h2>Special Deals & Packages</h2>
-        </div>
-        
-        <div class="offers-grid">
-            <div class="offer-card">
-                <div class="offer-badge">Save 15%</div>
-                <h3>Extended Stay Discount</h3>
-                <p>Book 3 nights or more and enjoy 15% off your total stay. Perfect for business trips and vacations.</p>
-                <div class="offer-validity">
-                    <i class="fas fa-calendar"></i> Valid all year round
-                </div>
-            </div>
-            
-            <div class="offer-card">
-                <div class="offer-badge">Best Value</div>
-                <h3>Bed & Breakfast Package</h3>
-                <p>All our rooms include complimentary breakfast! Start your day with our delicious buffet spread.</p>
-                <div class="offer-validity">
-                    <i class="fas fa-check-circle"></i> Included in all bookings
-                </div>
-            </div>
-            
-            <div class="offer-card">
-                <div class="offer-badge">Corporate</div>
-                <h3>Business Traveler Rate</h3>
-                <p>Special discounted rates for corporate bookings. Contact us for long-term accommodation arrangements.</p>
-                <div class="offer-validity">
-                    <i class="fas fa-briefcase"></i> Corporate accounts welcome
-                </div>
-            </div>
-        </div>
-    </section>
+   
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+    <div class="newsletter-overlay"></div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Book Your Stay?</h2>
-            <p>Experience authentic Kenyan hospitality at The Coconut Grill Hotels. We're here to make your stay memorable.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-calendar-check"></i> Check Availability
-                </a>
-                <a href="tel:+254700000000" class="btn btn-secondary btn-lg">
-                    <i class="fas fa-phone"></i> Call Us Now
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="newsletter-content">
+        <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>The Coconut Grill Hotels</h3>
-                <p>Thika's premier destination for accommodation, dining, and celebration. Family-run hospitality with modern comfort.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="rooms.html">Rooms & Rates</a></li>
-                    <li><a href="restaurant.html">Restaurant Menu</a></li>
-                    <li><a href="amenities.html">Facilities & Amenities</a></li>
-                    <li><a href="contact.html">Contact & Directions</a></li>
-                    <li><a href="#">Conference Facilities</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Room Service (24/7)</a></li>
-                    <li><a href="restaurant.html">Restaurant & Bar</a></li>
-                    <li><a href="amenities.html">Swimming Pool</a></li>
-                    <li><a href="amenities.html">Conference Halls</a></li>
-                    <li><a href="amenities.html">Fitness Center</a></li>
-                    <li><a href="#">Free Parking</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Visit Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Kenyatta Highway<br>Thika CBD, Kiambu County<br>Kenya</p>
-                <p style="margin-top: var(--space-sm);">
-                    <i class="fas fa-phone"></i> <a href="tel:+254700000000">+254 700 000 000</a><br>
-                    <i class="fas fa-envelope"></i> <a href="mailto:info@coconutgrillhotels.co.ke">info@coconutgrillhotels.co.ke</a>
-                </p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 The Coconut Grill Hotels. All rights reserved. | Proudly serving Thika with authentic Kenyan hospitality.</p>
-        </div>
-    </footer>
+        <h2>
+            Sign up for our newsletter<br>
+            to receive our news, deals<br>
+            and special offers.
+        </h2>
 
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe →</button>
+        </form>
+
+        <label class="newsletter-check">
+            <input type="checkbox" required>
+            <span>I agree to the <a href="#">Privacy Policy</a></span>
+        </label>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h5>ADDRESS</h5>
+            <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>PHONE</h5>
+            <p>+94 22 345 67 88</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>EMAIL</h5>
+            <p>reservation@coconutsaraih.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>SOCIAL</h5>
+            <div class="footer-socials">
+                <a href="#">fb</a>
+                <a href="#">tw</a>
+                <a href="#">ig</a>
+                <a href="#">yt</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© Copyright Coconut Saraih Beach Resort.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Policy</a>
+        </div>
+    </div>
+</footer>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20room%20availability" 
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
        class="whatsapp-float" 
        target="_blank"
        aria-label="Chat on WhatsApp">
@@ -566,5 +438,5 @@
 
     <!-- Main JavaScript -->
     <script src="src/js/main.js"></script>
-</body>
+ </body>
 </html>

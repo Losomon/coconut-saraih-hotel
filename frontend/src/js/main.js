@@ -93,11 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navWrapper) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navWrapper.style.background = 'rgba(255, 255, 255, 0.98)';
-                navWrapper.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                navWrapper.classList.add('scrolled');
             } else {
-                navWrapper.style.background = 'rgba(255, 255, 255, 0.98)';
-                navWrapper.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
+                navWrapper.classList.remove('scrolled');
             }
         });
     }
@@ -148,4 +146,77 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.prev').addEventListener('click', prevSlide);
 
     setInterval(nextSlide, 10000);
+    
+    // Scroll-based Slider with Keyboard & Touch Navigation
+    const sliderTrack = document.getElementById('sliderTrack');
+    
+    function slideLeft() {
+        sliderTrack.scrollBy({
+            left: -410,
+            behavior: 'smooth'
+        });
+    }
+    
+    function slideRight() {
+        sliderTrack.scrollBy({
+            left: 410,
+            behavior: 'smooth'
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') slideLeft();
+        if (e.key === 'ArrowRight') slideRight();
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    sliderTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) slideRight();
+        if (touchEndX > touchStartX + 50) slideLeft();
+    }
+
+    // Animated Counter for Stats Section
+    const counters = document.querySelectorAll('.count');
+    const counterSpeed = 120;
+    
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / counterSpeed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        // Start counter when element is in view
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counterObserver.observe(counter);
+    });
+    
 });

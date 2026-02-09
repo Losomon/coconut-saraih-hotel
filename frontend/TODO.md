@@ -1,5 +1,6 @@
-# TODO: Integrate Accommodations Slider into i.html
+# TODO: Add Testimonials Section to Coconut Saraih Hotel Website
 
-- [ ] Add Accommodations HTML section to i.html after the "Why Choose Us" section
-- [ ] Append Accommodations CSS styles to i.css
-- [ ] Append Accommodations JavaScript to main.js
+## Tasks
+- [ ] Add Testimonials Section HTML to frontend/in.html after Restaurant Section
+- [ ] Add Testimonials Section CSS to frontend/src/styles/i.css
+- [ ] Verify the implementation by checking the page layout
