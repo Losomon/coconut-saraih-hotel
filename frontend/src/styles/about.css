@@ -2,82 +2,157 @@
    ABOUT PAGE STYLES
    ============================================ */
 
-/* About Hero Section */
+/* ─── ABOUT HERO ─── */
 .about-hero {
-    position: relative;
     height: 100vh;
-    min-height: 600px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
+/* Background Image */
 .about-hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 801px;
-    margin-top: -120px;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.about-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%);
+    object-fit: cover;
     z-index: 1;
 }
 
+/* Dark elegant overlay */
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+    z-index: 2;
+}
+
+/* Content */
 .about-hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
-    color: #ffffff;
-    max-width: 800px;
+    color: #fff;
     padding: 2rem;
-    animation: fadeInUp 1.2s ease-out;
+    max-width: 720px;
 }
 
+/* Eyebrow / Tag */
 .about-hero-tag {
-    display: inline-block;
-    font-size: 0.875rem;
-    letter-spacing: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
-    font-weight: 300;
-    color: #C9A961;
+    color: var(--gold);
+    display: block;
     margin-bottom: 1.5rem;
 }
 
-.about-hero-tag::before,
-.about-hero-tag::after {
-    content: '—';
-    margin: 0 1rem;
-    opacity: 0.5;
-}
-
+/* Title */
 .about-hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-family: var(--ff-head);
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
     font-weight: 300;
-    line-height: 1.1;
+    line-height: 1;
     margin-bottom: 1.5rem;
-    letter-spacing: 2px;
 }
 
+.about-hero-title em {
+    font-style: italic;
+    color: var(--gold);
+}
+
+/* Subtitle */
 .about-hero-text {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Scroll indicator (reuse from hero) */
+.about-hero .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+/* ─── ABOUT-BANNER ─── */
+.about-banner {
+    margin: 5rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    background: var(--mist);
+}
+
+.banner-item {
+    background: var(--cream);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.banner-item:nth-child(3n) {
+    border-right: none;
+}
+
+.banner-item:nth-child(n+4) {
+    border-bottom: none;
+}
+
+.banner-num {
+    font-family: var(--ff-head);
+    font-size: 3.5rem;
+    color: var(--gold);
     font-weight: 300;
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.banner-label {
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #8a7a6a;
+    margin-top: .5rem;
+}
+
+/* Button Ghost */
+.btn-ghost {
+    display: inline-block;
+    border: 1px solid rgba(201, 169, 110, 0.5);
+    color: var(--gold);
+    padding: .85rem 2.5rem;
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-ghost:hover {
+    background: var(--gold);
+    color: var(--ocean);
 }
 
 /* Section Subtitle */
@@ -198,111 +273,6 @@
     font-size: 0.9rem;
     color: #333333;
     line-height: 1.7;
-}
-
-/* Video Hero Section with Stats */
-.video-hero {
-    position: relative;
-    height: 80vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.video-hero .bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.video-hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.video-hero .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #ffffff;
-    max-width: 900px;
-    padding: 2rem;
-}
-
-.video-hero .hero-eyebrow {
-    display: inline-block;
-    font-size: 0.875rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: #C9A961;
-    margin-bottom: 1.5rem;
-}
-
-.video-hero h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    line-height: 1.3;
-    margin-bottom: 3rem;
-}
-
-/* Stats - User's Design */
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 60px;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-.stat {
-    background: none;
-    padding: 0;
-    border: none;
-}
-
-.stat .count {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    font-weight: 500;
-    color: #d4b26a;
-    display: block;
-    margin-bottom: 8px;
-    line-height: 1;
-}
-
-.stat p {
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #ffffff;
-    opacity: 0.9;
-    margin: 0;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .stats {
-        flex-wrap: wrap;
-        gap: 40px;
-    }
-    
-    .stat .count {
-        font-size: 48px;
-    }
 }
 
 /* Experience Section */
@@ -733,13 +703,10 @@
 /* Background Video */
 .bg-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
 }
@@ -795,6 +762,7 @@
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 300;
     line-height: 1.3;
+    margin-top: 12rem;
     margin-bottom: 3rem;
     letter-spacing: 1px;
     color: #ffffff;

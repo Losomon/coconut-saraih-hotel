@@ -1,664 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-case=1.0">
-    <title>The Coconut Grill Restaurant | Authentic Kenyan Cuisine in Thika</title>
-    <meta name="description" content="Experience authentic Kenyan flavors at The Coconut Grill Restaurant. Daily buffet lunch for KShs 500, nyama choma, fresh tilapia, and continental favorites in Thika.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="src/styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Restaurant – The Coconut Saraih</title>
+  <meta name="description" content="Experience exquisite coastal dining at The Coconut Saraih's restaurant. Fresh seafood, gourmet dishes, and handcrafted cocktails with oceanfront views in coastal Kenya.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis=Cormorant+G.com/css2?familyaramond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="./src/styles/i.css">
+  <link rel="stylesheet" href="./src/styles/restaurant.css">
 </head>
 <body>
-    
-    <!-- Navigation -->
-    <div class="nav-wrapper">
-        <nav>
-            <a href="index.html" class="logo">
-                <span class="logo-icon">🥥</span>
-                <span>
-                    The Coconut Grill
-                    <span class="logo-subtitle">Hotels & Restaurant</span>
-                </span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="restaurant.html" class="active">Restaurant</a></li>
-                <li><a href="amenities.html">Amenities</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://wa.me/254700000000" class="mobile-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="rooms.html">Rooms Page</a></li>
+              <li><a href="room-details.html">Room Details</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+              <li><a href="account.html">My Account</a></li>
             </ul>
-            <a href="tel:+254700000000" class="nav-cta">
-                <i class="fas fa-utensils"></i> Reserve Table
-            </a>
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
+          </li>
+          <li class="dropdown">
+            <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About the Hotel</a></li>
+              <li><a href="restaurants.html">Restaurants & Bars</a></li>
+              <li><a href="restaurant.html">The Restaurant</a></li>
+              <li><a href="menu.html">Menu Page</a></li>
+              <li><a href="spa.html">Spa & Wellness</a></li>
+              <li><a href="events.html">Events & Meetings</a></li>
+              <li><a href="activities.html">Local Activities</a></li>
+              <li><a href="activity-detail.html">Activity Detail Page</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="nav-center">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🥥</span>
+          <span>The Coconut Saraih<span class="logo-subtitle">Hotels & Restaurant</span></span>
+        </a>
+      </div>
+      <div class="nav-right">
+        <span class="nav-phone">Tel: +41 22 345 67 88</span>
+        <div class="nav-lang"><a href="#">EN</a> / <a href="#">FR</a></div>
+        <a href="booking.html" class="nav-cta">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="restaurant-hero">
+    <img src="assets/images/restaurant-bar (11).jpg" alt="The Coral Table Restaurant">
+    <div class="hero-overlay"></div>
+    <div class="restaurant-hero-content">
+      <span class="restaurant-eyebrow">The Coral Table — Fine Dining</span>
+      <h1>
+        Savor the Flavors<br>
+        of <em>Paradise</em>
+      </h1>
+      <p>
+        Indulge in a culinary journey celebrating the vibrant flavors of Kenya's coast and beyond.
+        Every dish is a story — crafted from the morning's fresh catch and the season's finest harvest.
+      </p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-gold">Explore Our Menu</a>
+        <a href="#booking" class="btn-outline-white">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-hint-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">80</div>
+        <div class="stat-label">Seats Oceanfront</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">32</div>
+        <div class="stat-label">Signature Dishes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Awards & Accolades</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DINING STORY ── -->
+  <section class="dining-story">
+    <div class="story-images">
+      <div class="story-img-main-wrap">
+        <img class="story-img-main" src="assets/images/restaurant-bar (2).jpg" alt="The Coral Table interior">
+        <div class="story-year-badge">
+          <span class="year">2010</span>
+          <span class="year-label">Est.</span>
+        </div>
+      </div>
+      <img class="story-img-accent" src="assets/images/restaurant-bar (4).jpg" alt="Chef preparing dish">
+    </div>
+    <div class="story-text">
+      <div class="story-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span>Our Story</span>
+      </div>
+      <h2>
+        Where the Indian Ocean<br>
+        Inspires <em>Every Plate</em>
+      </h2>
+      <p>
+        The Coral Table was born from a deep respect for Kenya's coastal heritage — a place where
+        the sea's generosity meets the chef's imagination. Since 2010, we have welcomed guests
+        from around the world to share in the ritual of extraordinary dining.
+      </p>
+      <p>
+        Our head chef sources ingredients daily from local fishermen and organic farms within
+        30 kilometres of our kitchen, ensuring every plate tells an honest, seasonal story.
+      </p>
+      <div class="story-features">
+        <div class="story-feature">
+          <i class="fas fa-fish"></i>
+          <div class="story-feature-text">
+            <h5>Daily Fresh Catch</h5>
+            <p>Sourced from local fishermen each morning</p>
+          </div>
+        </div>
+        <div class="story-feature">
+          <i class="fas fa-leaf"></i>
+          <div class="story-feature-text">
+            <h5>Organic Produce</h5>
+            <p>Farm-to-table within 30km of our kitchen</p>
+          </div>
+        </div>
+        <div class="story-feature">
+          <i class="fas fa-wine-glass-alt"></i>
+          <div class="story-feature-text">
+            <h5>Curated Wine Cellar</h5>
+            <p>Over 180 labels from 14 countries</p>
+          </div>
+        </div>
+        <div class="story-feature">
+          <i class="fas fa-award"></i>
+          <div class="story-feature-text">
+            <h5>Award-Winning</h5>
+            <p>East Africa Dining Excellence 2023</p>
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="menu-cta-link">
+        Discover our story <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── TABLE BOOKING ── -->
+  <section class="table-booking" id="booking">
+    <div class="booking-inner">
+      <div class="booking-image">
+        <img src="assets/images/restaurant-bar (3).jpg" alt="Restaurant interior">
+        <div class="booking-image-overlay"></div>
+      </div>
+      <div class="booking-content">
+        <div class="booking-eyebrow">Reserve Your Table</div>
+        <h2>
+          Dinner Begins<br>
+          with a <em>Reservation</em>
+        </h2>
+        <p>
+          Whether a romantic dinner for two or a celebration with family, we craft every
+          visit into an unforgettable memory. Dinner service runs nightly from 6:00 PM.
+        </p>
+        <form class="booking-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <select>
+              <option value="">Select time</option>
+              <option>6:00 PM</option>
+              <option>6:30 PM</option>
+              <option>7:00 PM</option>
+              <option>7:30 PM</option>
+              <option>8:00 PM</option>
+              <option>8:30 PM</option>
+              <option>9:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Guests</label>
+            <select>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>5 Guests</option>
+              <option>6+ Guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Occasion</label>
+            <select>
+              <option value="">Select (optional)</option>
+              <option>Romantic Dinner</option>
+              <option>Birthday</option>
+              <option>Anniversary</option>
+              <option>Business Dinner</option>
+              <option>Family Gathering</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Special Requests</label>
+            <input type="text" placeholder="Dietary requirements, seating preference…">
+          </div>
+          <div class="booking-submit">
+            <button type="submit">Confirm Reservation →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENU SECTION ── -->
+  <section class="menu-section" id="menu">
+    <div class="menu-inner">
+
+      <div class="menu-header">
+        <div>
+          <div class="menu-eyebrow">
+            <div class="menu-eyebrow-line"></div>
+            <span>The Coral Table</span>
+            <div class="menu-eyebrow-line"></div>
+          </div>
+          <h2>Our Latest<br><em>Menus</em></h2>
+        </div>
+        <div>
+          <p class="menu-header-desc">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          </p>
+          <a href="menu.html" class="menu-cta-link">
+            Full Menu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="menu-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="starters">Starters</button>
+        <button class="tab-btn" data-tab="mains">Main Courses</button>
+        <button class="tab-btn" data-tab="sides">Sides</button>
+        <button class="tab-btn" data-tab="desserts">Desserts</button>
+        <button class="tab-btn" data-tab="drinks">Drinks</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-panel active" id="tab-starters">
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Purple Corn Tostada</div>
+              <div class="item-desc">Ricotta, goat cheese, beetroot and datterini.</div>
+              <div class="item-tags"><span class="item-tag">Vegetarian</span><span class="item-tag">Chef's Pick</span></div>
+            </div>
+            <div class="item-price">$36</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Bruno's Scribble</div>
+              <div class="item-desc">Culatello, Spalla Cotta, Mortadella, Culacciona.</div>
+              <div class="item-tags"><span class="item-tag">Charcuterie</span></div>
+            </div>
+            <div class="item-price">$30</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Fresh Oysters Dozen</div>
+              <div class="item-desc">Our selection of fresh oysters, limes.</div>
+              <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Seasonal</span></div>
+            </div>
+            <div class="item-price">$59</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Wild Mushroom Arancini</div>
+              <div class="item-desc">Porcini purée, parmesan, basil.</div>
+              <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+            </div>
+            <div class="item-price">$18</div>
+          </div>
+        </div>
+        <div class="chef-special">
+          <div class="chef-label">Chef's Special</div>
+          <div>
+            <h3>Seared Yellowfin Tuna<br><em>with Mango Leche de Tigre</em></h3>
+            <p>Coastal-caught yellowfin, yuzu ponzu, avocado mousse, crispy shallots and microgreens. A signature of our head chef — celebrating the Indian Ocean's finest.</p>
+          </div>
+          <div class="chef-price">$74<span>Per Person</span></div>
+        </div>
+      </div>
+
+      <!-- MAIN COURSES -->
+      <div class="menu-panel" id="tab-mains">
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Grilled Lobster Thermidor</div>
+              <div class="item-desc">Cognac cream, gruyère crust, saffron butter.</div>
+              <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Signature</span></div>
+            </div>
+            <div class="item-price">$95</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Wagyu Beef Tenderloin</div>
+              <div class="item-desc">Truffle jus, roasted bone marrow, dauphinoise.</div>
+              <div class="item-tags"><span class="item-tag">Meat</span><span class="item-tag">Chef's Pick</span></div>
+            </div>
+            <div class="item-price">$88</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Coastal Bouillabaisse</div>
+              <div class="item-desc">Daily catch, fennel, saffron broth, rouille toasts.</div>
+              <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Seasonal</span></div>
+            </div>
+            <div class="item-price">$62</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Garden Tart Fine Herbes</div>
+              <div class="item-desc">Seasonal vegetables, goat curd, herb emulsion.</div>
+              <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+            </div>
+            <div class="item-price">$44</div>
+          </div>
+        </div>
+        <div class="chef-special">
+          <div class="chef-label">Chef's Special</div>
+          <div>
+            <h3>Slow-Roasted Lamb Rack<br><em>with Ras el Hanout</em></h3>
+            <p>12-hour braised lamb, preserved lemon couscous, harissa yoghurt, pomegranate molasses and fresh herbs. A journey from the Kenyan coast to North Africa.</p>
+          </div>
+          <div class="chef-price">$82<span>Per Person</span></div>
+        </div>
+      </div>
+
+      <!-- SIDES -->
+      <div class="menu-panel" id="tab-sides">
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Truffle Mac & Cheese</div>
+              <div class="item-desc">Aged cheddar, black truffle shavings, crispy breadcrumb.</div>
+            </div>
+            <div class="item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Hand-Cut Frites</div>
+              <div class="item-desc">Double-fried, sea salt, aioli, rosemary.</div>
+            </div>
+            <div class="item-price">$12</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Roasted Heritage Beets</div>
+              <div class="item-desc">Orange glaze, walnuts, whipped feta.</div>
+              <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+            </div>
+            <div class="item-price">$14</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Coconut Jasmine Rice</div>
+              <div class="item-desc">Pandan leaf, toasted coconut, pickled ginger.</div>
+              <div class="item-tags"><span class="item-tag">House Specialty</span></div>
+            </div>
+            <div class="item-price">$10</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-panel" id="tab-desserts">
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Valrhona Chocolate Soufflé</div>
+              <div class="item-desc">72% dark chocolate, vanilla bean crème anglaise.</div>
+              <div class="item-tags"><span class="item-tag">Signature</span></div>
+            </div>
+            <div class="item-price">$22</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Passion Fruit Pavlova</div>
+              <div class="item-desc">Meringue, Chantilly cream, tropical coulis.</div>
+            </div>
+            <div class="item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Coconut Panna Cotta</div>
+              <div class="item-desc">Lemongrass gel, mango sorbet, tuile.</div>
+              <div class="item-tags"><span class="item-tag">House Specialty</span></div>
+            </div>
+            <div class="item-price">$16</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Artisan Cheese Board</div>
+              <div class="item-desc">Selection of 5 cheeses, quince, sourdough crackers.</div>
+            </div>
+            <div class="item-price">$28</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-panel" id="tab-drinks">
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Indian Ocean Sunset</div>
+              <div class="item-desc">Mango rum, passionfruit, lime, chilli salt rim.</div>
+              <div class="item-tags"><span class="item-tag">Signature Cocktail</span></div>
+            </div>
+            <div class="item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Lamu Spice Sour</div>
+              <div class="item-desc">Cardamom gin, turmeric syrup, egg white, citrus.</div>
+              <div class="item-tags"><span class="item-tag">Signature Cocktail</span></div>
+            </div>
+            <div class="item-price">$20</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Coconut Kefir Fizz</div>
+              <div class="item-desc">House coconut kefir, pandan, sparkling water.</div>
+              <div class="item-tags"><span class="item-tag">Non-Alcoholic</span></div>
+            </div>
+            <div class="item-price">$10</div>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <div class="item-name">Champagne Billecart-Salmon</div>
+              <div class="item-desc">Blanc de Blancs NV, chilled, per glass.</div>
+            </div>
+            <div class="item-price">$32</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GALLERY STRIP ── -->
+  <div class="gallery-strip">
+    <div class="gallery-strip-item">
+      <img src="assets/images/restaurant-bar (6).jpg" alt="Fresh ingredients">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="assets/images/restaurant-bar (8).jpg" alt="Dining experience">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="assets/images/restaurant-bar (9).jpg" alt="Chef at work">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="assets/images/restaurant-bar (10).jpg" alt="Beach BBQ">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="assets/images/restaurant-bar (12).jpg" alt="Cocktails">
+    </div>
+  </div>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials-section">
+    <div class="testimonials-header">
+      <span class="section-eyebrow">Guest Experiences</span>
+      <h2>What Our Guests <em>Are Saying</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>
+          The freshest seafood I have ever tasted. The view over the ocean at sunset made every course feel like a once-in-a-lifetime moment.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sophie Laurent</div>
+            <div class="author-origin">Paris, France</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>
+          Impeccable service from start to finish. The Wagyu tenderloin paired with the sommelier's recommendation was beyond words.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div>
+            <div class="author-name">James Odhiambo</div>
+            <div class="author-origin">Nairobi, Kenya</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>
+          We celebrated our anniversary here and the team arranged the most beautiful table by the water. The coconut panna cotta is unforgettable.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Amina & Tariq Hussain</div>
+            <div class="author-origin">Dubai, UAE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+    <div class="newsletter-overlay"></div>
+
+    <div class="newsletter-content">
+        <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+
+        <h2>
+            Sign up for our newsletter<br>
+            to receive our news, deals<br>
+            and special offers.
+        </h2>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe →</button>
+        </form>
+
+        <label class="newsletter-check">
+            <input type="checkbox" required>
+            <span>I agree to the <a href="#">Privacy Policy</a></span>
+        </label>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h5>ADDRESS</h5>
+            <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>PHONE</h5>
+            <p>+94 22 345 67 88</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>EMAIL</h5>
+            <p>reservation@coconutsaraih.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>SOCIAL</h5>
+            <div class="footer-socials">
+                <a href="#">fb</a>
+                <a href="#">tw</a>
+                <a href="#">ig</a>
+                <a href="#">yt</a>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Page Header -->
-    <section class="page-header restaurant-header">
-        <div class="page-header-content">
-            <h1>The Coconut Grill Restaurant</h1>
-            <p>Where authentic Kenyan flavors meet continental excellence</p>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> <span>/</span> <span>Restaurant</span>
-            </div>
+    <div class="footer-bottom">
+        <p>© Copyright Coconut Saraih Beach Resort.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Policy</a>
         </div>
-    </section>
-
-    <!-- Restaurant Intro -->
-    <section class="restaurant-intro">
-        <div class="intro-content">
-            <div class="intro-text">
-                <p class="section-subtitle">Award-Winning Cuisine</p>
-                <h2>A Culinary Journey Through Kenya</h2>
-                <p class="intro-description">
-                    The Coconut Grill Restaurant isn't just another hotel dining room—it's a destination. 
-                    Locals drive across Thika for our perfectly grilled nyama choma, tender stews simmered 
-                    with love, and fresh tilapia that melts in your mouth. Every dish tells a story of 
-                    Kenyan heritage, prepared by chefs who've mastered both traditional recipes and 
-                    contemporary techniques.
-                </p>
-                <p class="intro-description">
-                    Whether you're craving authentic Kenyan comfort food or international favorites, 
-                    our kitchen delivers. Dine in our elegant air-conditioned dining room or enjoy the 
-                    tropical breeze on our beautiful outdoor patio.
-                </p>
-                <div class="restaurant-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">KShs 500</span>
-                        <span class="stat-label">Daily Buffet</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Menu Items</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">7am-11pm</span>
-                        <span class="stat-label">Opening Hours</span>
-                    </div>
-                </div>
-            </div>
-            <div class="intro-image">
-                <img src="assets/images/restaurant-ambiance.jpg" alt="The Coconut Grill Restaurant Interior">
-            </div>
-        </div>
-    </section>
-
-    <!-- Daily Buffet Banner -->
-    <section class="buffet-banner">
-        <div class="buffet-content">
-            <div class="buffet-icon">🍽️</div>
-            <div class="buffet-text">
-                <h3>Daily Lunch Buffet</h3>
-                <p>All-you-can-eat buffet featuring Kenyan favorites & continental dishes</p>
-            </div>
-            <div class="buffet-price">
-                <span class="price">Only KShs 500</span>
-                <span class="time">12:00 PM - 3:00 PM Daily</span>
-            </div>
-            <a href="#contact" class="btn btn-primary">Reserve Your Table</a>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="menu-section">
-        <div class="section-header">
-            <p class="section-subtitle">Our Menu</p>
-            <h2>Signature Dishes & Specialties</h2>
-            <p class="section-description">
-                From traditional Kenyan delicacies to international favorites—every dish crafted with care
-            </p>
-        </div>
-        
-        <!-- Menu Categories -->
-        <div class="menu-tabs">
-            <button class="menu-tab active" data-category="kenyan">Kenyan Specialties</button>
-            <button class="menu-tab" data-category="nyama">Nyama Choma & Grills</button>
-            <button class="menu-tab" data-category="seafood">Fresh Seafood</button>
-            <button class="menu-tab" data-category="continental">Continental</button>
-            <button class="menu-tab" data-category="breakfast">Breakfast</button>
-            <button class="menu-tab" data-category="beverages">Beverages & Bar</button>
-        </div>
-
-        <!-- Kenyan Specialties -->
-        <div class="menu-category active" id="kenyan">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Mukimo Special</h4>
-                        <span class="menu-price">KShs 450</span>
-                    </div>
-                    <p class="menu-description">Traditional Kikuyu dish of mashed potatoes, peas, maize & greens, served with beef stew</p>
-                    <span class="menu-tag popular">Most Popular</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Ugali & Sukuma Wiki</h4>
-                        <span class="menu-price">KShs 350</span>
-                    </div>
-                    <p class="menu-description">Authentic maize meal with sautéed collard greens and your choice of beef, chicken, or fish</p>
-                    <span class="menu-tag">Authentic</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Pilau Rice</h4>
-                        <span class="menu-price">KShs 550</span>
-                    </div>
-                    <p class="menu-description">Fragrant spiced rice with tender beef, served with kachumbari and coconut chutney</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Githeri Deluxe</h4>
-                        <span class="menu-price">KShs 400</span>
-                    </div>
-                    <p class="menu-description">Slow-cooked maize and beans with vegetables, potatoes, and your choice of protein</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Matoke & Beef Stew</h4>
-                        <span class="menu-price">KShs 500</span>
-                    </div>
-                    <p class="menu-description">Steamed green bananas in rich beef stew with aromatic spices</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Traditional Chicken Stew</h4>
-                        <span class="menu-price">KShs 600</span>
-                    </div>
-                    <p class="menu-description">Free-range chicken slow-cooked with tomatoes, onions & traditional spices, served with ugali or rice</p>
-                    <span class="menu-tag chef">Chef's Choice</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nyama Choma & Grills -->
-        <div class="menu-category" id="nyama">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Nyama Choma - Goat</h4>
-                        <span class="menu-price">KShs 800/kg</span>
-                    </div>
-                    <p class="menu-description">Prime cuts of goat meat grilled to perfection, served with kachumbari and ugali</p>
-                    <span class="menu-tag popular">Signature Dish</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Beef Ribs Choma</h4>
-                        <span class="menu-price">KShs 700/kg</span>
-                    </div>
-                    <p class="menu-description">Tender beef ribs marinated in our secret spice blend and charcoal-grilled</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Grilled Chicken - Full</h4>
-                        <span class="menu-price">KShs 1,200</span>
-                    </div>
-                    <p class="menu-description">Whole chicken marinated overnight and grilled to juicy perfection</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Grilled Chicken - Half</h4>
-                        <span class="menu-price">KShs 650</span>
-                    </div>
-                    <p class="menu-description">Half chicken with your choice of sides</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Pork Choma</h4>
-                        <span class="menu-price">KShs 650/kg</span>
-                    </div>
-                    <p class="menu-description">Succulent pork grilled with traditional seasonings</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Mixed Grill Platter</h4>
-                        <span class="menu-price">KShs 1,800</span>
-                    </div>
-                    <p class="menu-description">Goat, beef, chicken & sausages with assorted sides - perfect for sharing!</p>
-                    <span class="menu-tag">For Sharing</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fresh Seafood -->
-        <div class="menu-category" id="seafood">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Whole Grilled Tilapia</h4>
-                        <span class="menu-price">KShs 900</span>
-                    </div>
-                    <p class="menu-description">Fresh tilapia from Lake Victoria, grilled and served with ugali & sukuma wiki</p>
-                    <span class="menu-tag popular">Local Favorite</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Deep Fried Tilapia</h4>
-                        <span class="menu-price">KShs 850</span>
-                    </div>
-                    <p class="menu-description">Crispy whole tilapia with chips and coleslaw</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Fish Fillet in Coconut Sauce</h4>
-                        <span class="menu-price">KShs 950</span>
-                    </div>
-                    <p class="menu-description">Tender fish fillet in creamy coastal-style coconut curry, served with rice</p>
-                    <span class="menu-tag chef">Chef's Special</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Grilled Prawns</h4>
-                        <span class="menu-price">KShs 1,400</span>
-                    </div>
-                    <p class="menu-description">Jumbo prawns marinated in garlic butter & herbs, served with rice or chips</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Fish & Chips</h4>
-                        <span class="menu-price">KShs 750</span>
-                    </div>
-                    <p class="menu-description">Beer-battered fish fillet with crispy fries and tartar sauce</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Seafood Platter</h4>
-                        <span class="menu-price">KShs 2,500</span>
-                    </div>
-                    <p class="menu-description">Prawns, calamari, fish & mussels - a coastal feast for two!</p>
-                    <span class="menu-tag">For 2 People</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Continental -->
-        <div class="menu-category" id="continental">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Beef Burger Deluxe</h4>
-                        <span class="menu-price">KShs 650</span>
-                    </div>
-                    <p class="menu-description">Juicy beef patty, cheese, lettuce, tomato & special sauce with fries</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Chicken Burger</h4>
-                        <span class="menu-price">KShs 600</span>
-                    </div>
-                    <p class="menu-description">Grilled chicken breast with coleslaw and chips</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Club Sandwich</h4>
-                        <span class="menu-price">KShs 550</span>
-                    </div>
-                    <p class="menu-description">Triple-decker with chicken, bacon, egg, lettuce & tomato</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Beef Steak</h4>
-                        <span class="menu-price">KShs 1,200</span>
-                    </div>
-                    <p class="menu-description">200g premium beef steak with mushroom sauce, vegetables & choice of sides</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Spaghetti Bolognese</h4>
-                        <span class="menu-price">KShs 700</span>
-                    </div>
-                    <p class="menu-description">Classic Italian pasta with rich meat sauce and parmesan</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Chicken Alfredo Pasta</h4>
-                        <span class="menu-price">KShs 750</span>
-                    </div>
-                    <p class="menu-description">Creamy fettuccine with grilled chicken and garlic bread</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Breakfast -->
-        <div class="menu-category" id="breakfast">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Full English Breakfast</h4>
-                        <span class="menu-price">KShs 650</span>
-                    </div>
-                    <p class="menu-description">Eggs, bacon, sausages, baked beans, toast, mushrooms & tomato</p>
-                    <span class="menu-tag">Included for Guests</span>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Kenyan Breakfast</h4>
-                        <span class="menu-price">KShs 500</span>
-                    </div>
-                    <p class="menu-description">Mandazi, samosa, chapati, tea/coffee, eggs & fruit</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Omelette Station</h4>
-                        <span class="menu-price">KShs 450</span>
-                    </div>
-                    <p class="menu-description">Made-to-order omelette with your choice of fillings, toast & juice</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Pancakes</h4>
-                        <span class="menu-price">KShs 400</span>
-                    </div>
-                    <p class="menu-description">Fluffy pancakes with honey, butter & fruit</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Continental Breakfast</h4>
-                        <span class="menu-price">KShs 550</span>
-                    </div>
-                    <p class="menu-description">Croissants, pastries, cereals, fruit, yogurt & beverages</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Breakfast Buffet</h4>
-                        <span class="menu-price">KShs 700</span>
-                    </div>
-                    <p class="menu-description">All-you-can-eat selection of hot & cold breakfast items</p>
-                    <span class="menu-tag popular">Weekends Only</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Beverages & Bar -->
-        <div class="menu-category" id="beverages">
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Fresh Juices</h4>
-                        <span class="menu-price">KShs 200-350</span>
-                    </div>
-                    <p class="menu-description">Orange, passion fruit, mango, pineapple, tree tomato (dawa)</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Kenyan Tea/Coffee</h4>
-                        <span class="menu-price">KShs 150</span>
-                    </div>
-                    <p class="menu-description">Authentic Kenyan chai or premium coffee</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Soft Drinks</h4>
-                        <span class="menu-price">KShs 120</span>
-                    </div>
-                    <p class="menu-description">Coca-Cola, Fanta, Sprite, Stoney Tangawizi</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Local Beers</h4>
-                        <span class="menu-price">KShs 280</span>
-                    </div>
-                    <p class="menu-description">Tusker, White Cap, Pilsner</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Wines</h4>
-                        <span class="menu-price">KShs 3,500+</span>
-                    </div>
-                    <p class="menu-description">Curated selection of red, white & rosé wines</p>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <h4>Cocktails</h4>
-                        <span class="menu-price">KShs 500-700</span>
-                    </div>
-                    <p class="menu-description">Dawa, Mojito, Margarita & signature coconut creations</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dining Options -->
-    <section class="dining-options">
-        <div class="section-header">
-            <p class="section-subtitle">Dining Experiences</p>
-            <h2>Where & How to Dine</h2>
-        </div>
-        
-        <div class="dining-grid">
-            <div class="dining-card">
-                <div class="dining-icon">🏛️</div>
-                <h3>Main Dining Room</h3>
-                <p>Elegant air-conditioned space with comfortable seating for up to 120 guests. Perfect for leisurely meals and special occasions.</p>
-                <ul class="dining-features">
-                    <li>Air-conditioned comfort</li>
-                    <li>Family-friendly atmosphere</li>
-                    <li>À la carte & buffet service</li>
-                    <li>Full bar available</li>
-                </ul>
-            </div>
-
-            <div class="dining-card">
-                <div class="dining-icon">🌴</div>
-                <h3>Outdoor Patio</h3>
-                <p>Al fresco dining under tropical palms with garden views. Enjoy your meal in the fresh air with natural ambiance.</p>
-                <ul class="dining-features">
-                    <li>Garden & pool views</li>
-                    <li>Evening breeze dining</li>
-                    <li>Perfect for groups</li>
-                    <li>Romantic setting</li>
-                </ul>
-            </div>
-
-            <div class="dining-card">
-                <div class="dining-icon">🚪</div>
-                <h3>24-Hour Room Service</h3>
-                <p>For hotel guests, enjoy our full menu delivered to your room any time of day or night.</p>
-                <ul class="dining-features">
-                    <li>Full menu available</li>
-                    <li>Quick delivery</li>
-                    <li>No extra charges</li>
-                    <li>Perfect for late arrivals</li>
-                </ul>
-            </div>
-
-            <div class="dining-card">
-                <div class="dining-icon">🎉</div>
-                <h3>Private Events</h3>
-                <p>Host your celebration with us. Customized menus for weddings, parties, corporate events, and special occasions.</p>
-                <ul class="dining-features">
-                    <li>Custom menu planning</li>
-                    <li>Group packages</li>
-                    <li>Event coordination</li>
-                    <li>Flexible arrangements</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Opening Hours -->
-    <section class="opening-hours">
-        <div class="section-header">
-            <h2>Opening Hours</h2>
-        </div>
-        
-        <div class="hours-grid">
-            <div class="hours-card">
-                <h3>🌅 Breakfast</h3>
-                <p class="hours-time">7:00 AM - 10:00 AM</p>
-                <p class="hours-note">Daily</p>
-            </div>
-
-            <div class="hours-card featured">
-                <h3>🍽️ Lunch Buffet</h3>
-                <p class="hours-time">12:00 PM - 3:00 PM</p>
-                <p class="hours-note">Only KShs 500 - Don't Miss It!</p>
-            </div>
-
-            <div class="hours-card">
-                <h3>🌙 Dinner</h3>
-                <p class="hours-time">6:00 PM - 11:00 PM</p>
-                <p class="hours-note">Daily</p>
-            </div>
-
-            <div class="hours-card">
-                <h3>☕ All Day Dining</h3>
-                <p class="hours-time">7:00 AM - 11:00 PM</p>
-                <p class="hours-note">À la carte menu available</p>
-            </div>
-        </div>
-
-        <div class="hours-note-section">
-            <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> Room service available 24/7 for hotel guests. Bar open until midnight on weekends.</p>
-        </div>
-    </section>
-
-    <!-- Reservation CTA -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Experience Authentic Kenyan Flavors?</h2>
-            <p>Reserve your table today or walk in and taste why locals call us the best restaurant in Thika!</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-utensils"></i> Reserve a Table
-                </a>
-                <a href="tel:+254700000000" class="btn btn-secondary btn-lg">
-                    <i class="fas fa-phone"></i> Call for Reservations
-                </a>
-            </div>
-            <p class="cta-note">Walk-ins welcome! • Open to the public • No hotel booking required</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>The Coconut Grill Hotels</h3>
-                <p>Thika's premier destination for accommodation, dining, and celebration. Family-run hospitality with modern comfort.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="rooms.html">Rooms & Rates</a></li>
-                    <li><a href="restaurant.html">Restaurant Menu</a></li>
-                    <li><a href="amenities.html">Facilities & Amenities</a></li>
-                    <li><a href="contact.html">Contact & Directions</a></li>
-                    <li><a href="#">Conference Facilities</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Room Service (24/7)</a></li>
-                    <li><a href="restaurant.html">Restaurant & Bar</a></li>
-                    <li><a href="amenities.html">Swimming Pool</a></li>
-                    <li><a href="amenities.html">Conference Halls</a></li>
-                    <li><a href="amenities.html">Fitness Center</a></li>
-                    <li><a href="#">Free Parking</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Visit Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Kenyatta Highway<br>Thika CBD, Kiambu County<br>Kenya</p>
-                <p style="margin-top: var(--space-sm);">
-                    <i class="fas fa-phone"></i> <a href="tel:+254700000000">+254 700 000 000</a><br>
-                    <i class="fas fa-envelope"></i> <a href="mailto:info@coconutgrillhotels.co.ke">info@coconutgrillhotels.co.ke</a>
-                </p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 The Coconut Grill Hotels. All rights reserved. | Proudly serving Thika with authentic Kenyan hospitality.</p>
-        </div>
-    </footer>
-
+    </div>
+</footer>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20reserve%20a%20table%20at%20The%20Coconut%20Grill%20Restaurant" 
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
        class="whatsapp-float" 
        target="_blank"
        aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Menu Tab JavaScript -->
-    <script>
-        // Menu tab functionality
-        const menuTabs = document.querySelectorAll('.menu-tab');
-        const menuCategories = document.querySelectorAll('.menu-category');
-
-        menuTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.dataset.category;
-                
-                // Remove active class from all tabs and categories
-                menuTabs.forEach(t => t.classList.remove('active'));
-                menuCategories.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding category
-                tab.classList.add('active');
-                document.getElementById(category).classList.add('active');
-            });
-        });
-    </script>
-
     <!-- Main JavaScript -->
     <script src="src/js/main.js"></script>
-</body>
+ </body>
 </html>

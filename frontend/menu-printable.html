@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | The Coconut Saraih</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        /* Header */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #d4b26a;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .logo-icon {
+            font-size: 40px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d4b26a;
+        }
+
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 20px 0 10px;
+            color: #1a1a1a;
+        }
+
+        .menu-subtitle {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Section */
+        .menu-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #d4b26a;
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Menu Items */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .item-info {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .item-description {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #d4b26a;
+            white-space: nowrap;
+        }
+
+        .price-large {
+            font-size: 16px;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #d4b26a;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        .footer-text span {
+            color: #d4b26a;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .menu-page {
+                width: 100%;
+                height: 100%;
+                padding: 15mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-page">
+        <!-- Header -->
+        <header class="menu-header">
+            <div class="logo">
+                <span class="logo-icon">🥥</span>
+                The Coconut Saraih
+            </div>
+            <p class="tagline">Beach Hotel & Restaurant</p>
+            <h1 class="menu-title">Menu</h1>
+            <p class="menu-subtitle">Fresh & Authentic Coastal Cuisine</p>
+        </header>
+
+        <!-- Starters -->
+        <section class="menu-section">
+            <h2 class="section-title">Starters</h2>
+            <div class="two-columns">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coconut Prawns</h3>
+                            <p class="item-description">Tiger prawns coated in crispy coconut, served with mango salsa</p>
+                        </div>
+                        <span class="item-price">KShs 1,200</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coastal Fish Ceviche</h3>
+                            <p class="item-description">Fresh local fish marinated in lime, coconut milk, chili</p>
+                        </div>
+                        <span class="item-price">KShs 950</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Samaki Wings</h3>
+                            <p class="item-description">Spiced fish wings grilled to perfection with garlic butter</p>
+                        </div>
+                        <span class="item-price">KShs 850</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Tropical Salad</h3>
+                            <p class="item-description">Fresh mango, papaya, avocado with lime honey dressing</p>
+                        </div>
+                        <span class="item-price">KShs 650</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Soup of the Day</h3>
+                            <p class="item-description">Ask your server for today's fresh selection</p>
+                        </div>
+                        <span class="item-price">KShs 450</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Bruschetta</h3>
+                            <p class="item-description">Tomato, basil, garlic on toasted ciabatta</p>
+                        </div>
+                        <span class="item-price">KShs 550</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Courses -->
+        <section class="menu-section">
+            <h2 class="section-title">Main Courses</h2>
+            <div class="two-columns">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Grilled Lobster</h3>
+                            <p class="item-description">Whole lobster with herb butter, served with rice and vegetables</p>
+                        </div>
+                        <span class="item-price price-large">KShs 3,500</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Swahili Seafood Platter</h3>
+                            <p class="item-description">Prawns, fish, calamari, mussels with coconut curry sauce</p>
+                        </div>
+                        <span class="item-price price-large">KShs 2,800</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coconut Curry Fish</h3>
+                            <p class="item-description">Local white fish in aromatic coconut curry, served with chapati</p>
+                        </div>
+                        <span class="item-price">KShs 1,600</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Beef Nyama Choma</h3>
+                            <p class="item-description">Grilled beef skewers with traditional accompaniments</p>
+                        </div>
+                        <span class="item-price">KShs 1,400</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Chicken Biryani</h3>
+                            <p class="item-description">Fragrant basmati rice with spiced chicken and raitha</p>
+                        </div>
+                        <span class="item-price">KShs 1,200</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Vegetarian Curry</h3>
+                            <p class="item-description">Seasonal vegetables in coconut curry with rice</p>
+                        </div>
+                        <span class="item-price">KShs 900</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-section">
+            <h2 class="section-title">Desserts</h2>
+            <div class="two-columns">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Mango Sticky Rice</h3>
+                            <p class="item-description">Sweet glutinous rice with fresh mango and coconut cream</p>
+                        </div>
+                        <span class="item-price">KShs 550</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Chocolate Lava Cake</h3>
+                            <p class="item-description">Warm chocolate cake with vanilla ice cream</p>
+                        </div>
+                        <span class="item-price">KShs 650</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Tropical Fruit Platter</h3>
+                            <p class="item-description">Seasonal fresh fruits with mint</p>
+                        </div>
+                        <span class="item-price">KShs 400</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coconut Panna Cotta</h3>
+                            <p class="item-description">Creamy coconut dessert with tropical coulis</p>
+                        </div>
+                        <span class="item-price">KShs 500</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages -->
+        <section class="menu-section">
+            <h2 class="section-title">Beverages</h2>
+            <div class="two-columns">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Fresh Smoothies</h3>
+                            <p class="item-description">Mango, Banana, Pineapple, Coconut</p>
+                        </div>
+                        <span class="item-price">KShs 350</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Fresh Juices</h3>
+                            <p class="item-description">Orange, Watermelon, Passion, Lime</p>
+                        </div>
+                        <span class="item-price">KShs 250</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Soft Drinks</h3>
+                            <p class="item-description">Coca-Cola, Fanta, Sprite, Soda</p>
+                        </div>
+                        <span class="item-price">KShs 150</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coffee</h3>
+                            <p class="item-description">Espresso, Cappuccino, Latte, Americano</p>
+                        </div>
+                        <span class="item-price">KShs 200</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Tea</h3>
+                            <p class="item-description">Kenyan Tea, Earl Grey, Herbal, Mint</p>
+                        </div>
+                        <span class="item-price">KShs 150</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3 class="item-name">Coconut Water</h3>
+                            <p class="item-description">Fresh young coconut</p>
+                        </div>
+                        <span class="item-price">KShs 300</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="menu-footer">
+            <p class="footer-text">
+                <span>🥥</span> All prices include VAT | Service charge not included | Prices subject to change <span>🥥</span>
+            </p>
+            <p class="footer-text" style="margin-top: 10px;">
+                Beach Road, Coconut Saraih | Tel: +254 22 345 67 88
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

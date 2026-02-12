@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Latest Menu - The Coconut Saraih Hotel</title>
+    <meta name="description" content="Discover our latest menu at Coconut Saraih Hotel, featuring a delectable selection of dishes crafted with fresh ingredients. Indulge in a culinary experience that combines local flavors with international cuisine. Explore our menu now!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="src/styles/i.css">
+    
+    <style>
+        /* Menu Page Specific Styles - Dark Elegant Theme */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{--ink:#0e0c0a;--ink-mid:#1a1714;--parch:#f5f0e8;--gold:#c8a45d;--gold-l:#e2c98a;--gdim:rgba(200,164,93,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif}
+
+        body{background:var(--ink);color:var(--parch);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        a{text-decoration:none;color:inherit}
+        img{display:block;max-width:100%}
+
+        /* Override nav from i.css for consistency */
+        .nav-links a{color:rgba(245,240,232,.65)}
+        .nav-links a:hover{color:var(--gold)}
+        .logo span:not(.logo-icon){color:var(--parch)}
+        .nav-phone{color:rgba(245,240,232,.45)}
+        .nav-lang a{color:rgba(245,240,232,.45)}
+        .nav-lang a:hover{color:var(--gold)}
+        .nav-cta{color:var(--ink);background:var(--gold)}
+        .nav-cta:hover{background:var(--gold-l)}
+        .dropdown-menu{background:var(--ink-mid);border:1px solid var(--gdim)}
+        .dropdown-menu li a{color:rgba(245,240,232,.65)}
+        .dropdown-menu li a:hover{background:rgba(200,164,93,.08);color:var(--gold)}
+
+        /* HERO */
+        .menu-hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:flex-end;overflow:hidden}
+        .menu-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;animation:zoomIn 10s ease-out forwards}
+        @keyframes zoomIn{from{transform:scale(1.07)}to{transform:scale(1)}}
+        .menu-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,12,10,.9) 0%,rgba(14,12,10,.3) 55%,transparent 100%);z-index:1}
+        .menu-hero-content{position:relative;z-index:2;padding:0 8% 80px;animation:fadeUp .9s .3s both}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        .page-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+        .page-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+        .menu-hero-content h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:1.1;color:var(--parch)}
+        .menu-hero-content h1 em{font-style:italic;color:var(--gold)}
+
+        /* FILTER TABS */
+        .menu-filter{background:var(--ink-mid);border-bottom:1px solid var(--gdim);position:fixed;top:72px;left:0;right:0;z-index:100;transform:translateY(-100%);opacity:0;transition:transform 0.4s ease,opacity 0.4s ease}
+        .menu-filter.visible{transform:translateY(0);opacity:1}
+        .filter-inner{max-width:1200px;margin:0 auto;padding:0 6%;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+        .filter-inner::-webkit-scrollbar{display:none}
+        .filter-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.35);padding:22px 28px;position:relative;transition:color .3s;white-space:nowrap;flex-shrink:0}
+        .filter-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+        .filter-btn:hover{color:rgba(245,240,232,.65)}
+        .filter-btn.active{color:var(--gold)}
+        .filter-btn.active::after{transform:scaleX(1)}
+
+        /* MENU BODY */
+        .menu-body{max-width:1200px;margin:0 auto;padding:80px 6% 120px}
+
+        .menu-category{display:none;animation:fadeUp .4s both}
+        .menu-category.active{display:block}
+
+        .category-header{display:flex;align-items:center;gap:24px;margin-bottom:60px}
+        .category-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--parch)}
+        .category-header h2 em{font-style:italic;color:var(--gold)}
+        .cat-line{flex:1;height:1px;background:var(--gdim)}
+        .cat-count{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.3)}
+
+        /* Items grid */
+        .items-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+        .menu-item{padding:30px 0;border-bottom:1px solid rgba(245,240,232,.06);display:grid;grid-template-columns:1fr auto;gap:16px 36px;align-items:start;position:relative;transition:padding-left .3s}
+        .items-grid .menu-item:nth-child(odd){padding-right:56px;border-right:1px solid rgba(245,240,232,.06)}
+        .items-grid .menu-item:nth-child(even){padding-left:56px}
+        .items-grid .menu-item:nth-last-child(-n+2){border-bottom:none}
+        .menu-item:hover{padding-left:8px}
+        .items-grid .menu-item:nth-child(odd):hover{padding-left:0;padding-right:48px}
+        .item-name{font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--parch);margin-bottom:6px;transition:color .3s}
+        .menu-item:hover .item-name{color:var(--gold-l)}
+        .item-desc{font-size:.82rem;color:rgba(245,240,232,.42);line-height:1.7;font-style:italic}
+        .item-tags{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+        .item-tag{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,164,93,.3);padding:3px 9px;border-radius:999px}
+        .item-price{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--gold);white-space:nowrap;padding-top:4px}
+
+        /* Featured dish */
+        .featured-dish{margin-top:70px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gdim)}
+        .featured-img{position:relative;overflow:hidden;min-height:420px}
+        .featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+        .featured-dish:hover .featured-img img{transform:scale(1.04)}
+        .featured-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--ink-mid) 100%)}
+        .featured-content{padding:60px 56px;background:var(--ink-mid);display:flex;flex-direction:column;justify-content:center}
+        .featured-tag{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:5px 14px;align-self:flex-start;margin-bottom:26px}
+        .featured-content h3{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--parch);margin-bottom:16px}
+        .featured-content h3 em{font-style:italic;color:var(--gold)}
+        .featured-content p{font-size:.9rem;color:rgba(245,240,232,.5);line-height:1.85;margin-bottom:28px}
+        .featured-price{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--gold)}
+        .featured-price span{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,164,93,.5);margin-top:4px}
+
+        /* Responsive */
+        @media (max-width:900px){
+            .featured-dish{grid-template-columns:1fr}
+            .featured-img{min-height:320px}
+            .featured-content{padding:40px 32px}
+            .items-grid{grid-template-columns:1fr}
+            .items-grid .menu-item:nth-child(odd){padding-right:0;border-right:none;border-bottom:1px solid rgba(245,240,232,.06)}
+            .items-grid .menu-item:nth-child(even){padding-left:0}
+            .items-grid .menu-item:nth-last-child(-n+2){border-bottom:1px solid rgba(245,240,232,.06)}
+        }
+        @media (max-width:600px){
+            .nav-container{padding:0 4%}
+            .nav-links{gap:20px}
+            .nav-phone{display:none}
+            .menu-hero{height:60vh;min-height:400px}
+            .menu-hero-content{padding:0 6% 60px}
+            .menu-body{padding:60px 6% 80px}
+            .filter-btn{padding:18px 20px;font-size:.62rem}
+            .category-header{flex-wrap:wrap;gap:12px}
+            .cat-line{width:100%;order:3}
+            .menu-item{padding:24px 0;gap:12px}
+            .item-name{font-size:1.25rem}
+            .featured-content{padding:32px 24px}
+            .featured-price{font-size:2.4rem}
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation - Same as other pages -->
+    <header class="nav-wrapper" id="navbar">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="rooms.html">Rooms Page</a></li>
+                            <li><a href="room-details.html">Room Details</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About the Hotel</a></li>
+                            <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                            <li><a href="restaurant.html">The Restaurant</a></li>
+                            <li><a href="menu.html">Menu Page</a></li>
+                            <li><a href="spa.html">Spa & Wellness</a></li>
+                            <li><a href="events.html">Events & Meetings</a></li>
+                            <li><a href="activities.html">Local Activities</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🥥</span>
+                    <span>
+                        The Coconut Saraih
+                        <span class="logo-subtitle">Hotels & Restaurant</span>
+                    </span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <span class="nav-phone">Tel: +41 22 345 67 88</span>
+                <div class="nav-lang">
+                    <a href="#">EN</a> / <a href="#">FR</a>
+                </div>
+                <a href="booking.html" class="nav-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <img src="assets/images/restaurant-bar (9).jpg" alt="Menu at The Coral Table">
+        <div class="menu-hero-overlay"></div>
+        <div class="menu-hero-content">
+            <span class="page-eyebrow">The Coral Table</span>
+            <h1>Our Latest<br><em>Menu</em></h1>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <nav class="menu-filter">
+        <div class="filter-inner">
+            <button class="filter-btn active" data-cat="starters">Starters</button>
+            <button class="filter-btn" data-cat="mains">Main Courses</button>
+            <button class="filter-btn" data-cat="sides">Sides</button>
+            <button class="filter-btn" data-cat="desserts">Desserts</button>
+            <button class="filter-btn" data-cat="drinks">Drinks</button>
+        </div>
+    </nav>
+
+    <!-- Menu Body -->
+    <div class="menu-body">
+
+        <!-- STARTERS -->
+        <div class="menu-category active" id="cat-starters">
+            <div class="category-header">
+                <h2>Starters</h2>
+                <div class="cat-line"></div>
+                <span class="cat-count">4 Dishes</span>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Purple Corn Tostada</div>
+                        <div class="item-desc">Ricotta, goat cheese, beetroot and datterini.</div>
+                        <div class="item-tags">
+                            <span class="item-tag">Vegetarian</span>
+                            <span class="item-tag">Chef's Pick</span>
+                        </div>
+                    </div>
+                    <div class="item-price">$36</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Bruno's Scribble</div>
+                        <div class="item-desc">Culatello, Spalla Cotta, Mortadella, Culacciona.</div>
+                        <div class="item-tags"><span class="item-tag">Charcuterie</span></div>
+                    </div>
+                    <div class="item-price">$30</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Fresh Oysters Dozen</div>
+                        <div class="item-desc">Our selection of fresh oysters, limes.</div>
+                        <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Seasonal</span></div>
+                    </div>
+                    <div class="item-price">$59</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Wild Mushroom Arancini</div>
+                        <div class="item-desc">Porcini purée, parmesan, basil.</div>
+                        <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+                    </div>
+                    <div class="item-price">$18</div>
+                </div>
+            </div>
+            <div class="featured-dish">
+                <div class="featured-img">
+                    <img src="assets/images/restaurant-bar (6).jpg" alt="Chef's Special">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-tag">Chef's Special</span>
+                    <h3>Seared Yellowfin Tuna<br><em>with Mango Leche de Tigre</em></h3>
+                    <p>Coastal-caught yellowfin, yuzu ponzu, avocado mousse, crispy shallots and microgreens. A signature of our head chef — celebrating the Indian Ocean's finest.</p>
+                    <div class="featured-price">$74<span>Per Person</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAINS -->
+        <div class="menu-category" id="cat-mains">
+            <div class="category-header">
+                <h2>Main <em>Courses</em></h2>
+                <div class="cat-line"></div>
+                <span class="cat-count">4 Dishes</span>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Lobster Thermidor</div>
+                        <div class="item-desc">Cognac cream, gruyère crust, saffron butter.</div>
+                        <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Signature</span></div>
+                    </div>
+                    <div class="item-price">$95</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Wagyu Beef Tenderloin</div>
+                        <div class="item-desc">Truffle jus, roasted bone marrow, dauphinoise.</div>
+                        <div class="item-tags"><span class="item-tag">Meat</span><span class="item-tag">Chef's Pick</span></div>
+                    </div>
+                    <div class="item-price">$88</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Coastal Bouillabaisse</div>
+                        <div class="item-desc">Daily catch, fennel, saffron broth, rouille toasts.</div>
+                        <div class="item-tags"><span class="item-tag">Seafood</span><span class="item-tag">Seasonal</span></div>
+                    </div>
+                    <div class="item-price">$62</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Garden Tart Fine Herbes</div>
+                        <div class="item-desc">Seasonal vegetables, goat curd, herb emulsion.</div>
+                        <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+                    </div>
+                    <div class="item-price">$44</div>
+                </div>
+            </div>
+            <div class="featured-dish">
+                <div class="featured-img">
+                    <img src="assets/images/restaurant-bar (11).jpg" alt="Lamb Rack">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-tag">Tonight's Special</span>
+                    <h3>Slow-Roasted Lamb Rack<br><em>with Ras el Hanout</em></h3>
+                    <p>12-hour braised lamb, preserved lemon couscous, harissa yoghurt, pomegranate molasses and fresh herbs. A journey from the Kenyan coast to North Africa.</p>
+                    <div class="featured-price">$82<span>Per Person</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDES -->
+        <div class="menu-category" id="cat-sides">
+            <div class="category-header">
+                <h2><em>Sides</em></h2>
+                <div class="cat-line"></div>
+                <span class="cat-count">4 Dishes</span>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Truffle Mac & Cheese</div>
+                        <div class="item-desc">Aged cheddar, black truffle shavings, crispy breadcrumb.</div>
+                    </div>
+                    <div class="item-price">$18</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Hand-Cut Frites</div>
+                        <div class="item-desc">Double-fried, sea salt, aioli, rosemary.</div>
+                    </div>
+                    <div class="item-price">$12</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Roasted Heritage Beets</div>
+                        <div class="item-desc">Orange glaze, walnuts, whipped feta.</div>
+                        <div class="item-tags"><span class="item-tag">Vegetarian</span></div>
+                    </div>
+                    <div class="item-price">$14</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Coconut Jasmine Rice</div>
+                        <div class="item-desc">Pandan leaf, toasted coconut, pickled ginger.</div>
+                        <div class="item-tags"><span class="item-tag">House Specialty</span></div>
+                    </div>
+                    <div class="item-price">$10</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-category" id="cat-desserts">
+            <div class="category-header">
+                <h2><em>Desserts</em></h2>
+                <div class="cat-line"></div>
+                <span class="cat-count">4 Dishes</span>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Valrhona Chocolate Soufflé</div>
+                        <div class="item-desc">72% dark chocolate, vanilla bean crème anglaise.</div>
+                        <div class="item-tags"><span class="item-tag">Signature</span></div>
+                    </div>
+                    <div class="item-price">$22</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Passion Fruit Pavlova</div>
+                        <div class="item-desc">Meringue, Chantilly cream, tropical coulis.</div>
+                    </div>
+                    <div class="item-price">$18</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Coconut Panna Cotta</div>
+                        <div class="item-desc">Lemongrass gel, mango sorbet, tuile.</div>
+                        <div class="item-tags"><span class="item-tag">House Specialty</span></div>
+                    </div>
+                    <div class="item-price">$16</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Artisan Cheese Board</div>
+                        <div class="item-desc">Selection of 5 cheeses, quince, sourdough crackers.</div>
+                    </div>
+                    <div class="item-price">$28</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-category" id="cat-drinks">
+            <div class="category-header">
+                <h2><em>Drinks</em></h2>
+                <div class="cat-line"></div>
+                <span class="cat-count">4 Items</span>
+            </div>
+            <div class="items-grid">
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Indian Ocean Sunset</div>
+                        <div class="item-desc">Mango rum, passionfruit, lime, chilli salt rim.</div>
+                        <div class="item-tags"><span class="item-tag">Signature Cocktail</span></div>
+                    </div>
+                    <div class="item-price">$18</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Lamu Spice Sour</div>
+                        <div class="item-desc">Cardamom gin, turmeric syrup, egg white, citrus.</div>
+                        <div class="item-tags"><span class="item-tag">Signature Cocktail</span></div>
+                    </div>
+                    <div class="item-price">$20</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Coconut Kefir Fizz</div>
+                        <div class="item-desc">House coconut kefir, pandan, sparkling water.</div>
+                        <div class="item-tags"><span class="item-tag">Non-Alcoholic</span></div>
+                    </div>
+                    <div class="item-price">$10</div>
+                </div>
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Champagne Billecart-Salmon</div>
+                        <div class="item-desc">Blanc de Blancs NV, chilled, per glass.</div>
+                    </div>
+                    <div class="item-price">$32</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-overlay"></div>
+        <div class="newsletter-content">
+            <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+            <h2>Sign up for our newsletter<br>to receive our news, deals<br>and special offers.</h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+            <label class="newsletter-check">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="#">Privacy Policy</a></span>
+            </label>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>ADDRESS</h5>
+                <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+            </div>
+            <div class="footer-col">
+                <h5>PHONE</h5>
+                <p>+94 22 345 67 88</p>
+            </div>
+            <div class="footer-col">
+                <h5>EMAIL</h5>
+                <p>reservation@coconutsaraih.com</p>
+            </div>
+            <div class="footer-col">
+                <h5>SOCIAL</h5>
+                <div class="footer-socials">
+                    <a href="#">fb</a>
+                    <a href="#">tw</a>
+                    <a href="#">ig</a>
+                    <a href="#">yt</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('cat-' + btn.dataset.cat).classList.add('active');
+            });
+        });
+
+        // Show/hide filter on scroll
+        const menuFilter = document.querySelector('.menu-filter');
+        const heroSection = document.querySelector('.menu-hero');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > heroSection.offsetHeight - 100) {
+                menuFilter.classList.add('visible');
+            } else {
+                menuFilter.classList.remove('visible');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="src/js/main.js"></script>
+</body>
+</html>

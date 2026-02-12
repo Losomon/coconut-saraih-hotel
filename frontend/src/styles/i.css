@@ -4,6 +4,8 @@
    ============================================ */
 :root {
     --primary-gold: #C9A961;
+    --gold: #C9A961;
+    --ff-head: 'Montserrat', sans-serif;
     --primary-dark: #1a1a1a;
     --primary-white: #ffffff;
     --overlay-dark: rgba(0, 0, 0, 0.45);
@@ -538,11 +540,12 @@ h3 {
         font-size: 0.75rem;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--text-light);
+        color: var(--gold);
         font-weight: 400;
     }
 
-    .form-group input,
+    /* Input styles for contact form - overridden by contact.css */
+    /* .form-group input,
     .form-group select {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid var(--border-light);
@@ -553,9 +556,9 @@ h3 {
         transition: all 0.3s ease;
         cursor: pointer;
         height: 48px;
-    }
+    } */
 
-    .form-group input:focus,
+    /* .form-group input:focus,
     .form-group select:focus {
         outline: none;
         background: rgba(255, 255, 255, 0.15);
@@ -564,7 +567,7 @@ h3 {
 
     .form-group input::placeholder {
         color: rgba(255, 255, 255, 0.5);
-    }
+    } */
 
     .form-group select option {
         background: var(--primary-dark);

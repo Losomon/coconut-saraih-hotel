@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const navHeight = document.querySelector('.nav-wrapper').offsetHeight;
+                const nav = document.querySelector('.navbar') || document.querySelector('.nav-wrapper');
+            const navHeight = nav ? nav.offsetHeight : 0;
                 const targetPosition = target.offsetTop - navHeight;
                 window.scrollTo({
                     top: targetPosition,
@@ -89,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Navbar scroll effect
-    const navWrapper = document.querySelector('.nav-wrapper');
-    if (navWrapper) {
+    const navbar = document.querySelector('.navbar') || document.querySelector('.nav-wrapper');
+    if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navWrapper.classList.add('scrolled');
+                navbar.classList.add('scrolled');
             } else {
-                navWrapper.classList.remove('scrolled');
+                navbar.classList.remove('scrolled');
             }
         });
     }
@@ -187,36 +188,104 @@ document.addEventListener('DOMContentLoaded', function() {
         if (touchEndX < touchStartX - 50) slideRight();
         if (touchEndX > touchStartX + 50) slideLeft();
     }
-
-    // Animated Counter for Stats Section
-    const counters = document.querySelectorAll('.count');
-    const counterSpeed = 120;
     
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / counterSpeed;
+    // ============================================
+    // Venue Cards Slider (8 second auto-slide)
+    // ============================================
+    
+    const venueCardsTrack = document.getElementById('venueCardsTrack');
+    const venueCardsPrev = document.getElementById('venueCardsPrev');
+    const venueCardsNext = document.getElementById('venueCardsNext');
+    const venueCardsDots = document.getElementById('venueCardsDots');
+    
+    if (venueCardsTrack && venueCardsPrev && venueCardsNext && venueCardsDots) {
+        const venueCards = venueCardsTrack.querySelectorAll('.venue-card');
+        let currentVenueCard = 0;
+        let venueCardsInterval;
+        const cardsToShow = window.innerWidth > 1024 ? 3 : (window.innerWidth > 600 ? 2 : 1);
+        const totalCards = venueCards.length;
+        
+        // Create dots
+        const dotsCount = Math.ceil(totalCards / cardsToShow);
+        for (let i = 0; i < dotsCount; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'venue-cards-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToVenueCard(i));
+            venueCardsDots.appendChild(dot);
+        }
+        
+        const dots = venueCardsDots.querySelectorAll('.venue-cards-dot');
+        
+        function updateVenueCards() {
+            const cardWidth = venueCards[0].offsetWidth + 24; // card width + gap
+            venueCardsTrack.style.transform = `translateX(-${currentVenueCard * cardWidth}px)`;
             
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        
-        // Start counter when element is in view
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCount();
-                    counterObserver.unobserve(entry.target);
-                }
+            // Update dots
+            const activeDot = Math.floor(currentVenueCard / cardsToShow);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDot);
             });
-        }, { threshold: 0.5 });
+        }
         
-        counterObserver.observe(counter);
-    });
-    
+        function goToVenueCard(index) {
+            currentVenueCard = index;
+            updateVenueCards();
+            resetVenueCardsInterval();
+        }
+        
+        function nextVenueCard() {
+            const maxIndex = totalCards - cardsToShow;
+            currentVenueCard = currentVenueCard < maxIndex ? currentVenueCard + 1 : 0;
+            updateVenueCards();
+        }
+        
+        function prevVenueCard() {
+            const maxIndex = totalCards - cardsToShow;
+            currentVenueCard = currentVenueCard > 0 ? currentVenueCard - 1 : maxIndex;
+            updateVenueCards();
+        }
+        
+        function startVenueCardsInterval() {
+            venueCardsInterval = setInterval(nextVenueCard, 8000);
+        }
+        
+        function resetVenueCardsInterval() {
+            clearInterval(venueCardsInterval);
+            startVenueCardsInterval();
+        }
+        
+        // Event listeners
+        venueCardsNext.addEventListener('click', () => {
+            nextVenueCard();
+            resetVenueCardsInterval();
+        });
+        
+        venueCardsPrev.addEventListener('click', () => {
+            prevVenueCard();
+            resetVenueCardsInterval();
+        });
+        
+        // Touch swipe support
+        let venueCardTouchStartX = 0;
+        let venueCardTouchEndX = 0;
+        
+        venueCardsTrack.addEventListener('touchstart', (e) => {
+            venueCardTouchStartX = e.changedTouches[0].screenX;
+        });
+        
+        venueCardsTrack.addEventListener('touchend', (e) => {
+            venueCardTouchEndX = e.changedTouches[0].screenX;
+            if (venueCardTouchEndX < venueCardTouchStartX - 50) nextVenueCard();
+            if (venueCardTouchEndX > venueCardTouchStartX + 50) prevVenueCard();
+            resetVenueCardsInterval();
+        });
+        
+        // Start auto-slide
+        startVenueCardsInterval();
+        
+        // Update on resize
+        window.addEventListener('resize', () => {
+            updateVenueCards();
+        });
+    }
 });
