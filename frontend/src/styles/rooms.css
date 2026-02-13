@@ -1,4 +1,18 @@
 /* ============================================
+   ROOMS PAGE HERO
+   ============================================ */
+.hero-rooms {
+    background-image: url('../../assets/images/b1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-rooms .hero-background {
+    background: transparent;
+}
+
+/* ============================================
    ROOM AMENITIES BANNER
    ============================================ */
 .amenities-banner {

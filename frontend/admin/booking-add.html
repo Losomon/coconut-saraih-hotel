@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New Booking - Coconut Saraih Hotel Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="../vendor/chartist/css/chartist.min.css">
+    <link href="../vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../src/styles/admin/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader">
+        <div class="waviy">
+            <span style="--i:1">L</span><span style="--i:2">o</span><span style="--i:3">a</span><span style="--i:4">d</span><span style="--i:5">i</span><span style="--i:6">n</span><span style="--i:7">g</span><span style="--i:8">.</span><span style="--i:9">.</span><span style="--i:10">.</span>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-abbr" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <rect width="80" height="80" rx="16" fill="#1362FC"/>
+                    <circle cx="42" cy="19" r="10" fill="white"/>
+                    <circle cx="75.5" cy="76.5" r="16.5" fill="#12A7FB"/>
+                </svg>
+                <svg class="brand-title" width="123" height="68" viewBox="0 0 123 68" fill="none">
+                    <path d="M12.376 11.22C9.996 11.22 8.092 12.92 7.616 15.3C7.14 17.544 8.568 19.38 10.948 19.38C13.192 19.38 15.3 17.544 15.776 15.3C16.252 12.92 14.62 11.22 12.376 11.22Z" fill="#383838"/>
+                </svg>
+            </a>
+            <div class="nav-control"><div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div></div>
+        </div>
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a href="index.html" class="ai-icon" aria-expanded="false"><i class="flaticon-025-dashboard"></i><span class="nav-text">Dashboard</span></a></li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-015-booking"></i><span class="nav-text">Bookings</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="booking-list.html">All Bookings</a></li>
+                            <li><a href="booking-add.html" class="active">New Booking</a></li>
+                            <li><a href="booking-calendar.html">Booking Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-028-user-1"></i><span class="nav-text">Guests</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="guest-list.html">Guest List</a></li>
+                            <li><a href="guest-detail.html">Guest Profile</a></li>
+                            <li><a href="guest-feedback.html">Guest Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-018-bed"></i><span class="nav-text">Rooms</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="room-list.html">Room List</a></li>
+                            <li><a href="room-types.html">Room Types</a></li>
+                            <li><a href="room-status.html">Room Status</a></li>
+                            <li><a href="housekeeping.html">Housekeeping</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-020-restaurant"></i><span class="nav-text">Restaurant</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="restaurant-orders.html">Orders</a></li>
+                            <li><a href="restaurant-menu.html">Menu</a></li>
+                            <li><a href="restaurant-reservations.html">Reservations</a></li>
+                            <li><a href="restaurant-reports.html">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-041-graph"></i><span class="nav-text">Events</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="event-calendar.html">Event Calendar</a></li>
+                            <li><a href="event-bookings.html">Event Bookings</a></li>
+                            <li><a href="event-halls.html">Halls & Capacity</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-072-printer"></i><span class="nav-text">Payments</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="payments-list.html">All Payments</a></li>
+                            <li><a href="invoices.html">Invoices</a></li>
+                            <li><a href="refunds.html">Refunds</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="reports.html" class="ai-icon" aria-expanded="false"><i class="flaticon-043-menu"></i><span class="nav-text">Reports</span></a></li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-035-team"></i><span class="nav-text">Staff</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="staff-list.html">Staff List</a></li>
+                            <li><a href="staff-roles.html">Roles & Access</a></li>
+                            <li><a href="staff-shifts.html">Shifts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">New Booking</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="booking-list.html">Bookings</a></li>
+                            <li class="breadcrumb-item active">New Booking</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <h4 class="text-white mb-0">Booking Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Guest Name</label>
+                                                <select class="form-control default-select">
+                                                    <option>Select Guest</option>
+                                                    <option>John Smith</option>
+                                                    <option>Sarah Johnson</option>
+                                                    <option>Michael Brown</option>
+                                                    <option>New Guest</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Room Type</label>
+                                                <select class="form-control default-select" id="roomType">
+                                                    <option>Select Room Type</option>
+                                                    <option>Standard Room</option>
+                                                    <option>Deluxe Suite</option>
+                                                    <option>Family Room</option>
+                                                    <option>Presidential Suite</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Check In Date</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Check Out Date</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Number of Adults</label>
+                                                <input type="number" class="form-control" value="2" min="1" max="4">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Number of Children</label>
+                                                <input type="number" class="form-control" value="0" min="0" max="4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Special Requests</label>
+                                        <textarea class="form-control" rows="3" placeholder="Any special requests..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Booking Status</label>
+                                        <select class="form-control default-select">
+                                            <option>Confirmed</option>
+                                            <option>Pending</option>
+                                            <option>Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Create Booking</button>
+                                        <a href="booking-list.html" class="btn btn-secondary">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <h4 class="text-white mb-0">Price Summary</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Room Rate</span>
+                                    <span>$150.00/night</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Nights</span>
+                                    <span>3</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tax (10%)</span>
+                                    <span>$45.00</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <strong>Total</strong>
+                                    <strong class="text-primary">$495.00</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <h4 class="text-white mb-0">Payment</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Payment Method</label>
+                                    <select class="form-control default-select">
+                                        <option>Credit Card</option>
+                                        <option>Cash</option>
+                                        <option>Bank Transfer</option>
+                                    </select>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="advancePayment">
+                                    <label class="form-check-label" for="advancePayment">Advance Payment Received</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="../vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/deznav-init.js"></script>
+</body>
+</html>

@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunset Dhow Sailing | The Coconut Saraih</title>
+  <title id="page-title">Sunset Dhow Sailing | The Coconut Saraih</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="src/styles/activities.css">
-  <link rel="stylesheet" href="src/styles/activities-details.css">
   <link rel="stylesheet" href="src/styles/i.css">
-</head>
+  <link rel="stylesheet" href="src/styles/activities.css">
+  <link rel="stylesheet" href="src/styles/activity-details.css">
+  </head>
 <body>
-
 <!-- ── NAV ── -->
 <header class="nav-wrapper">
   <nav class="nav-container">
@@ -22,7 +21,8 @@
         <li class="dropdown">
           <a href="#">Stay <i class="fas fa-chevron-down fa-xs"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="rooms.html" class="active">Rooms Page</a></li>
+            <li><a href="room-details.html">Room Details</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="checkout.html">Checkout</a></li>
             <li><a href="account.html">My Account</a></li>
@@ -67,10 +67,10 @@
 ══════════════════════════════════════ -->
 <section class="detail-hero">
   <img
-    id="activity-image"
+    id="hero-image"
     class="detail-hero-img"
     src="assets/images/local-activities (9).jpg"
-    alt=""
+    alt="Sunset Dhow Sailing on the Indian Ocean"
   >
   <div class="detail-hero-overlay"></div>
   <div class="detail-hero-overlay-left"></div>
@@ -81,14 +81,14 @@
       <i class="fas fa-chevron-right"></i>
       <a href="activities.html">Local Activities</a>
       <i class="fas fa-chevron-right"></i>
-      <span id="breadcrumb-title" class="current">Sunset Dhow Sailing</span>
+      <span id="breadcrumb-current" class="current">Sunset Dhow Sailing</span>
     </div>
 
-    <div id="activity-category" class="detail-hero-category">Water & Ocean</div>
+    <div id="hero-category" class="detail-hero-category">Water & Ocean</div>
 
-    <h1 id="activity-title"><span id="title-first">Sunset Dhow</span><br><em id="title-em">Sailing</em></h1>
+    <h1><span id="hero-title-main">Sunset Dhow</span><br><em id="hero-title-italic">Sailing</em></h1>
 
-    <div class="hero-meta-pills">
+    <div id="hero-meta" class="hero-meta-pills">
       <div class="meta-pill"><i class="fas fa-clock"></i> 3 Hours</div>
       <div class="meta-pill"><i class="fas fa-users"></i> 2 – 12 Guests</div>
       <div class="meta-pill"><i class="fas fa-sun"></i> Sunset Departures</div>
@@ -110,18 +110,18 @@
     <div class="overview-text">
       <div class="eyebrow-row">
         <div class="eyebrow-line"></div>
-        <span class="eyebrow-text">About This Experience</span>
+        <span id="overview-eyebrow" class="eyebrow-text">About This Experience</span>
       </div>
 
-      <h2>Sail into the<br><em>Golden Hour</em></h2>
+      <h2><span id="overview-heading-main">Sail into the</span><br><em id="overview-heading-italic">Golden Hour</em></h2>
 
-      <p id="activity-intro" class="overview-lead">
+      <p id="overview-lead" class="overview-lead">
         As the sun descends into the Indian Ocean, step aboard a handcrafted traditional
         dhow and let the warm trade winds carry you into one of East Africa's most
         breathtaking sunsets.
       </p>
 
-      <div class="overview-body">
+      <div id="overview-body" class="overview-body">
         <p>
           This signature experience departs from The Coconut Saraih's private jetty each
           evening, timed perfectly to capture the full arc of the coastal sunset. Your
@@ -145,7 +145,7 @@
     </div>
 
     <div class="overview-image">
-      <img src="assets/images/local-activities (4).jpg" alt="Sunset dhow sailing experience">
+      <img id="overview-image" src="assets/images/local-activities (4).jpg" alt="Sunset dhow sailing experience">
     </div>
   </div>
 </div>
@@ -159,7 +159,7 @@
   <div class="detail-content">
 
     <!-- GALLERY MOSAIC -->
-    <div class="detail-gallery">
+    <div id="gallery" class="detail-gallery">
       <div class="gallery-cell">
         <img src="assets/images/local-activities (4).jpg" alt="Dhow at sunset">
       </div>
@@ -178,7 +178,7 @@
         <span class="eyebrow-text">Experience Highlights</span>
       </div>
 
-      <div class="highlights-grid">
+      <div id="highlights-grid" class="highlights-grid">
         <div class="highlight-item">
           <div class="highlight-icon"><i class="fas fa-ship"></i></div>
           <div class="highlight-text">
@@ -233,7 +233,7 @@
       <div class="inclusions-grid">
         <div class="inc-block">
           <h3>Included</h3>
-          <ul class="inc-list">
+          <ul id="included-list" class="inc-list">
             <li><i class="fas fa-check check"></i>Private jetty transfer from the hotel</li>
             <li><i class="fas fa-check check"></i>3-hour guided dhow sailing experience</li>
             <li><i class="fas fa-check check"></i>Champagne or sparkling wine (1 bottle per 2 guests)</li>
@@ -246,7 +246,7 @@
         </div>
         <div class="inc-block">
           <h3>Not Included</h3>
-          <ul class="inc-list">
+          <ul id="not-included-list" class="inc-list">
             <li><i class="fas fa-times cross"></i>Additional alcoholic beverages beyond allocation</li>
             <li><i class="fas fa-times cross"></i>Personal travel insurance</li>
             <li><i class="fas fa-times cross"></i>Professional photography package (available as add-on)</li>
@@ -263,7 +263,7 @@
         <span class="eyebrow-text">Your Evening</span>
       </div>
 
-      <div class="timeline">
+      <div id="timeline" class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-time">5:00 PM</div>
@@ -330,19 +330,19 @@
 
       <div class="reviews-header-row">
         <div class="overall-rating">
-          <div class="rating-num">4.9</div>
+          <div id="rating-num" class="rating-num">4.9</div>
           <div class="rating-detail">
-            <div class="rating-stars">
+            <div id="rating-stars" class="rating-stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i>
               <i class="fas fa-star"></i><i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <div class="rating-count">Based on 148 reviews</div>
+            <div id="rating-count" class="rating-count">Based on 148 reviews</div>
           </div>
         </div>
       </div>
 
-      <div class="review-cards">
+      <div id="review-cards" class="review-cards">
         <div class="review-card">
           <div class="review-stars">
             <i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -413,7 +413,7 @@
         <span class="eyebrow-text">You Might Also Love</span>
       </div>
 
-      <div class="related-grid">
+      <div class="related-grid" id="related-grid">
         <a href="activity-detail.html" class="related-card">
           <img src="assets/images/local-activities (10).jpg" alt="Reef Snorkelling">
           <div class="related-card-body">
@@ -451,13 +451,13 @@
       <div class="booking-card-header">
         <span class="booking-card-label">Book This Experience</span>
         <div class="booking-price">
-          KShs 6,000
-          <span>Per person · Min. 2 guests</span>
+          <span id="booking-price">6,000</span>
+          <span id="booking-price-note">Per person · Min. 2 guests</span>
         </div>
       </div>
 
       <div class="booking-card-body">
-        <div class="booking-meta">
+        <div id="booking-meta" class="booking-meta">
           <div class="bm-row">
             <span class="bm-label"><i class="fas fa-clock"></i> Duration</span>
             <span class="bm-value">3 Hours</span>
@@ -537,25 +537,27 @@
     <!-- INFO CARD -->
     <div class="sidebar-info-card">
       <div class="sic-title">Good to Know</div>
-      <div class="sic-item">
-        <i class="fas fa-info-circle"></i>
-        Minimum age is 4 years. Children under 12 at half price.
-      </div>
-      <div class="sic-item">
-        <i class="fas fa-tshirt"></i>
-        Wear light clothing, bring a light jacket for the return at night.
-      </div>
-      <div class="sic-item">
-        <i class="fas fa-cloud-sun"></i>
-        Activity runs in all weather. Cancellations only for severe conditions.
-      </div>
-      <div class="sic-item">
-        <i class="fas fa-phone-alt"></i>
-        Questions? Call us: <a href="tel:+41223456788" style="color:var(--gold)">+41 22 345 67 88</a>
-      </div>
-      <div class="sic-item">
-        <i class="fab fa-whatsapp"></i>
-        Or WhatsApp: <a href="https://wa.me/254700000000" style="color:var(--gold)" target="_blank">+254 700 000 000</a>
+      <div id="good-to-know-list">
+        <div class="sic-item">
+          <i class="fas fa-info-circle"></i>
+          Minimum age is 4 years. Children under 12 at half price.
+        </div>
+        <div class="sic-item">
+          <i class="fas fa-tshirt"></i>
+          Wear light clothing, bring a light jacket for the return at night.
+        </div>
+        <div class="sic-item">
+          <i class="fas fa-cloud-sun"></i>
+          Activity runs in all weather. Cancellations only for severe conditions.
+        </div>
+        <div class="sic-item">
+          <i class="fas fa-phone-alt"></i>
+          Questions? Call us: <a href="tel:+41223456788" style="color:var(--gold)">+41 22 345 67 88</a>
+        </div>
+        <div class="sic-item">
+          <i class="fab fa-whatsapp"></i>
+          Or WhatsApp: <a href="https://wa.me/254700000000" style="color:var(--gold)" target="_blank">+254 700 000 000</a>
+        </div>
       </div>
     </div>
 
@@ -563,7 +565,7 @@
 </div>
 
 <!-- NEWSLETTER -->
-<section class="newsletter-section">
+<section class="newsletter-section" style="background-image: url('assets/images/newsletter.jpg');">
   <div class="newsletter-overlay"></div>
   <div class="newsletter-content">
     <span class="newsletter-eyebrow">Stay Tuned with Coconut Saraih</span>
@@ -663,77 +665,9 @@
   timelineItems.forEach(el => io.observe(el));
 </script>
 
-<script>
-const activities = {
-  "dhow-sailing": {
-    category: "Water & Ocean",
-    titleFirst: "Sunset Dhow",
-    titleEm: "Sailing",
-    intro: "Sail across the Indian Ocean aboard a traditional dhow as the sun melts into the horizon.",
-    image: "assets/images/local-activities (16).jpg"
-  },
-  "snorkelling": {
-    category: "Water & Ocean",
-    titleFirst: "Reef",
-    titleEm: "Snorkelling",
-    intro: "Discover vibrant coral reefs and tropical marine life just off the coast.",
-    image: "assets/images/local-activities (9).jpg"
-  },
-  "safari": {
-    category: "Land & Safari",
-    titleFirst: "Tsavo",
-    titleEm: "Safari",
-    intro: "Journey into Kenya's wild landscapes and encounter elephants, lions and giraffes.",
-    image: "assets/images/local-activities (3).jpg"
-  },
-  "swahili-culture": {
-    category: "Culture & Heritage",
-    titleFirst: "Swahili",
-    titleEm: "Culture",
-    intro: "Step into centuries of tradition, architecture and coastal heritage.",
-    image: "assets/images/local-activities (29).jpg"
-  },
-  "wellness": {
-    category: "Wellness & Leisure",
-    titleFirst: "Wellness &",
-    titleEm: "Mindfulness",
-    intro: "Restore balance through yoga, meditation and oceanfront rituals.",
-    image: "assets/images/local-activities (10).jpg"
-  },
-  "culinary": {
-    category: "Food & Culinary",
-    titleFirst: "Coastal",
-    titleEm: "Cuisine",
-    intro: "Explore spices, flavors and Swahili cooking traditions.",
-    image: "assets/images/restaurant-bar (11).jpg"
-  },
-  "adventure": {
-    category: "Adventure",
-    titleFirst: "Beyond the",
-    titleEm: "Horizon",
-    intro: "Thrilling activities for explorers seeking unforgettable moments.",
-    image: "assets/images/local-activities (8).jpg"
-  }
-};
-
-const params = new URLSearchParams(window.location.search);
-const activityId = params.get('id');
-
-if (activities[activityId]) {
-  document.getElementById('activity-category').textContent = activities[activityId].category;
-  document.getElementById('title-first').textContent = activities[activityId].titleFirst;
-  document.getElementById('title-em').textContent = activities[activityId].titleEm;
-  document.getElementById('activity-intro').textContent = activities[activityId].intro;
-  document.getElementById('activity-image').src = activities[activityId].image;
-  document.getElementById('activity-image').alt = activities[activityId].titleFirst + ' ' + activities[activityId].titleEm;
-  document.getElementById('breadcrumb-title').textContent = activities[activityId].titleFirst + ' ' + activities[activityId].titleEm;
-} else {
-  // fallback
-  document.getElementById('activity-category').textContent = "";
-  document.getElementById('title-first').textContent = "Activity";
-  document.getElementById('title-em').textContent = "Not Found";
-  document.getElementById('breadcrumb-title').textContent = "Activity Not Found";
-}
-</script>
+<!-- Dynamic Activities Loader Scripts -->
+<script src="src/js/main.js"></script>
+<script src="src/js/activities-data.js"></script>
+<script src="src/js/activity-detail-loader.js"></script>
 </body>
-</html>
+</html> 

@@ -124,7 +124,42 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Accommodations Slider
+    // ============================================
+    // Dynamic Booking Date Defaults
+    // ============================================
+    const checkInInput = document.getElementById('check-in');
+    const checkOutInput = document.getElementById('check-out');
+    
+    if (checkInInput && checkOutInput) {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        // Format date as YYYY-MM-DD
+        const formatDate = (date) => {
+            return date.toISOString().split('T')[0];
+        };
+        
+        checkInInput.value = formatDate(today);
+        checkOutInput.value = formatDate(tomorrow);
+        
+        // Set min dates
+        checkInInput.min = formatDate(today);
+        checkOutInput.min = formatDate(tomorrow);
+        
+        // Update checkout min when checkin changes
+        checkInInput.addEventListener('change', function() {
+            const checkInDate = new Date(this.value);
+            const checkOutDate = new Date(checkInDate);
+            checkOutDate.setDate(checkOutDate.getDate() + 1);
+            checkOutInput.min = formatDate(checkOutDate);
+            
+            if (new Date(checkOutInput.value) <= new Date(this.value)) {
+                checkOutInput.value = formatDate(checkOutDate);
+            }
+        });
+    }
+
     const slides = document.querySelectorAll('.room-slide');
     const track = document.querySelector('.slider-track');
     let index = 0;

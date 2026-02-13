@@ -16,11 +16,12 @@
     
     <!-- Main Styles -->
     <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/restaurant.css">
     
     <style>
         /* Menu Page Specific Styles - Dark Elegant Theme */
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        :root{--ink:#0e0c0a;--ink-mid:#1a1714;--parch:#f5f0e8;--gold:#c8a45d;--gold-l:#e2c98a;--gdim:rgba(200,164,93,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif}
+        :root{--ink:#0e0c0a;--ink-mid:#1a1714;--parch:#f5f0e8;--gold:#c8a45d;--gold-l:#e2c98a;--gdim:rgba(200,164,93,.18);--serif:'Cormorant+Garamond',Georgia,serif;--sans:'Jost',sans-serif}
 
         body{background:var(--ink);color:var(--parch);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
         a{text-decoration:none;color:inherit}
@@ -131,10 +132,10 @@
     </style>
 </head>
 <body>
-    
-    <!-- Navigation - Same as other pages -->
+    <!-- Navigation -->
     <header class="nav-wrapper" id="navbar">
         <nav class="nav-container">
+            <!-- LEFT -->
             <div class="nav-left">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -158,12 +159,14 @@
                             <li><a href="spa.html">Spa & Wellness</a></li>
                             <li><a href="events.html">Events & Meetings</a></li>
                             <li><a href="activities.html">Local Activities</a></li>
+                            <li><a href="activity-detail.html">Activity Detail Page</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </li>
                     <li><a href="news.html">News</a></li>
                 </ul>
             </div>
+            <!-- CENTER -->
             <div class="nav-center">
                 <a href="index.html" class="logo">
                     <span class="logo-icon">🥥</span>
@@ -173,6 +176,7 @@
                     </span>
                 </a>
             </div>
+            <!-- RIGHT -->
             <div class="nav-right">
                 <span class="nav-phone">Tel: +41 22 345 67 88</span>
                 <div class="nav-lang">

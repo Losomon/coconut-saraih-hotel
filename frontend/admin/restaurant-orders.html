@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Restaurant Orders - Coconut Saraih Hotel Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="../vendor/chartist/css/chartist.min.css">
+    <link href="../vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../src/styles/admin/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"><div class="waviy"><span style="--i:1">L</span><span style="--i:2">o</span><span style="--i:3">a</span><span style="--i:4">d</span><span style="--i:5">i</span><span style="--i:6">n</span><span style="--i:7">g</span><span style="--i:8">.</span><span style="--i:9">.</span><span style="--i:10">.</span></div></div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-abbr" width="80" height="80" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="16" fill="#1362FC"/><circle cx="42" cy="19" r="10" fill="white"/><circle cx="75.5" cy="76.5" r="16.5" fill="#12A7FB"/></svg>
+            </a>
+            <div class="nav-control"><div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div></div>
+        </div>
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a href="index.html" class="ai-icon" aria-expanded="false"><i class="flaticon-025-dashboard"></i><span class="nav-text">Dashboard</span></a></li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-015-booking"></i><span class="nav-text">Bookings</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="booking-list.html">All Bookings</a></li>
+                            <li><a href="booking-add.html">New Booking</a></li>
+                            <li><a href="booking-calendar.html">Booking Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-028-user-1"></i><span class="nav-text">Guests</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="guest-list.html">Guest List</a></li>
+                            <li><a href="guest-detail.html">Guest Profile</a></li>
+                            <li><a href="guest-feedback.html">Guest Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-018-bed"></i><span class="nav-text">Rooms</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="room-list.html">Room List</a></li>
+                            <li><a href="room-types.html">Room Types</a></li>
+                            <li><a href="room-status.html">Room Status</a></li>
+                            <li><a href="housekeeping.html">Housekeeping</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-020-restaurant"></i><span class="nav-text">Restaurant</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="restaurant-orders.html" class="active">Orders</a></li>
+                            <li><a href="restaurant-menu.html">Menu</a></li>
+                            <li><a href="restaurant-reservations.html">Reservations</a></li>
+                            <li><a href="restaurant-reports.html">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-041-graph"></i><span class="nav-text">Events</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="event-calendar.html">Event Calendar</a></li>
+                            <li><a href="event-bookings.html">Event Bookings</a></li>
+                            <li><a href="event-halls.html">Halls & Capacity</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-072-printer"></i><span class="nav-text">Payments</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="payments-list.html">All Payments</a></li>
+                            <li><a href="invoices.html">Invoices</a></li>
+                            <li><a href="refunds.html">Refunds</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="reports.html" class="ai-icon" aria-expanded="false"><i class="flaticon-043-menu"></i><span class="nav-text">Reports</span></a></li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-035-team"></i><span class="nav-text">Staff</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="staff-list.html">Staff List</a></li>
+                            <li><a href="staff-roles.html">Roles & Access</a></li>
+                            <li><a href="staff-shifts.html">Shifts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center"><h4 class="text-themecolor">Restaurant Orders</h4></div>
+                    <div class="col-md-7 align-self-center text-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Restaurant</li>
+                        </ol>
+                        <button class="btn btn-primary ms-2">New Order</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Today's Orders</h5>
+                                <h2 class="text-primary">45</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Pending</h5>
+                                <h2 class="text-warning">8</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Completed</h5>
+                                <h2 class="text-success">35</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Revenue</h5>
+                                <h2 class="text-info">$1,250</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Order ID</th>
+                                                <th>Table</th>
+                                                <th>Items</th>
+                                                <th>Total</th>
+                                                <th>Status</th>
+                                                <th>Time</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#ORD-001</td>
+                                                <td>Table 5</td>
+                                                <td>Grilled Salmon, Caesar Salad, Wine</td>
+                                                <td>$45.00</td>
+                                                <td><span class="badge badge-warning">Pending</span></td>
+                                                <td>12:30 PM</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success">Complete</button>
+                                                    <button class="btn btn-sm btn-primary">View</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-002</td>
+                                                <td>Table 12</td>
+                                                <td>Beef Steak, Mashed Potatoes</td>
+                                                <td>$32.00</td>
+                                                <td><span class="badge badge-info">Preparing</span></td>
+                                                <td>12:45 PM</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-success">Complete</button>
+                                                    <button class="btn btn-sm btn-primary">View</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-003</td>
+                                                <td>Room 101</td>
+                                                <td>Club Sandwich, Coffee</td>
+                                                <td>$18.00</td>
+                                                <td><span class="badge badge-success">Delivered</span></td>
+                                                <td>1:00 PM</td>
+                                                <td><button class="btn btn-sm btn-primary">View</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-004</td>
+                                                <td>Table 3</td>
+                                                <td>Pasta Carbonara, Tiramisu</td>
+                                                <td>$28.00</td>
+                                                <td><span class="badge badge-success">Completed</span></td>
+                                                <td>1:15 PM</td>
+                                                <td><button class="btn btn-sm btn-primary">View</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/deznav-init.js"></script>
+</body>
+</html>

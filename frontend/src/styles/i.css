@@ -50,7 +50,7 @@ body {
     font-family: var(--font-body);
     color: var(--primary-dark);
     line-height: 1.7;
-    background-color: var(--primary-white);
+    background-color: var(--primary-dark);
     overflow-x: hidden;
 }
 
@@ -157,7 +157,8 @@ h3 {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-gold);
 }
 
@@ -173,7 +174,8 @@ h3 {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
@@ -214,7 +216,8 @@ h3 {
     transition: all 0.25s ease;
 }
 
-.dropdown-menu li a:hover {
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active {
     background: rgba(255,255,255,0.06);
     color: var(--primary-gold);
 }
@@ -385,9 +388,9 @@ h3 {
         height: 100%;
         background: linear-gradient(
             135deg,
-            rgba(0, 0, 0, 0.5) 0%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(0, 0, 0, 0.6) 100%
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.2) 100%
         );
     }
 

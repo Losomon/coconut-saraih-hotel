@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Calendar - Coconut Saraih Hotel Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link href="../src/styles/admin/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"><div class="waviy"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span></div></div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-abbr" width="80" height="80" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="16" fill="#1362FC"/><circle cx="42" cy="19" r="10" fill="white"/><circle cx="75.5" cy="76.5" r="16.5" fill="#12A7FB"/></svg>
+            </a>
+            <div class="nav-control"><div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div></div>
+        </div>
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a href="index.html" class="ai-icon"><i class="flaticon-025-dashboard"></i><span class="nav-text">Dashboard</span></a></li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()"><i class="flaticon-015-booking"></i><span class="nav-text">Bookings</span></a>
+                        <ul><li><a href="booking-list.html">All Bookings</a></li><li><a href="booking-add.html">New Booking</a></li><li><a href="booking-calendar.html">Booking Calendar</a></li></ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()"><i class="flaticon-041-graph"></i><span class="nav-text">Events</span></a>
+                        <ul><li><a href="event-calendar.html" class="active">Event Calendar</a></li><li><a href="event-bookings.html">Event Bookings</a></li><li><a href="event-halls.html">Halls & Capacity</a></li></ul>
+                    </li>
+                    <li><a href="reports.html" class="ai-icon"><i class="flaticon-043-menu"></i><span class="nav-text">Reports</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center"><h4 class="text-themecolor">Event Calendar</h4></div>
+                    <div class="col-md-7 align-self-center text-end">
+                        <button class="btn btn-primary">Add Event</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div style="height: 500px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; border: 2px dashed #ccc;">
+                                    <div class="text-center">
+                                        <i class="flaticon-041-graph" style="font-size: 48px; color: #1362FC;"></i>
+                                        <p class="mt-3">Full Calendar Widget Placeholder</p>
+                                        <p class="text-muted">Events will be displayed here</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Upcoming Events</h5>
+                                <div class="border-bottom py-2">
+                                    <strong>Corporate Meeting</strong>
+                                    <p class="text-muted">Feb 20, 2026 - Grand Hall</p>
+                                </div>
+                                <div class="border-bottom py-2">
+                                    <strong>Wedding Reception</strong>
+                                    <p class="text-muted">Feb 22, 2026 - Garden Terrace</p>
+                                </div>
+                                <div class="py-2">
+                                    <strong>Conference</strong>
+                                    <p class="text-muted">Feb 25, 2026 - Conference Room A</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/deznav-init.js"></script>
+</body>
+</html>

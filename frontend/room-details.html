@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Deluxe Ocean View Room | The Coconut Saraih</title>
+    <meta name="description" content="View detailed room information at The Coconut Saraih. Explore amenities, features, and pricing for our luxurious beachfront accommodations.">
+    <meta name="keywords" content="room details, beachfront room, hotel room amenities, ocean view room, luxury accommodation Kenya">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/rooms.css">
+    <link rel="stylesheet" href="src/styles/room-details.css">
+
+</head>
+<body>
+    
+    <!-- Navigation --> 
+    <header class="nav-wrapper" id="navbar">
+        <nav class="nav-container">
+            <!-- LEFT -->
+            <div class="nav-left">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown active">
+                        <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="rooms.html">Rooms Page</a></li>
+                            <li><a href="room-details.html" class="active">Room Details</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About the Hotel</a></li>
+                            <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                            <li><a href="restaurant.html">The Restaurant</a></li>
+                            <li><a href="menu.html">Menu Page</a></li>
+                            <li><a href="spa.html">Spa & Wellness</a></li>
+                            <li><a href="events.html">Events & Meetings</a></li>
+                            <li><a href="activities.html">Local Activities</a></li>
+                            <li><a href="activity-detail.html">Activity Detail Page</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+
+            <!-- CENTER -->
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🥥</span>
+                    <span>
+                        The Coconut Saraih
+                        <span class="logo-subtitle">Hotels & Restaurant</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="nav-right">
+                <span class="nav-phone">Tel: +41 22 345 67 88</span>
+                <div class="nav-lang">
+                    <a href="#">EN</a> / <a href="#">FR</a>
+                </div>
+                <a href="booking.html" class="nav-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         CINEMATIC HERO
+    ══════════════════════════════════════ -->
+    <section class="detail-hero">
+        <img
+            id="hero-image"
+            class="detail-hero-img"
+            src="assets/images/b2.jpg"
+            alt="Deluxe Ocean View Room"
+        >
+        <div class="detail-hero-overlay"></div>
+        <div class="detail-hero-overlay-left"></div>
+
+        <div class="detail-hero-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="rooms.html">Rooms</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="breadcrumb-current" class="current">Deluxe Ocean View Room</span>
+            </div>
+
+            <div id="hero-category" class="detail-hero-category">Luxury Accommodation</div>
+
+            <h1><span id="hero-title-main">Deluxe Ocean</span><br><em id="hero-title-italic">View Room</em></h1>
+
+            <div id="hero-meta-pills" class="hero-meta-pills">
+                <div class="meta-pill"><i class="fas fa-star"></i> <span id="hero-rating">4.8</span> · <span id="hero-reviews">156</span> Reviews</div>
+                <div class="meta-pill"><i class="fas fa-bed"></i> King Bed</div>
+                <div class="meta-pill"><i class="fas fa-ruler-combined"></i> 32 m²</div>
+                <div class="meta-pill"><i class="fas fa-bath"></i> Bathtub</div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-hint">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         OVERVIEW (FULL WIDTH)
+    ══════════════════════════════════════ -->
+    <div class="overview-section">
+        <div class="overview-split">
+            <div class="overview-text">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span id="overview-eyebrow" class="eyebrow-text">Welcome to Your Coastal Retreat</span>
+                </div>
+
+                <h2><span id="overview-heading-main">Wake Up to</span><br><em id="overview-heading-italic">Poolside Paradise</em></h2>
+
+                <p id="overview-lead" class="overview-lead">
+                    Step into spacious luxury with our Deluxe Room, featuring stunning pool views, a plush king-size bed, and a relaxing bathtub for ultimate unwinding.
+                </p>
+
+                <div id="overview-body" class="overview-body">
+                    <p>
+                        The Deluxe Room at The Coconut Saraih redefines comfort with its generous 32 square meters of thoughtfully designed space. Floor-to-ceiling windows frame breathtaking views of the resort's sparkling pool and tropical gardens, creating a serene backdrop for your stay.
+                    </p>
+                    <p>
+                        The centerpiece of the room is our premium king-size bed, dressed in 400-thread-count Egyptian cotton sheets that promise the deepest sleep. The modern en-suite bathroom is a sanctuary in itself, featuring a rainfall shower, deep soaking bathtub, and premium toiletries from our signature bath collection.
+                    </p>
+                    <p>
+                        Stay entertained with a 55-inch smart TV offering international channels, or catch up on work at the dedicated workspace with ergonomic chair. The private balcony is the perfect spot for morning coffee or evening cocktails as you watch the sun set over the pool.
+                    </p>
+                </div>
+            </div>
+
+            <div class="overview-image">
+                <img id="overview-image" src="assets/images/b3.jpg" alt="Deluxe Room interior">
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MAIN CONTENT + SIDEBAR
+    ══════════════════════════════════════ -->
+    <div class="detail-layout">
+
+        <!-- ── LEFT COLUMN ── -->
+        <div class="detail-content">
+
+            <!-- GALLERY MOSAIC -->
+            <div id="gallery" class="detail-gallery">
+                <div class="gallery-cell">
+                    <img src="assets/images/b2.jpg" alt="Deluxe Room view">
+                </div>
+                <div class="gallery-cell">
+                    <img src="assets/images/b3.jpg" alt="Deluxe Room bed">
+                </div>
+                <div class="gallery-cell">
+                    <img src="assets/images/b4.jpg" alt="Deluxe Room bathroom">
+                </div>
+            </div>
+
+            <!-- HIGHLIGHTS / AMENITIES -->
+            <div class="highlights-section">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Room Amenities</span>
+                </div>
+
+                <div id="highlights-grid" class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-wifi"></i></div>
+                        <div class="highlight-text">
+                            <h4>High-Speed WiFi</h4>
+                            <p>Free fiber optic connection throughout the room</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-tv"></i></div>
+                        <div class="highlight-text">
+                            <h4>55" Smart TV</h4>
+                            <p>Netflix and international channels available</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-snowflake"></i></div>
+                        <div class="highlight-text">
+                            <h4>Air Conditioning</h4>
+                            <p>Quiet inverter system with climate control</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-bed"></i></div>
+                        <div class="highlight-text">
+                            <h4>King Size Bed</h4>
+                            <p>Premium Egyptian cotton linens</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-bath"></i></div>
+                        <div class="highlight-text">
+                            <h4>Soaking Tub</h4>
+                            <p>Rainfall shower combo with premium toiletries</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-minibar"></i></div>
+                        <div class="highlight-text">
+                            <h4>Mini Bar</h4>
+                            <p>Stocked with beverages and snacks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INCLUSIONS & POLICIES -->
+            <div class="inclusions-section">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">What's Included</span>
+                </div>
+                <div class="inclusions-grid">
+                    <div class="inc-block">
+                        <h3>Included</h3>
+                        <ul id="included-list" class="inc-list">
+                            <li><i class="fas fa-check check"></i>Daily housekeeping</li>
+                            <li><i class="fas fa-check check"></i>Premium bed linens</li>
+                            <li><i class="fas fa-check check"></i>Bathrobe & slippers</li>
+                            <li><i class="fas fa-check check"></i>Pool & beach access</li>
+                            <li><i class="fas fa-check check"></i>Evening turndown service</li>
+                            <li><i class="fas fa-check check"></i>Welcome fruit basket</li>
+                        </ul>
+                    </div>
+                    <div class="inc-block">
+                        <h3>Optional Add-ons</h3>
+                        <ul id="not-included-list" class="inc-list">
+                            <li><i class="fas fa-plus cross"></i>Airport transfer - $30</li>
+                            <li><i class="fas fa-plus cross"></i>Spa treatment - 15% off</li>
+                            <li><i class="fas fa-plus cross"></i>Romantic setup - $25</li>
+                            <li><i class="fas fa-plus cross"></i>In-room breakfast - $15</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POLICIES TIMELINE -->
+            <div class="itinerary-section">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Room Policies</span>
+                </div>
+
+                <div id="timeline" class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">2:00 PM</div>
+                        <div class="timeline-title">Check-in</div>
+                        <div class="timeline-desc">
+                            Flexible check-in from 2:00 PM onwards. Early check-in available on request.
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">11:00 AM</div>
+                        <div class="timeline-title">Check-out</div>
+                        <div class="timeline-desc">
+                            Late checkout available until 2:00 PM (subject to availability).
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">All Day</div>
+                        <div class="timeline-title">Non-Smoking</div>
+                        <div class="timeline-desc">
+                            This is a non-smoking room. Smoking is allowed in designated areas.
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">Any Time</div>
+                        <div class="timeline-title">Children Welcome</div>
+                        <div class="timeline-desc">
+                            Children of all ages are welcome. Cots available upon request.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REVIEWS -->
+            <div class="reviews-section">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">Guest Reviews</span>
+                </div>
+
+                <div class="reviews-header-row">
+                    <div class="overall-rating">
+                        <div id="rating-num" class="rating-num">4.8</div>
+                        <div class="rating-detail">
+                            <div id="rating-stars" class="rating-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div id="rating-count" class="rating-count">Based on 128 reviews</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="review-cards" class="review-cards">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Absolutely loved this room! The bathtub was amazing after a long day at the beach. Pool views were perfect and the staff were incredibly helpful.
+                        </p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">E</div>
+                            <div>
+                                <div class="reviewer-name">Emma Thompson</div>
+                                <div class="reviewer-origin">Canada</div>
+                            </div>
+                            <div class="reviewer-date">January 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            Worth every penny. The bed was incredibly comfortable and the room was spotless. Staff were exceptional throughout our stay.
+                        </p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">D</div>
+                            <div>
+                                <div class="reviewer-name">David Park</div>
+                                <div class="reviewer-origin">South Korea</div>
+                            </div>
+                            <div class="reviewer-date">December 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATED ROOMS -->
+            <div class="related-section">
+                <div class="eyebrow-row">
+                    <div class="eyebrow-line"></div>
+                    <span class="eyebrow-text">You Might Also Like</span>
+                </div>
+
+                <div id="related-grid" class="related-grid">
+                    <a href="room-details.html?id=standard-room" class="related-card">
+                        <img src="assets/images/b1.jpg" alt="Standard Room">
+                        <div class="related-card-body">
+                            <div class="related-tag">Beach View</div>
+                            <div class="related-name">Standard Room</div>
+                            <div class="related-price">From <strong>$23</strong></div>
+                        </div>
+                    </a>
+                    <a href="room-details.html?id=ocean-view-suite" class="related-card">
+                        <img src="assets/images/a2.jpg" alt="Ocean View Suite">
+                        <div class="related-card-body">
+                            <div class="related-tag">Ocean View</div>
+                            <div class="related-name">Ocean View Suite</div>
+                            <div class="related-price">From <strong>$50</strong></div>
+                        </div>
+                    </a>
+                    <a href="room-details.html?id=family-suite" class="related-card">
+                        <img src="assets/images/b3.jpg" alt="Family Suite">
+                        <div class="related-card-body">
+                            <div class="related-tag">Garden View</div>
+                            <div class="related-name">Family Suite</div>
+                            <div class="related-price">From <strong>$57</strong></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- end .detail-content -->
+
+        <!-- ── RIGHT SIDEBAR ── -->
+        <aside class="detail-sidebar">
+
+            <!-- BOOKING CARD -->
+            <div class="booking-card">
+                <div class="booking-card-header">
+                    <span class="booking-card-label">Book This Room</span>
+                    <div class="booking-price">
+                        <span id="booking-price">37</span>
+                        <span id="booking-price-note">per night • 2 Adults max</span>
+                    </div>
+                </div>
+
+                <div class="booking-card-body">
+                    <div id="booking-meta" class="booking-meta">
+                        <div class="bm-row">
+                            <span class="bm-label"><i class="fas fa-ruler-combined"></i> Size</span>
+                            <span class="bm-value">32 m²</span>
+                        </div>
+                        <div class="bm-row">
+                            <span class="bm-label"><i class="fas fa-user-friends"></i> Guests</span>
+                            <span class="bm-value">2 Adults max</span>
+                        </div>
+                        <div class="bm-row">
+                            <span class="bm-label"><i class="fas fa-bed"></i> Bed</span>
+                            <span class="bm-value">King Size Bed</span>
+                        </div>
+                        <div class="bm-row">
+                            <span class="bm-label"><i class="fas fa-eye"></i> View</span>
+                            <span class="bm-value">Pool View</span>
+                        </div>
+                    </div>
+
+                    <form class="booking-form">
+                        <div class="bf-group">
+                            <label>Check In</label>
+                            <input type="date" id="check-in" value="">
+                        </div>
+                        <div class="bf-group">
+                            <label>Check Out</label>
+                            <input type="date" id="check-out" value="">
+                        </div>
+                        <div class="bf-group">
+                            <label>Rooms</label>
+                            <select>
+                                <option>1 Room</option>
+                                <option>2 Rooms</option>
+                                <option>3 Rooms</option>
+                            </select>
+                        </div>
+                        <div class="bf-group">
+                            <label>Guests</label>
+                            <select>
+                                <option>1 Adult</option>
+                                <option>2 Adults</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="booking-btn">Reserve Now →</button>
+                    </form>
+
+                    <p class="booking-note">
+                        Free cancellation up to 24 hours before check-in.<br>
+                        Best price guarantee on direct bookings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sidebar-actions">
+                <button class="sidebar-action-btn">
+                    <i class="fas fa-heart"></i> Save
+                </button>
+                <button class="sidebar-action-btn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="sidebar-action-btn">
+                    <i class="fas fa-print"></i> Print
+                </button>
+            </div>
+
+            <!-- INFO CARD -->
+            <div class="sidebar-info-card">
+                <div class="sic-title">Need Help?</div>
+                <div class="sic-item">
+                    <i class="fas fa-phone-alt"></i>
+                    Call us: <a href="tel:+41223456788" style="color:var(--gold)">+41 22 345 67 88</a>
+                </div>
+                <div class="sic-item">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp: <a href="https://wa.me/254700000000" style="color:var(--gold)" target="_blank">+254 700 000 000</a>
+                </div>
+                <div class="sic-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:reservation@coconutsaraih.com" style="color:var(--gold)">Email Us</a>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+     <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="newsletter-overlay"></div>
+
+        <div class="newsletter-content">
+            <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+
+            <h2>
+                Sign up for our newsletter<br>
+                to receive our news, deals<br>
+                and special offers.
+            </h2>
+
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+
+            <label class="newsletter-check">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="#">Privacy Policy</a></span>
+            </label>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <h5>ADDRESS</h5>
+                <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+            </div>
+
+            <div class="footer-col">
+                <h5>PHONE</h5>
+                <p>+94 22 345 67 88</p>
+            </div>
+
+            <div class="footer-col">
+                <h5>EMAIL</h5>
+                <p>reservation@coconutsaraih.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h5>SOCIAL</h5>
+                <div class="footer-socials">
+                    <a href="#">fb</a>
+                    <a href="#">tw</a>
+                    <a href="#">ig</a>
+                    <a href="#">yt</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Policy</a>
+            </div>
+        </div>
+    </footer>
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
+        class="whatsapp-float" 
+        target="_blank"
+        aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+
+    <!-- JavaScript -->
+    <script src="src/js/rooms-data.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/room-details-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Housekeeping - Coconut Saraih Hotel Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link href="../src/styles/admin/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"><div class="waviy"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span></div></div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-abbr" width="80" height="80" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="16" fill="#1362FC"/></svg>
+            </a>
+            <div class="nav-control"><div class="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div></div>
+        </div>
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a href="index.html" class="ai-icon"><i class="flaticon-025-dashboard"></i><span class="nav-text">Dashboard</span></a></li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()"><i class="flaticon-018-bed"></i><span class="nav-text">Rooms</span></a>
+                        <ul><li><a href="room-list.html">Room List</a></li><li><a href="room-types.html">Room Types</a></li><li><a href="room-status.html">Room Status</a></li><li><a href="housekeeping.html" class="active">Housekeeping</a></li></ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center"><h4 class="text-themecolor">Housekeeping</h4></div>
+                    <div class="col-md-7 align-self-center text-end">
+                        <button class="btn btn-primary">Assign Tasks</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h2 class="text-warning">8</h2>
+                                <p>Rooms to Clean</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h2 class="text-info">5</h2>
+                                <p>In Progress</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h2 class="text-success">12</h2>
+                                <p>Completed Today</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h2 class="text-danger">2</h2>
+                                <p>VIP Requests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header bg-primary"><h4 class="text-white mb-0">Room Cleaning Status</h4></div>
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead><tr><th>Room</th><th>Type</th><th>Status</th><th>Housekeeper</th><th>Priority</th><th>Actions</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>201</td><td>Standard</td><td><span class="badge badge-warning">To Clean</span></td><td>Lisa T.</td><td>Normal</td><td><button class="btn btn-sm btn-success">Start</button></td></tr>
+                                        <tr><td>205</td><td>Standard</td><td><span class="badge badge-info">Cleaning</span></td><td>Maria G.</td><td>Normal</td><td><button class="btn btn-sm btn-success">Complete</button></td></tr>
+                                        <tr><td>301</td><td>Family</td><td><span class="badge badge-warning">To Clean</span></td><td>John D.</td><td>High</td><td><button class="btn btn-sm btn-success">Start</button></td></tr>
+                                        <tr><td>402</td><td>Deluxe</td><td><span class="badge badge-warning">To Clean</span></td><td>Sarah K.</td><td>VIP</td><td><button class="btn btn-sm btn-success">Start</button></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/global/global.min.js"></script>
+    <script src="../js/custom.min.js"></script>
+    <script src="../js/deznav-init.js"></script>
+</body>
+</html>

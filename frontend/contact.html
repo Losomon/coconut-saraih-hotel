@@ -5,15 +5,58 @@
 <title>Contact | The Coconut Saraih</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="src/styles/contact.css">
+
 <link rel="stylesheet" href="src/styles/i.css">
+<link rel="stylesheet" href="src/styles/contact.css">
+
 </head>
 <body>
 <header class="nav-wrapper">
   <nav class="nav-container">
-    <div class="nav-left"><ul class="nav-links"><li><a href="index.html">Home</a></li><li class="dropdown"><a href="#">Stay <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="rooms.html">Rooms</a></li><li><a href="cart.html">Cart</a></li><li><a href="checkout.html">Checkout</a></li><li><a href="account.html">My Account</a></li></ul></li><li class="dropdown"><a href="#">Pages <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="about.html">About</a></li><li><a href="restaurants.html">Restaurants</a></li><li><a href="restaurant.html">The Restaurant</a></li><li><a href="menu.html">Menu</a></li><li><a href="spa.html">Spa & Wellness</a></li><li><a href="events.html">Events & Meetings</a></li><li><a href="activities.html">Local Activities</a></li><li><a href="activity-detail.html">Activity Detail Page</a></li><li><a href="contact.html">Contact</a></li></ul></li><li><a href="news.html">News</a></li></ul></div>
-    <div class="nav-center"><a href="index.html" class="logo"><span class="logo-icon">🥥</span><span>The Coconut Saraih<span class="logo-subtitle">Hotels & Restaurant</span></span></a></div>
-    <div class="nav-right"><span class="nav-phone">Tel: +41 22 345 67 88</span><div class="nav-lang"><a href="#">EN</a> / <a href="#">FR</a></div><a href="booking.html" class="nav-cta">Book Now</a></div>
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Stay <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="rooms.html">Rooms Page</a></li>
+            <li><a href="room-details.html">Room Details</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="account.html">My Account</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Pages <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="restaurant.html">The Restaurant</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="spa.html">Spa & Wellness</a></li>
+            <li><a href="events.html">Events & Meetings</a></li>
+            <li><a href="activities.html">Local Activities</a></li>
+            <li><a href="activity-detail.html">Activity Detail Page</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🥥</span>
+        <span>
+          <span class="logo-name">The Coconut Saraih</span>
+          <span class="logo-subtitle">Hotels & Restaurant</span>
+        </span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-phone">Tel: +41 22 345 67 88</span>
+      <div class="nav-lang"><a href="#">EN</a> / <a href="#">FR</a></div>
+      <a href="booking.html" class="nav-cta">Book Now</a>
+    </div>
   </nav>
 </header>
 
@@ -183,13 +226,28 @@
   </div>
 </section>
 
-<section class="newsletter-section">
-  <div class="newsletter-content">
-    <span class="newsletter-eyebrow">Stay Tuned with Coconut Saraih</span>
-    <h2>Sign up for our newsletter<br>to receive <em>special offers</em></h2>
-    <form class="newsletter-form"><input type="email" placeholder="Your Email Address" required><button type="submit">Subscribe →</button></form>
-    <label class="newsletter-check"><input type="checkbox" required><span>I agree to the <a href="#">Privacy Policy</a></span></label>
-  </div>
+<section class="newsletter-section" style="background-image: url('assets/images/newsletter.jpg');">
+    <div class="newsletter-overlay"></div>
+
+    <div class="newsletter-content">
+        <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+
+        <h2>
+            Sign up for our newsletter<br>
+            to receive our news, deals<br>
+            and special offers.
+        </h2>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe →</button>
+        </form>
+
+        <label class="newsletter-check">
+            <input type="checkbox" required>
+            <span>I agree to the <a href="#">Privacy Policy</a></span>
+        </label>
+    </div>
 </section>
 
 <footer class="site-footer">

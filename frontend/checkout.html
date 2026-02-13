@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | The Coconut Saraih - Beachfront Hotel in Coastal Kenya</title>
+    <meta name="description" content="Complete your booking at The Coconut Saraih. Secure checkout for your beachfront hotel reservation.">
+    <meta name="keywords" content="checkout, hotel booking checkout, reservation checkout, secure booking, Coconut Saraih payment">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/checkout.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <header class="nav-wrapper" id="navbar">
+        <nav class="nav-container">
+            <!-- LEFT -->
+            <div class="nav-left">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown active">
+                        <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="rooms.html">Rooms Page</a></li>
+                            <li><a href="room-details.html">Room Details</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html" class="active">Checkout</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About the Hotel</a></li>
+                            <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                            <li><a href="restaurant.html">The Restaurant</a></li>
+                            <li><a href="menu.html">Menu Page</a></li>
+                            <li><a href="spa.html">Spa & Wellness</a></li>
+                            <li><a href="events.html">Events & Meetings</a></li>
+                            <li><a href="activities.html">Local Activities</a></li>
+                            <li><a href="activity-detail.html">Activity Detail Page</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+
+            <!-- CENTER -->
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🥥</span>
+                    <span>
+                        The Coconut Saraih
+                        <span class="logo-subtitle">Hotels & Restaurant</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="nav-right">
+                <span class="nav-phone">Tel: +41 22 345 67 88</span>
+                <div class="nav-lang">
+                    <a href="#">EN</a> / <a href="#">FR</a>
+                </div>
+                <a href="booking.html" class="nav-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-checkout">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-tag">Secure Checkout</span>
+            <h1 id="hero-title">Complete Your Booking</h1>
+            <p id="hero-text">
+                Enter your details to confirm your reservation at Coconut Saraih
+            </p>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="checkout-container">
+            
+            <!-- Breadcrumb -->
+            <div class="checkout-breadcrumb">
+                <div class="checkout-breadcrumb-inner">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="rooms.html">Rooms</a>
+                    <span>/</span>
+                    <a href="cart.html">Cart</a>
+                    <span>/</span>
+                    <span class="current">Checkout</span>
+                </div>
+            </div>
+            
+            <!-- Checkout Form -->
+            <div class="checkout-form-wrapper">
+                <!-- Progress Steps -->
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Guest Details</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Payment</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Confirmation</span>
+                    </div>
+                </div>
+
+                <!-- Guest Details Form -->
+                <div class="form-section">
+                    <h2><i class="fas fa-user"></i> Guest Information</h2>
+                    
+                    <!-- Guest Login Option -->
+                    <div class="guest-login-option">
+                        <p>Already have an account? <a href="account.html">Sign in</a> for a faster checkout experience.</p>
+                        <button class="btn-outline">Login</button>
+                    </div>
+                    
+                    <form class="guest-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name *</label>
+                                <input type="text" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name *</label>
+                                <input type="text" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" placeholder="john.doe@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" placeholder="+1 234 567 8900" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Country *</label>
+                                <select required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="TZ">Tanzania</option>
+                                    <option value="UG">Uganda</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="IN">India</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>City *</label>
+                                <input type="text" placeholder="New York" required>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Special Requests</label>
+                            <textarea placeholder="Any special requests or requirements? (Optional)" rows="4"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Booking Details Form -->
+                <div class="form-section">
+                    <h2><i class="fas fa-calendar-alt"></i> Booking Details</h2>
+                    <form class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Check In Date *</label>
+                                <input type="date" value="2026-02-15" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Check Out Date *</label>
+                                <input type="date" value="2026-02-18" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Number of Rooms</label>
+                                <select>
+                                    <option>1 Room</option>
+                                    <option>2 Rooms</option>
+                                    <option>3 Rooms</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Guests</label>
+                                <select>
+                                    <option>1 Adult</option>
+                                    <option>2 Adults</option>
+                                    <option>2 Adults, 1 Child</option>
+                                    <option>3 Adults</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="form-section">
+                    <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                    <div class="payment-methods-selector">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" checked>
+                            <span class="payment-icon"><i class="fas fa-credit-card"></i></span>
+                            <span class="payment-name">Credit/Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment">
+                            <span class="payment-icon"><i class="fab fa-paypal"></i></span>
+                            <span class="payment-name">PayPal</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment">
+                            <span class="payment-icon"><i class="fas fa-university"></i></span>
+                            <span class="payment-name">Bank Transfer</span>
+                        </label>
+                    </div>
+                    
+                    <form class="card-form">
+                        <div class="form-group full-width">
+                            <label>Cardholder Name *</label>
+                            <input type="text" placeholder="JOHN DOE" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Card Number *</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date *</label>
+                                <input type="text" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label>CVV *</label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                        <div class="card-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Terms -->
+                <div class="terms-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span>I want to receive special offers and updates via email</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Booking Summary</h3>
+                
+                <div class="summary-rooms">
+                    <div class="summary-room">
+                        <img src="assets/images/b2.jpg" alt="Deluxe Room">
+                        <div class="summary-room-info">
+                            <h4>Deluxe Ocean View Room</h4>
+                            <p>Feb 15 - Feb 18, 2026</p>
+                            <p>3 Nights • 2 Guests</p>
+                        </div>
+                        <span class="summary-room-price">$111</span>
+                    </div>
+                    <div class="summary-room">
+                        <img src="assets/images/a2.jpg" alt="Ocean Suite">
+                        <div class="summary-room-info">
+                            <h4>Ocean View Suite</h4>
+                            <p>Feb 20 - Feb 23, 2026</p>
+                            <p>3 Nights • 2 Guests</p>
+                        </div>
+                        <span class="summary-room-price">$150</span>
+                    </div>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$261</span>
+                </div>
+                <div class="summary-row">
+                    <span>Taxes & Fees (10%)</span>
+                    <span>$26</span>
+                </div>
+                <div class="summary-row">
+                    <span>Service Charge (5%)</span>
+                    <span>$13</span>
+                </div>
+                
+                <div class="summary-divider"></div>
+                
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$300</span>
+                </div>
+
+                <button type="submit" class="btn-complete-booking">
+                    <i class="fas fa-lock"></i> Complete Booking
+                </button>
+
+                <div class="secure-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Your booking is secured with SSL encryption</span>
+                </div>
+
+                <div class="need-help">
+                    <h5>Need Help?</h5>
+                    <p><i class="fas fa-phone"></i> +41 22 345 67 88</p>
+                    <p><i class="fas fa-envelope"></i> reservation@coconutsaraih.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="newsletter-overlay"></div>
+        <div class="newsletter-content">
+            <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+            <h2>
+                Sign up for our newsletter<br>
+                to receive our news, deals<br>
+                and special offers.
+            </h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+            <label class="newsletter-check">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="#">Privacy Policy</a></span>
+            </label>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>ADDRESS</h5>
+                <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+            </div>
+            <div class="footer-col">
+                <h5>PHONE</h5>
+                <p>+94 22 345 67 88</p>
+            </div>
+            <div class="footer-col">
+                <h5>EMAIL</h5>
+                <p>reservation@coconutsaraih.com</p>
+            </div>
+            <div class="footer-col">
+                <h5>SOCIAL</h5>
+                <div class="footer-socials">
+                    <a href="#">fb</a>
+                    <a href="#">tw</a>
+                    <a href="#">ig</a>
+                    <a href="#">yt</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main JavaScript -->
+    <script src="src/js/main.js"></script>
+</body>
+</html>
