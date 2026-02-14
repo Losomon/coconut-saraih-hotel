@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient Generator | Coconut Saraih Hotel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            color: #a0a0a0;
+            font-size: 1rem;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .panel h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Preview Section */
+        .preview-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .preview-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        .gradient-type-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        /* Controls Section */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .gradient-type-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .type-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .type-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .type-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+        }
+
+        .angle-control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .angle-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #667eea, #a855f7, #ff6b6b);
+            outline: none;
+        }
+
+        .angle-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .angle-value {
+            color: #fff;
+            font-weight: bold;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        /* Color Stops */
+        .color-stops-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .color-stop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .color-picker-wrapper {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .color-picker-wrapper input[type="color"] {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 0;
+            background: none;
+        }
+
+        .color-picker-wrapper input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .color-picker-wrapper input[type="color"]::-webkit-color-swatch {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+        }
+
+        .color-input {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .color-input input[type="text"] {
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-input input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .stop-position {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stop-position input[type="range"] {
+            width: 80px;
+            -webkit-appearance: none;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .stop-position input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .stop-position span {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            min-width: 35px;
+        }
+
+        .remove-color-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: rgba(255, 100, 100, 0.2);
+            color: #ff6b6b;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .remove-color-btn:hover {
+            background: rgba(255, 100, 100, 0.4);
+        }
+
+        .add-color-btn {
+            padding: 12px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .add-color-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Presets */
+        .presets {
+            margin-top: 25px;
+        }
+
+        .presets h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .preset-btn {
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .preset-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CSS Output */
+        .css-output {
+            margin-top: 20px;
+        }
+
+        .css-code {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .css-code pre {
+            color: #d4d4d4;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .css-code .property {
+            color: #9cdcfe;
+        }
+
+        .css-code .value {
+            color: #ce9178;
+        }
+
+        .output-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .output-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: #fff;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        .copy-success {
+            display: none;
+            color: #38ef7d;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .copy-success.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Additional CSS Properties */
+        .additional-properties {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .property-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .property-control label {
+            display: block;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .property-control input, 
+        .property-control select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .property-control input:focus,
+        .property-control select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .property-control select option {
+            background: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 CSS Gradient Generator</h1>
+            <p>Create beautiful gradients and export as custom CSS stylesheets</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Preview Panel -->
+            <div class="panel">
+                <h2>📺 Live Preview</h2>
+                <div class="preview-container" id="preview"></div>
+                <div class="preview-info">
+                    <span id="gradientTypeDisplay">Linear Gradient</span>
+                    <span class="gradient-type-badge" id="angleDisplay">90deg</span>
+                </div>
+
+                <!-- Presets -->
+                <div class="presets">
+                    <h3>✨ Quick Presets</h3>
+                    <div class="preset-grid">
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)" onclick="applyPreset(['#667eea', '#764ba2'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" onclick="applyPreset(['#f093fb', '#f5576c'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" onclick="applyPreset(['#4facfe', '#00f2fe'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" onclick="applyPreset(['#43e97b', '#38f9d7'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)" onclick="applyPreset(['#fa709a', '#fee140'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)" onclick="applyPreset(['#a8edea', '#fed6e3'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)" onclick="applyPreset(['#ff9a9e', '#fecfef'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)" onclick="applyPreset(['#ffecd2', '#fcb69f'], 'linear', 135)"></button>
+                        <button class="preset-btn" style="background: radial-gradient(circle, #667eea 0%, #764ba2 100%)" onclick="applyPreset(['#667eea', '#764ba2'], 'radial', 0)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(to right, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #5f27cd)" onclick="applyPreset(['#ff6b6b', '#feca57', '#48dbfb', '#1dd1a1', '#5f27cd'], 'linear', 90)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4)" onclick="applyPreset(['#ff6b6b', '#4ecdc4'], 'linear', 45)"></button>
+                        <button class="preset-btn" style="background: linear-gradient(180deg, #0c0c0c 0%, #2d2d2d 50%, #0c0c0c 100%)" onclick="applyPreset(['#0c0c0c', '#2d2d2d', '#0c0c0c'], 'linear', 180)"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="panel">
+                <h2>⚙️ Gradient Controls</h2>
+                
+                <!-- Gradient Type -->
+                <div class="control-group">
+                    <label>Gradient Type</label>
+                    <div class="gradient-type-selector">
+                        <button class="type-btn active" data-type="linear" onclick="setGradientType('linear')">Linear</button>
+                        <button class="type-btn" data-type="radial" onclick="setGradientType('radial')">Radial</button>
+                    </div>
+                </div>
+
+                <!-- Angle Control -->
+                <div class="control-group" id="angleGroup">
+                    <label>Direction / Angle</label>
+                    <div class="angle-control">
+                        <input type="range" class="angle-slider" id="angleSlider" min="0" max="360" value="90" oninput="updateAngle(this.value)">
+                        <span class="angle-value" id="angleValue">90°</span>
+                    </div>
+                </div>
+
+                <!-- Color Stops -->
+                <div class="control-group">
+                    <label>Color Stops</label>
+                    <div class="color-stops-container" id="colorStops">
+                        <!-- Color stops will be added here dynamically -->
+                    </div>
+                    <button class="add-color-btn" onclick="addColorStop()">+ Add Color Stop</button>
+                </div>
+
+                <!-- Additional Properties -->
+                <div class="additional-properties">
+                    <div class="property-row">
+                        <div class="property-control">
+                            <label>Width</label>
+                            <input type="text" id="widthValue" value="100%" onchange="updateGradient()">
+                        </div>
+                        <div class="property-control">
+                            <label>Height</label>
+                            <input type="text" id="heightValue" value="300px" onchange="updateGradient()">
+                        </div>
+                    </div>
+                    <div class="property-row">
+                        <div class="property-control">
+                            <label>Repeat</label>
+                            <select id="repeatValue" onchange="updateGradient()">
+                                <option value="no-repeat">No Repeat</option>
+                                <option value="repeat">Repeat</option>
+                                <option value="repeat-x">Repeat X</option>
+                                <option value="repeat-y">Repeat Y</option>
+                            </select>
+                        </div>
+                        <div class="property-control">
+                            <label>Position</label>
+                            <select id="positionValue" onchange="updateGradient()">
+                                <option value="center center">Center</option>
+                                <option value="top left">Top Left</option>
+                                <option value="top center">Top Center</option>
+                                <option value="top right">Top Right</option>
+                                <option value="bottom left">Bottom Left</option>
+                                <option value="bottom center">Bottom Center</option>
+                                <option value="bottom right">Bottom Right</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Output -->
+                <div class="css-output">
+                    <h2>📄 CSS Output</h2>
+                    <div class="css-code">
+                        <pre id="cssCode"></pre>
+                    </div>
+                    <div class="output-buttons">
+                        <button class="output-btn copy-btn" onclick="copyToClipboard()">
+                            📋 Copy CSS
+                        </button>
+                        <button class="output-btn download-btn" onclick="downloadCSS()">
+                            💾 Download CSS
+                        </button>
+                    </div>
+                    <div class="copy-success" id="copySuccess">✓ CSS copied to clipboard!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let gradientType = 'linear';
+        let angle = 90;
+        let colorStops = [
+            { color: '#667eea', position: 0 },
+            { color: '#764ba2', position: 100 }
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderColorStops();
+            updateGradient();
+        });
+
+        // Set gradient type
+        function setGradientType(type) {
+            gradientType = type;
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === type);
+            });
+            
+            // Show/hide angle control based on type
+            const angleGroup = document.getElementById('angleGroup');
+            angleGroup.style.display = type === 'radial' ? 'none' : 'block';
+            
+            document.getElementById('gradientTypeDisplay').textContent = 
+                type === 'linear' ? 'Linear Gradient' : 'Radial Gradient';
+            
+            updateGradient();
+        }
+
+        // Update angle
+        function updateAngle(value) {
+            angle = parseInt(value);
+            document.getElementById('angleValue').textContent = value + '°';
+            document.getElementById('angleDisplay').textContent = value + '°';
+            updateGradient();
+        }
+
+        // Render color stops
+        function renderColorStops() {
+            const container = document.getElementById('colorStops');
+            container.innerHTML = '';
+
+            colorStops.forEach((stop, index) => {
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'color-stop';
+                stopDiv.innerHTML = `
+                    <div class="color-picker-wrapper">
+                        <input type="color" value="${stop.color}" onchange="updateColor(${index}, this.value)">
+                    </div>
+                    <div class="color-input">
+                        <input type="text" value="${stop.color}" onchange="updateColor(${index}, this.value)" placeholder="#000000">
+                        <div class="stop-position">
+                            <input type="range" min="0" max="100" value="${stop.position}" 
+                                oninput="updatePosition(${index}, this.value)">
+                            <span>${stop.position}%</span>
+                        </div>
+                    </div>
+                    ${colorStops.length > 2 ? `
+                        <button class="remove-color-btn" onclick="removeColorStop(${index})" title="Remove color">×</button>
+                    ` : ''}
+                `;
+                container.appendChild(stopDiv);
+            });
+        }
+
+        // Update color
+        function updateColor(index, value) {
+            colorStops[index].color = value;
+            renderColorStops();
+            updateGradient();
+        }
+
+        // Update position
+        function updatePosition(index, value) {
+            colorStops[index].position = parseInt(value);
+            renderColorStops();
+            updateGradient();
+        }
+
+        // Add color stop
+        function addColorStop() {
+            if (colorStops.length < 10) {
+                // Find a position between existing stops
+                const lastPosition = colorStops[colorStops.length - 1].position;
+                const newPosition = Math.min(lastPosition + 20, 100);
+                
+                // Get a color between the first and last
+                const firstColor = colorStops[0].color;
+                
+                colorStops.push({ color: firstColor, position: newPosition });
+                renderColorStops();
+                updateGradient();
+            }
+        }
+
+        // Remove color stop
+        function removeColorStop(index) {
+            if (colorStops.length > 2) {
+                colorStops.splice(index, 1);
+                renderColorStops();
+                updateGradient();
+            }
+        }
+
+        // Apply preset
+        function applyPreset(colors, type, deg) {
+            gradientType = type;
+            colorStops = colors.map((color, index) => ({
+                color: color,
+                position: Math.round((index / (colors.length - 1)) * 100)
+            }));
+
+            // Update UI
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === type);
+            });
+
+            const angleGroup = document.getElementById('angleGroup');
+            angleGroup.style.display = type === 'radial' ? 'none' : 'block';
+
+            if (type === 'linear') {
+                angle = deg;
+                document.getElementById('angleSlider').value = deg;
+                document.getElementById('angleValue').textContent = deg + '°';
+                document.getElementById('angleDisplay').textContent = deg + '°';
+            }
+
+            document.getElementById('gradientTypeDisplay').textContent = 
+                type === 'linear' ? 'Linear Gradient' : 'Radial Gradient';
+
+            renderColorStops();
+            updateGradient();
+        }
+
+        // Generate gradient string
+        function generateGradientString() {
+            // Sort stops by position
+            const sortedStops = [...colorStops].sort((a, b) => a.position - b.position);
+            const stopsString = sortedStops.map(stop => `${stop.color} ${stop.position}%`).join(', ');
+
+            if (gradientType === 'linear') {
+                return `linear-gradient(${angle}deg, ${stopsString})`;
+            } else {
+                const position = document.getElementById('positionValue').value;
+                return `radial-gradient(circle at ${position}, ${stopsString})`;
+            }
+        }
+
+        // Update gradient and preview
+        function updateGradient() {
+            const gradient = generateGradientString();
+            const width = document.getElementById('widthValue').value;
+            const height = document.getElementById('heightValue').value;
+            const repeat = document.getElementById('repeatValue').value;
+            const position = document.getElementById('positionValue').value;
+
+            // Update preview
+            const preview = document.getElementById('preview');
+            preview.style.background = gradient;
+            preview.style.width = width;
+            preview.style.height = height;
+            preview.style.backgroundRepeat = repeat;
+
+            // Generate CSS code
+            generateCSSCode(width, height, repeat, position);
+        }
+
+        // Generate CSS code
+        function generateCSSCode(width, height, repeat, position) {
+            const gradient = generateGradientString();
+            
+            const css = `.gradient-background {
+    width: ${width};
+    height: ${height};
+    background: ${gradient};
+    background-repeat: ${repeat};
+    background-position: ${position};
+}`;
+            document.getElementById('cssCode').innerHTML = css
+                .replace(/(\w+):/g, '<span class="property">$1</span>:')
+                .replace(/: ([^;{]+)/g, ': <span class="value">$1</span>');
+        }
+
+        // Copy to clipboard
+        function copyToClipboard() {
+            const gradient = generateGradientString();
+            const width = document.getElementById('widthValue').value;
+            const height = document.getElementById('heightValue').value;
+            const repeat = document.getElementById('repeatValue').value;
+            const position = document.getElementById('positionValue').value;
+
+            const css = `.gradient-background {
+    width: ${width};
+    height: ${height};
+    background: ${gradient};
+    background-repeat: ${repeat};
+    background-position: ${position};
+}`;
+
+            navigator.clipboard.writeText(css).then(() => {
+                const successMsg = document.getElementById('copySuccess');
+                successMsg.classList.add('show');
+                setTimeout(() => successMsg.classList.remove('show'), 2000);
+            });
+        }
+
+        // Download CSS
+        function downloadCSS() {
+            const gradient = generateGradientString();
+            const width = document.getElementById('widthValue').value;
+            const height = document.getElementById('heightValue').value;
+            const repeat = document.getElementById('repeatValue').value;
+            const position = document.getElementById('positionValue').value;
+
+            const css = `/* CSS Gradient - Generated by Coconut Saraih Hotel */
+/* ${new Date().toISOString()} */
+
+.gradient-background {
+    width: ${width};
+    height: ${height};
+    background: ${gradient};
+    background-repeat: ${repeat};
+    background-position: ${position};
+}
+
+/* Alternative class names you can use */
+.gradient {
+    background: ${gradient};
+}
+
+.gradient-bg {
+    background: ${gradient};
+    background-repeat: ${repeat};
+}
+`;
+
+            const blob = new Blob([css], { type: 'text/css' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'gradient-styles.css';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

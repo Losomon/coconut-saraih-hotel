@@ -15,6 +15,10 @@ const staffRoutes = require('./routes/staff');
 const paymentRoutes = require('./routes/payments');
 const feedbackRoutes = require('./routes/feedback');
 const contactRoutes = require('./routes/contact');
+const spaRoutes = require('./routes/spa.routes');
+const analyticsRoutes = require('./routes/analytics.routes');
+const notificationRoutes = require('./routes/notification.routes');
+const apiRoutes = require('./routes/index');
 
 dotenv.config();
 connectDB();
@@ -38,6 +42,12 @@ app.use('/api/staff', staffRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/spa', spaRoutes);
+app.use('/api/analytics', analyticsRoutes);
+app.use('/api/notifications', notificationRoutes);
+
+// API aggregator route (alternative access)
+app.use('/api/v1', apiRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

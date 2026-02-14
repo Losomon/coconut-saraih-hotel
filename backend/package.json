@@ -1,25 +1,137 @@
 {
   "name": "coconut-saraih-hotel-backend",
   "version": "1.0.0",
-  "description": "Backend API for Coconut Saraih Hotel",
+  "description": "Production-ready Backend API for Coconut Saraih Hotel",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "seed": "node data/seed.js"
+    "seed": "node data/seed.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.js\"",
+    "build": "echo 'No build step required for Node.js'",
+    "docker:build": "docker build -t coconut-saraih-api .",
+    "docker:run": "docker run -p 3000:3000 coconut-saraih-api",
+    "docker-compose:up": "docker-compose up -d",
+    "docker-compose:down": "docker-compose down"
+  },
+  "keywords": [
+    "hotel",
+    "booking",
+    "backend",
+    "api",
+    "express",
+    "mongodb"
+  ],
+  "author": "Coconut Saraih Hotel",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "express-validator": "^7.0.1",
-    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "express-validator": "^7.0.1",
+    "nodemailer": "^6.9.7",
+    "socket.io": "^4.7.2",
+    "redis": "^4.6.11",
+    "winston": "^3.11.0",
+    "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.7"
+    "sharp": "^0.32.6",
+    "pdfkit": "^0.14.0",
+    "exceljs": "^4.4.0",
+    "i18next": "^23.7.6",
+    "joi": "^17.11.0",
+    "uuid": "^9.0.1",
+    "crypto-js": "^4.2.0",
+    "stripe": "^14.9.0",
+    "twilio": "^4.20.0",
+    "africastalking": "^1.2.2",
+    "cloudinary": "^1.41.0",
+    "@aws-sdk/client-s3": "^3.470.0",
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "bull": "^4.12.0",
+    "node-cron": "^3.0.3",
+    "compression": "^1.7.4",
+    "express-mongo-sanitize": "^2.2.0",
+    "xss-clean": "^0.1.4",
+    "hpp": "^0.2.3",
+    "cookie-parser": "^1.4.6",
+    "morgan": "^1.10.0",
+    "fb": "^2.0.0",
+    "firebase-admin": "^12.0.0",
+    "newrelic": "^11.7.0",
+    "@sentry/node": "^7.91.0",
+    "axios": "^1.6.2",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "cypress": "^13.6.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2021": true,
+      "jest": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-unused-vars": "warn",
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!node_modules/**",
+      "!tests/**"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
