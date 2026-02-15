@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | The Coconut Saraih Beach Hotel</title>
+    <meta name="description" content="Explore our stunning photo gallery showcasing the beauty of Coconut Saraih Beach Hotel - from beachfront views to luxury accommodations.">
+    <meta name="keywords" content="Coconut Saraih hotel gallery, beach hotel photos, luxury resort images">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="src/styles/i.css">
+    <!-- Gallery Styles -->
+    <link rel="stylesheet" href="src/styles/gallery.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <header class="nav-wrapper" id="navbar">
+        <nav class="nav-container">
+            <!-- LEFT -->
+            <div class="nav-left">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="rooms.html">Rooms Page</a></li>
+                            <li><a href="room-details.html">Room Details</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About the Hotel</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                            <li><a href="restaurant.html">The Restaurant</a></li>
+                            <li><a href="menu.html">Menu Page</a></li>
+                            <li><a href="spa.html">Spa & Wellness</a></li>
+                            <li><a href="events.html">Events & Meetings</a></li>
+                            <li><a href="activities.html">Local Activities</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <!-- CENTER -->
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🥥</span>
+                    <span>
+                        The Coconut Saraih
+                        <span class="logo-subtitle">Hotels & Restaurant</span>
+                    </span>
+                </a>
+            </div>
+            <!-- RIGHT -->
+            <div class="nav-right">
+                <span class="nav-phone">Tel: +41 22 345 67 88</span>
+                <div class="nav-lang">
+                    <a href="#">EN</a> / <a href="#">FR</a>
+                </div>
+                <a href="booking.html" class="nav-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-bg"></div>
+        <div class="gallery-hero-overlay"></div>
+        <div class="gallery-hero-content">
+            <span class="gallery-hero-subtitle">Visual Journey</span>
+            <h1>Our Gallery</h1>
+            <p>Discover the beauty and elegance that awaits you at Coconut Saraih Beach Hotel</p>
+            <div class="gallery-breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Gallery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-page-section">
+        <div class="gallery-container">
+            
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="rooms">Rooms</button>
+                <button class="filter-btn" data-filter="dining">Dining</button>
+                <button class="filter-btn" data-filter="facilities">Facilities</button>
+                <button class="filter-btn" data-filter="activities">Activities</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="spa">Spa</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-page-grid" id="galleryGrid">
+                <!-- Images will be loaded dynamically via JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="gallery-load-more">
+                <button class="btn-load-more" id="loadMoreBtn">
+                    <i class="fas fa-images"></i> Load More Photos
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+        <div class="lightbox-counter">
+            <span id="lightboxCurrent">1</span> / <span id="lightboxTotal">1</span>
+        </div>
+    </div>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="newsletter-overlay"></div>
+        <div class="newsletter-content">
+            <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+            <h2>
+                Sign up for our newsletter<br>
+                to receive our news, deals<br>
+                and special offers.
+            </h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit">Subscribe →</button>
+            </form>
+            <label class="newsletter-check">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="#">Privacy Policy</a></span>
+            </label>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>ADDRESS</h5>
+                <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+            </div>
+            <div class="footer-col">
+                <h5>PHONE</h5>
+                <p>+94 22 345 67 88</p>
+            </div>
+            <div class="footer-col">
+                <h5>EMAIL</h5>
+                <p>reservation@coconutsaraih.com</p>
+            </div>
+            <div class="footer-col">
+                <h5>SOCIAL</h5>
+                <div class="footer-socials">
+                    <a href="#">fb</a>
+                    <a href="#">tw</a>
+                    <a href="#">ig</a>
+                    <a href="#">yt</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Gallery JavaScript -->
+    <script src="src/js/gallery.js"></script>
+</body>
+</html>

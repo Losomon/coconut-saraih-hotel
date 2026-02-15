@@ -2,7 +2,7 @@ const Guest = require('../models/Guest');
 const Booking = require('../models/Booking');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 
 // @route   GET /api/v1/guests
 // @desc    Get all guests

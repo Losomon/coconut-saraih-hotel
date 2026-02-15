@@ -1,0 +1,33 @@
+{
+  "name": "saraih-hotel",
+  "displayName": "Saraih Hotel",
+  "description": "Coconut Saraih Hotel - A comprehensive hotel management system",
+  "version": "1.0.0",
+  "projectType": "web-application",
+  "organization": "Coconut Saraih Hotel",
+  "tags": [
+    "hotel",
+    "hospitality",
+    "booking",
+    "management-system"
+  ],
+  "created": "2026-02-15",
+  "technologies": {
+    "frontend": ["HTML", "CSS", "JavaScript"],
+    "backend": ["Node.js", "Express"],
+    "database": "MongoDB",
+    "cache": "Redis"
+  },
+  "features": [
+    "Room booking and management",
+    "Restaurant reservations",
+    "Event hall bookings",
+    "Spa services",
+    "Payment processing",
+    "Guest management",
+    "Staff management",
+    "Real-time notifications",
+    "Multi-language support (English, Swahili, French, Arabic)",
+    "Analytics and reporting"
+  ]
+}

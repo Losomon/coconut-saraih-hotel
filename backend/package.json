@@ -59,7 +59,7 @@
     "crypto-js": "^4.2.0",
     "stripe": "^14.9.0",
     "twilio": "^4.20.0",
-    "africastalking": "^1.2.2",
+    "africastalking": "^0.7.9",
     "cloudinary": "^1.41.0",
     "@aws-sdk/client-s3": "^3.470.0",
     "@paypal/checkout-server-sdk": "^1.0.3",

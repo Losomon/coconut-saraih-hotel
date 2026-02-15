@@ -125,7 +125,7 @@ const getBaseTemplate = (content, footer = true) => {
 <body>
   <div class="container">
     <div class="header">
-      <h1>🏝️ Coconut Saraih Hotel</h1>
+      <h1> Coconut Saraih Hotel</h1>
       <p>Your Tropical Paradise Awaits</p>
     </div>
     <div class="content">
@@ -155,7 +155,7 @@ const getBaseTemplate = (content, footer = true) => {
  */
 const sendWelcomeEmail = (user) => {
   const content = `
-    <div class="success-icon">👋</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Welcome to Coconut Saraih Hotel!</h2>
     <p>Dear <strong>${user.firstName} ${user.lastName}</strong>,</p>
     <p>Thank you for joining us! We're thrilled to have you as our guest.</p>
@@ -179,7 +179,7 @@ const sendWelcomeEmail = (user) => {
   `;
   
   return {
-    subject: 'Welcome to Coconut Saraih Hotel! 🌴',
+    subject: 'Welcome to Coconut Saraih Hotel! ',
     html: getBaseTemplate(content)
   };
 };
@@ -203,7 +203,7 @@ const sendBookingConfirmationEmail = (booking, guest) => {
   });
 
   const content = `
-    <div class="success-icon">✅</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Booking Confirmed!</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Thank you for choosing Coconut Saraih Hotel! Your booking has been confirmed.</p>
@@ -257,7 +257,7 @@ const sendBookingConfirmationEmail = (booking, guest) => {
   `;
 
   return {
-    subject: `Booking Confirmed - ${booking.bookingReference} 🏨`,
+    subject: `Booking Confirmed - ${booking.bookingReference}`,
     html: getBaseTemplate(content)
   };
 };
@@ -267,7 +267,7 @@ const sendBookingConfirmationEmail = (booking, guest) => {
  */
 const sendBookingCancellationEmail = (booking, guest) => {
   const content = `
-    <div class="warning-icon">❌</div>
+    <div class="warning-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Booking Cancelled</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>We regret to inform you that your booking has been cancelled as requested.</p>
@@ -320,7 +320,7 @@ const sendBookingCancellationEmail = (booking, guest) => {
  */
 const sendPaymentConfirmationEmail = (payment, booking, guest) => {
   const content = `
-    <div class="success-icon">💳</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Payment Successful!</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Thank you! We have received your payment successfully.</p>
@@ -361,7 +361,7 @@ const sendPaymentConfirmationEmail = (payment, booking, guest) => {
   `;
 
   return {
-    subject: `Payment Confirmed - ${payment.paymentReference} 💰`,
+    subject: `Payment Confirmed - ${payment.paymentReference} `,
     html: getBaseTemplate(content)
   };
 };
@@ -371,7 +371,7 @@ const sendPaymentConfirmationEmail = (payment, booking, guest) => {
  */
 const sendCheckInReminderEmail = (booking, guest) => {
   const content = `
-    <div class="success-icon">⏰</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Check-in Reminder</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>This is a friendly reminder about your upcoming stay!</p>
@@ -396,7 +396,7 @@ const sendCheckInReminderEmail = (booking, guest) => {
     </table>
     
     <div class="info-box">
-      <p><strong>📝 Please Remember:</strong></p>
+      <p><strong> Please Remember:</strong></p>
       <p>• Valid ID or passport</p>
       <p>• Booking confirmation (print or digital)</p>
       <p>• Credit card for incidental deposits</p>
@@ -411,7 +411,7 @@ const sendCheckInReminderEmail = (booking, guest) => {
   `;
 
   return {
-    subject: `Check-in Tomorrow - ${booking.bookingReference} 🏨`,
+    subject: `Check-in Tomorrow - ${booking.bookingReference}`,
     html: getBaseTemplate(content)
   };
 };
@@ -423,7 +423,7 @@ const sendPasswordResetEmail = (user, resetToken) => {
   const resetUrl = `${config.app.clientUrl}/reset-password?token=${resetToken}`;
 
   const content = `
-    <div class="warning-icon">🔐</div>
+    <div class="warning-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Password Reset Request</h2>
     <p>Dear <strong>${user.firstName}</strong>,</p>
     <p>We received a request to reset your password. Click the button below to create a new password:</p>
@@ -446,7 +446,7 @@ const sendPasswordResetEmail = (user, resetToken) => {
   `;
 
   return {
-    subject: 'Password Reset Request 🔐',
+    subject: 'Password Reset Request ',
     html: getBaseTemplate(content)
   };
 };
@@ -458,7 +458,7 @@ const sendVerificationEmail = (user, verificationToken) => {
   const verifyUrl = `${config.app.clientUrl}/verify-email?token=${verificationToken}`;
 
   const content = `
-    <div class="success-icon">📧</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Verify Your Email</h2>
     <p>Dear <strong>${user.firstName}</strong>,</p>
     <p>Thank you for registering! Please verify your email address to activate your account.</p>
@@ -480,7 +480,7 @@ const sendVerificationEmail = (user, verificationToken) => {
   `;
 
   return {
-    subject: 'Verify Your Email - Coconut Saraih Hotel 📧',
+    subject: 'Verify Your Email - Coconut Saraih Hotel ',
     html: getBaseTemplate(content)
   };
 };
@@ -490,7 +490,7 @@ const sendVerificationEmail = (user, verificationToken) => {
  */
 const sendInvoiceEmail = (invoice, booking, guest) => {
   const content = `
-    <div class="success-icon">📄</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Invoice</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Please find below your invoice for your stay at Coconut Saraih Hotel.</p>
@@ -564,7 +564,7 @@ const sendInvoiceEmail = (invoice, booking, guest) => {
   `;
 
   return {
-    subject: `Invoice ${invoice.invoiceNumber} - Coconut Saraih Hotel 📄`,
+    subject: `Invoice ${invoice.invoiceNumber} - Coconut Saraih Hotel `,
     html: getBaseTemplate(content)
   };
 };
@@ -574,7 +574,7 @@ const sendInvoiceEmail = (invoice, booking, guest) => {
  */
 const sendContactConfirmationEmail = (contact) => {
   const content = `
-    <div class="success-icon">✉️</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Message Received</h2>
     <p>Dear <strong>${contact.name}</strong>,</p>
     <p>Thank you for reaching out to us! We have received your message and will get back to you within 24-48 hours.</p>
@@ -605,7 +605,7 @@ const sendContactConfirmationEmail = (contact) => {
   `;
 
   return {
-    subject: 'We Received Your Message - Coconut Saraih Hotel ✉️',
+    subject: 'We Received Your Message - Coconut Saraih Hotel ',
     html: getBaseTemplate(content)
   };
 };
@@ -615,7 +615,7 @@ const sendContactConfirmationEmail = (contact) => {
  */
 const sendActivityConfirmationEmail = (activityBooking, guest) => {
   const content = `
-    <div class="success-icon">🏄</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Activity Booking Confirmed!</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Your booking for an exciting activity has been confirmed!</p>
@@ -648,9 +648,9 @@ const sendActivityConfirmationEmail = (activityBooking, guest) => {
     </table>
     
     <div class="info-box">
-      <p><strong>📍 Meeting Point:</strong></p>
+      <p><strong> Meeting Point:</strong></p>
       <p>${activityBooking.meetingPoint || 'Hotel Lobby'}</p>
-      <p><strong>⏰ Please arrive 15 minutes before the scheduled time</strong></p>
+      <p><strong> Please arrive 15 minutes before the scheduled time</strong></p>
     </div>
     
     <p style="text-align: center; margin-top: 20px;">
@@ -662,7 +662,7 @@ const sendActivityConfirmationEmail = (activityBooking, guest) => {
   `;
 
   return {
-    subject: `Activity Confirmed - ${activityBooking.activityName} 🏄`,
+    subject: `Activity Confirmed - ${activityBooking.activityName} `,
     html: getBaseTemplate(content)
   };
 };
@@ -672,7 +672,7 @@ const sendActivityConfirmationEmail = (activityBooking, guest) => {
  */
 const sendRestaurantReservationEmail = (reservation, guest) => {
   const content = `
-    <div class="success-icon">🍽️</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Table Reservation Confirmed!</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Your table reservation has been confirmed. We look forward to serving you!</p>
@@ -711,7 +711,7 @@ const sendRestaurantReservationEmail = (reservation, guest) => {
     </table>
     
     <div class="info-box">
-      <p><strong>💡 Tips for your dining experience:</strong></p>
+      <p><strong> Tips for your dining experience:</strong></p>
       <p>• Formal dress code is recommended</p>
       <p>• Arrive a few minutes early to be seated</p>
       <p>• Feel free to browse our menu in advance</p>
@@ -726,7 +726,7 @@ const sendRestaurantReservationEmail = (reservation, guest) => {
   `;
 
   return {
-    subject: `Table Reserved - ${reservation.restaurantName} 🍽️`,
+    subject: `Table Reserved - ${reservation.restaurantName} `,
     html: getBaseTemplate(content)
   };
 };
@@ -736,7 +736,7 @@ const sendRestaurantReservationEmail = (reservation, guest) => {
  */
 const sendFeedbackRequestEmail = (booking, guest) => {
   const content = `
-    <div class="success-icon">💭</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">We'd Love Your Feedback!</h2>
     <p>Dear <strong>${guest.firstName} ${guest.lastName}</strong>,</p>
     <p>Thank you for staying with us at Coconut Saraih Hotel!</p>
@@ -755,7 +755,7 @@ const sendFeedbackRequestEmail = (booking, guest) => {
   `;
 
   return {
-    subject: 'Share Your Experience - Coconut Saraih Hotel 💭',
+    subject: 'Share Your Experience - Coconut Saraih Hotel ',
     html: getBaseTemplate(content)
   };
 };
@@ -765,7 +765,7 @@ const sendFeedbackRequestEmail = (booking, guest) => {
  */
 const sendNewsletterSubscriptionEmail = (email) => {
   const content = `
-    <div class="success-icon">📰</div>
+    <div class="success-icon"></div>
     <h2 style="text-align: center; margin-bottom: 20px;">Welcome to Our Newsletter!</h2>
     <p>Thank you for subscribing to the Coconut Saraih Hotel newsletter!</p>
     <p>You'll now receive:</p>
@@ -790,7 +790,7 @@ const sendNewsletterSubscriptionEmail = (email) => {
   `;
 
   return {
-    subject: 'Welcome to Coconut Saraih Hotel Newsletter! 📰',
+    subject: 'Welcome to Coconut Saraih Hotel Newsletter! ',
     html: getBaseTemplate(content)
   };
 };

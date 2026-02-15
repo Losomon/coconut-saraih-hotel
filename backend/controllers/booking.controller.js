@@ -4,7 +4,7 @@ const Guest = require('../models/Guest');
 const Payment = require('../models/Payment');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 const bookingService = require('../services/booking.service');
 
 // @route   GET /api/v1/bookings

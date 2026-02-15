@@ -50,6 +50,10 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/v1', apiRoutes);
 
 // Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Coconut Saraih Hotel API is running' });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Coconut Saraih Hotel API is running' });
 });

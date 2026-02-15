@@ -5,7 +5,7 @@ const Room = require('../models/Room');
 const Guest = require('../models/Guest');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 
 // @route   GET /api/v1/analytics/dashboard
 // @desc    Get dashboard metrics

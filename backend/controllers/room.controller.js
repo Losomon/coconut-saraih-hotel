@@ -2,7 +2,7 @@ const Room = require('../models/Room');
 const Booking = require('../models/Booking');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 const pricingService = require('../services/pricing.service');
 const availabilityService = require('../services/availability.service');
 

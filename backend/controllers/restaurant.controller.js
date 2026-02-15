@@ -2,7 +2,7 @@ const MenuItem = require('../models/MenuItem');
 const TableReservation = require('../models/TableReservation');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 
 // ============================================
 // MENU MANAGEMENT

@@ -1,7 +1,7 @@
 const SpaService = require('../models/SpaService');
 const ApiError = require('../utils/ApiError');
 const ApiResponse = require('../utils/ApiResponse');
-const catchAsync = require('../utils/catchAsync');
+const { catchAsync } = require('../utils/catchAsync');
 
 // @route   GET /api/v1/spa/services
 // @desc    Get all spa services
