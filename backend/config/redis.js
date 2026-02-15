@@ -12,21 +12,38 @@ let isConnected = false;
  * Create and configure Redis client
  */
 const createRedisClient = () => {
-  redisClient = redis.createClient({
-    socket: {
-      host: config.redis.options.host,
-      port: config.redis.options.port,
-      reconnectStrategy: (retries) => {
-        if (retries > 10) {
-          console.error('Max reconnection attempts reached for Redis');
-          return new Error('Max reconnection attempts reached');
+  // Check if REDIS_URL is provided
+  if (config.redis.url && config.redis.url.startsWith('redis')) {
+    redisClient = redis.createClient({
+      url: config.redis.url,
+      socket: {
+        reconnectStrategy: (retries) => {
+          if (retries > 10) {
+            console.error('Max reconnection attempts reached for Redis');
+            return new Error('Max reconnection attempts reached');
+          }
+          return Math.min(retries * 100, 3000);
         }
-        return Math.min(retries * 100, 3000);
       }
-    },
-    password: config.redis.options.password,
-    database: config.redis.options.db
-  });
+    });
+  } else {
+    // Fallback to individual options (local Redis)
+    redisClient = redis.createClient({
+      socket: {
+        host: config.redis.options.host,
+        port: config.redis.options.port,
+        reconnectStrategy: (retries) => {
+          if (retries > 10) {
+            console.error('Max reconnection attempts reached for Redis');
+            return new Error('Max reconnection attempts reached');
+          }
+          return Math.min(retries * 100, 3000);
+        }
+      },
+      password: config.redis.options.password,
+      database: config.redis.options.db
+    });
+  }
 
   redisClient.on('error', (err) => {
     console.error('Redis Client Error:', err.message);
