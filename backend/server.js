@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const { connectRedis } = require('./config/redis');
 
 // Route imports
 const authRoutes = require('./routes/auth');
@@ -22,6 +23,7 @@ const apiRoutes = require('./routes/index');
 
 dotenv.config();
 connectDB();
+connectRedis();
 
 const app = express();
 
