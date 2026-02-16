@@ -19,6 +19,7 @@
     <!-- Main Styles -->
     <link rel="stylesheet" href="src/styles/i.css">
     <link rel="stylesheet" href="src/styles/cart.css">
+    
 </head>
 <body>
     
@@ -34,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="rooms.html">Rooms Page</a></li>
                             <li><a href="room-details.html">Room Details</a></li>
-                            <li><a href="cart.html" class="active">Cart</a></li>
+                            <li><a href="cart.html" class="active">Cart <span class="cart-count" style="display:none;">0</span></a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="account.html">My Account</a></li>
                         </ul>
@@ -80,179 +81,146 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero hero-cart">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <span class="hero-tag">Your Reservations</span>
-            <h1 id="hero-title">Shopping Cart</h1>
-            <p id="hero-text">
+    <!-- Cart Hero Section -->
+    <section class="cart-hero">
+        <img src="https://cozystay.loftocean.com/apartment/wp-content/uploads/sites/6/2023/03/img-32.jpg" alt="The Coconut Saraih Hotel" class="cart-hero-bg">
+        <div class="cart-hero-overlay"></div>
+        <div class="cart-hero-content">
+            <span class="cart-hero-tag">Your Booking</span>
+            <h1 class="cart-hero-title"><em>Shopping Cart</em></h1>
+            <p class="cart-hero-text">
                 Review your selected rooms and services before proceeding to checkout
             </p>
         </div>
     </section>
 
+    <!-- Breadcrumb Navigation with Image Background -->
+    <div class="cart-breadcrumb" style="background-image: url('https://cozystay.loftocean.com/apartment/wp-content/uploads/sites/6/2023/03/img-28.jpg'); background-size: cover; background-position: center;">
+        <div class="cart-breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="rooms.html">Rooms</a>
+            <span>/</span>
+            <span class="current">Shopping Cart</span>
+        </div>
+    </div>
+
     <!-- Cart Section -->
     <section class="cart-section">
         <div class="cart-container">
             
-            <!-- Breadcrumb -->
-            <div class="cart-breadcrumb">
-                <div class="cart-breadcrumb-inner">
-                    <a href="index.html">Home</a>
-                    <span>/</span>
-                    <a href="rooms.html">Rooms</a>
-                    <span>/</span>
-                    <span class="current">Shopping Cart</span>
-                </div>
-            </div>
-            
-            <!-- Cart Items -->
-            <div class="cart-items-wrapper">
-                <h2>Your Reservations</h2>
-                
-                <!-- Cart Item 1 -->
-                <div class="cart-item">
-                    <div class="cart-item-image">
-                        <img src="assets/images/b2.jpg" alt="Deluxe Ocean View Room">
+            <!-- Dynamic Cart Content -->
+            <div class="cart-layout">
+                <!-- Cart Items Column -->
+                <div class="cart-items-wrapper">
+                    <div class="cart-header">
+                        <h2>Your Reservations</h2>
+                        <button class="btn-clear-cart" onclick="clearCart()" style="display: none;" id="clear-cart-btn">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
                     </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-header">
-                            <h3>Deluxe Ocean View Room</h3>
-                            <button class="remove-item"><i class="fas fa-times"></i></button>
-                        </div>
-                        <p class="cart-item-meta">Pool View • 32 m² • King Bed</p>
-                        <div class="cart-item-info">
-                            <div class="info-row">
-                                <span class="label">Check In:</span>
-                                <span class="value">February 15, 2026</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Check Out:</span>
-                                <span class="value">February 18, 2026</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duration:</span>
-                                <span class="value">3 Nights</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Guests:</span>
-                                <span class="value">2 Adults</span>
-                            </div>
-                        </div>
-                        <div class="cart-item-includes">
-                            <span><i class="fas fa-check"></i> Free WiFi</span>
-                            <span><i class="fas fa-check"></i> Breakfast Included</span>
-                            <span><i class="fas fa-check"></i> Pool Access</span>
+                    
+                    <!-- Cart Items Container (Populated by JavaScript) -->
+                    <div id="cart-items">
+                        <div class="cart-loading">
+                            <i class="fas fa-spinner"></i>
+                            <span>Loading your cart...</span>
                         </div>
                     </div>
-                    <div class="cart-item-price">
-                        <span class="price-label">Price per night</span>
-                        <span class="price-amount">$37</span>
-                        <span class="item-total">Total: $111</span>
+
+                    <!-- Empty Cart State -->
+                    <div id="empty-cart" style="display: none;">
+                        <div class="empty-state">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Browse our beautiful rooms and add them to your cart</p>
+                            <a href="rooms.html" class="btn-primary">
+                                <i class="fas fa-bed"></i> Browse Rooms
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <div class="cart-footer">
+                        <a href="rooms.html" class="btn-continue">
+                            <i class="fas fa-arrow-left"></i> Continue Shopping
+                        </a>
                     </div>
                 </div>
 
-                <!-- Cart Item 2 -->
-                <div class="cart-item">
-                    <div class="cart-item-image">
-                        <img src="assets/images/a2.jpg" alt="Ocean View Suite">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-header">
-                            <h3>Ocean View Suite</h3>
-                            <button class="remove-item"><i class="fas fa-times"></i></button>
+                <!-- Cart Summary Column -->
+                <div class="cart-sidebar">
+                    <div class="cart-summary">
+                        <h3>Booking Summary</h3>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">$0.00</span>
                         </div>
-                        <p class="cart-item-meta">Ocean View • 42 m² • King Bed</p>
-                        <div class="cart-item-info">
-                            <div class="info-row">
-                                <span class="label">Check In:</span>
-                                <span class="value">February 20, 2026</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Check Out:</span>
-                                <span class="value">February 23, 2026</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Duration:</span>
-                                <span class="value">3 Nights</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="label">Guests:</span>
-                                <span class="value">2 Adults</span>
-                            </div>
+
+                        <div class="summary-row">
+                            <span>Tax (16%)</span>
+                            <span id="cart-tax">$0.00</span>
                         </div>
-                        <div class="cart-item-includes">
-                            <span><i class="fas fa-check"></i> Free WiFi</span>
-                            <span><i class="fas fa-check"></i> Breakfast Included</span>
-                            <span><i class="fas fa-check"></i> Spa Access</span>
+
+                        <div class="summary-row">
+                            <span>Service Fee</span>
+                            <span id="cart-service">$5.00</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+
+                        <button class="btn-checkout" onclick="proceedToCheckout()">
+                            <i class="fas fa-credit-card"></i> Proceed to Checkout
+                        </button>
+
+                        <div class="secure-checkout">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Checkout</span>
                         </div>
                     </div>
-                    <div class="cart-item-price">
-                        <span class="price-label">Price per night</span>
-                        <span class="price-amount">$50</span>
-                        <span class="item-total">Total: $150</span>
+
+                    <!-- Promo Code -->
+                    <div class="promo-code-box">
+                        <h4>Have a Promo Code?</h4>
+                        <form class="promo-form" onsubmit="applyPromo(event)">
+                            <input type="text" placeholder="Enter code" id="promo-input">
+                            <button type="submit">Apply</button>
+                        </form>
+                        <div id="promo-message"></div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Cart Summary -->
-            <div class="cart-summary">
-                <h3>Booking Summary</h3>
-                
-                <div class="summary-row">
-                    <span>Deluxe Ocean View Room (3 nights)</span>
-                    <span>$111</span>
-                </div>
-                <div class="summary-row">
-                    <span>Ocean View Suite (3 nights)</span>
-                    <span>$150</span>
-                </div>
-                
-                <div class="summary-divider"></div>
-                
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span>$261</span>
-                </div>
-                <div class="summary-row">
-                    <span>Taxes & Fees (10%)</span>
-                    <span>$26</span>
-                </div>
-                <div class="summary-row">
-                    <span>Service Charge (5%)</span>
-                    <span>$13</span>
-                </div>
-                
-                <div class="summary-divider"></div>
-                
-                <div class="summary-row total">
-                    <span>Total</span>
-                    <span>$300</span>
-                </div>
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="badge-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Payment</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-undo"></i>
+                            <span>Free Cancellation</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
 
-                <div class="promo-code">
-                    <input type="text" placeholder="Promo Code">
-                    <button class="btn-apply">Apply</button>
-                </div>
-
-                <a href="checkout.html" class="btn-checkout">
-                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
-                </a>
-                
-                <a href="rooms.html" class="btn-continue">
-                    <i class="fas fa-arrow-left"></i> Continue Shopping
-                </a>
-
-                <div class="payment-methods">
-                    <p>We Accept</p>
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-amex"></i>
-                        <i class="fab fa-cc-paypal"></i>
+                    <!-- Need Help -->
+                    <div class="help-box">
+                        <h4><i class="fas fa-question-circle"></i> Need Help?</h4>
+                        <p>Our team is here to assist you</p>
+                        <a href="tel:+254700000000" class="btn-help">
+                            <i class="fas fa-phone"></i> Call Us
+                        </a>
+                        <a href="https://wa.me/254700000000" class="btn-help">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -289,7 +257,7 @@
     </section>
 
     <!-- NEWSLETTER SECTION -->
-    <section class="newsletter-section">
+    <section class="newsletter-section" style="background-image: url('assets/images/newsletter.jpg');">
         <div class="newsletter-overlay"></div>
         <div class="newsletter-content">
             <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
@@ -318,7 +286,7 @@
             </div>
             <div class="footer-col">
                 <h5>PHONE</h5>
-                <p>+94 22 345 67 88</p>
+                <p>+254 700 000 000</p>
             </div>
             <div class="footer-col">
                 <h5>EMAIL</h5>
@@ -327,18 +295,18 @@
             <div class="footer-col">
                 <h5>SOCIAL</h5>
                 <div class="footer-socials">
-                    <a href="#">fb</a>
-                    <a href="#">tw</a>
-                    <a href="#">ig</a>
-                    <a href="#">yt</a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <p>© 2026 Coconut Saraih Beach Resort.</p>
             <div class="footer-links">
                 <a href="#">Privacy</a>
-                <a href="#">Terms of Use</a>
+                <a href="#">Terms</a>
                 <a href="#">Policy</a>
             </div>
         </div>
@@ -352,7 +320,13 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Room Data -->
+    <script src="src/js/rooms-data.js"></script>
+    
     <!-- Main JavaScript -->
     <script src="src/js/main.js"></script>
+    
+    <!-- Cart JavaScript -->
+    <script src="src/js/cart.js"></script>
 </body>
 </html>

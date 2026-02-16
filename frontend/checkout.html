@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | The Coconut Saraih - Beachfront Hotel in Coastal Kenya</title>
-    <meta name="description" content="Complete your booking at The Coconut Saraih. Secure checkout for your beachfront hotel reservation.">
-    <meta name="keywords" content="checkout, hotel booking checkout, reservation checkout, secure booking, Coconut Saraih payment">
+    <title>Checkout | The Coconut Saraih Hotel</title>
+    <meta name="description" content="Complete your booking at The Coconut Saraih Hotel.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Main Styles -->
     <link rel="stylesheet" href="src/styles/i.css">
     <link rel="stylesheet" href="src/styles/checkout.css">
 </head>
@@ -25,14 +23,13 @@
     <!-- Navigation -->
     <header class="nav-wrapper" id="navbar">
         <nav class="nav-container">
-            <!-- LEFT -->
             <div class="nav-left">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown active">
                         <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="rooms.html">Rooms Page</a></li>
+                            <li><a href="rooms.html">Rooms</a></li>
                             <li><a href="room-details.html">Room Details</a></li>
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html" class="active">Checkout</a></li>
@@ -40,7 +37,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">pages <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html">About the Hotel</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
@@ -55,10 +52,9 @@
                         </ul>
                     </li>
                     <li><a href="news.html">News</a></li>
+                    </li>
                 </ul>
             </div>
-
-            <!-- CENTER -->
             <div class="nav-center">
                 <a href="index.html" class="logo">
                     <span class="logo-icon">🥥</span>
@@ -68,10 +64,8 @@
                     </span>
                 </a>
             </div>
-
-            <!-- RIGHT -->
             <div class="nav-right">
-                <span class="nav-phone">Tel: +41 22 345 67 88</span>
+                <span class="nav-phone">Tel: +254 700 000 000</span>
                 <div class="nav-lang">
                     <a href="#">EN</a> / <a href="#">FR</a>
                 </div>
@@ -80,17 +74,36 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero hero-checkout">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <span class="hero-tag">Secure Checkout</span>
-            <h1 id="hero-title">Complete Your Booking</h1>
-            <p id="hero-text">
-                Enter your details to confirm your reservation at Coconut Saraih
+    <!-- Checkout Hero Section -->
+    <section class="cart-hero">
+        <img src="https://cozystay.loftocean.com/apartment/wp-content/uploads/sites/6/2023/03/img-32.jpg" alt="The Coconut Saraih Hotel" class="cart-hero-bg">
+        <div class="cart-hero-overlay"></div>
+        <div class="cart-hero-content">
+            <span class="cart-hero-tag">Complete Your Booking</span>
+            <h1 class="cart-hero-title"><em>Checkout</em></h1>
+            <p class="cart-hero-text">
+                Secure your reservation with our easy checkout process
             </p>
+        </div>
+    </section>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="progress-container">
+            <div class="progress-step completed">
+                <div class="step-icon"><i class="fas fa-shopping-cart"></i></div>
+                <span>Cart</span>
+            </div>
+            <div class="progress-line completed"></div>
+            <div class="progress-step active">
+                <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                <span>Checkout</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                <span>Confirmation</span>
+            </div>
         </div>
     </section>
 
@@ -98,261 +111,279 @@
     <section class="checkout-section">
         <div class="checkout-container">
             
-            <!-- Breadcrumb -->
-            <div class="checkout-breadcrumb">
-                <div class="checkout-breadcrumb-inner">
-                    <a href="index.html">Home</a>
-                    <span>/</span>
-                    <a href="rooms.html">Rooms</a>
-                    <span>/</span>
-                    <a href="cart.html">Cart</a>
-                    <span>/</span>
-                    <span class="current">Checkout</span>
-                </div>
-            </div>
-            
             <!-- Checkout Form -->
-            <div class="checkout-form-wrapper">
-                <!-- Progress Steps -->
-                <div class="checkout-steps">
-                    <div class="step active">
-                        <span class="step-number">1</span>
-                        <span class="step-label">Guest Details</span>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <span class="step-label">Payment</span>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <span class="step-label">Confirmation</span>
-                    </div>
-                </div>
-
-                <!-- Guest Details Form -->
-                <div class="form-section">
-                    <h2><i class="fas fa-user"></i> Guest Information</h2>
+            <div class="checkout-main">
+                <form id="checkout-form" class="checkout-form">
                     
-                    <!-- Guest Login Option -->
-                    <div class="guest-login-option">
-                        <p>Already have an account? <a href="account.html">Sign in</a> for a faster checkout experience.</p>
-                        <button class="btn-outline">Login</button>
-                    </div>
-                    
-                    <form class="guest-form">
-                        <div class="form-row">
+                    <!-- Guest Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Guest Information</h2>
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label>First Name *</label>
-                                <input type="text" placeholder="John" required>
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
                             </div>
                             <div class="form-group">
-                                <label>Last Name *</label>
-                                <input type="text" placeholder="Doe" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Email Address *</label>
-                                <input type="email" placeholder="john.doe@email.com" required>
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
                             </div>
                             <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" placeholder="+1 234 567 8900" required>
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group">
-                                <label>Country *</label>
-                                <select required>
-                                    <option value="">Select Country</option>
-                                    <option value="US">United States</option>
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="nationality">Country/Nationality</label>
+                                <select id="nationality" name="nationality">
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="USA">United States</option>
                                     <option value="UK">United Kingdom</option>
-                                    <option value="KE">Kenya</option>
-                                    <option value="TZ">Tanzania</option>
-                                    <option value="UG">Uganda</option>
-                                    <option value="ZA">South Africa</option>
-                                    <option value="IN">India</option>
-                                    <option value="DE">Germany</option>
-                                    <option value="FR">France</option>
-                                    <option value="other">Other</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>City *</label>
-                                <input type="text" placeholder="New York" required>
-                            </div>
                         </div>
-                        <div class="form-group full-width">
-                            <label>Special Requests</label>
-                            <textarea placeholder="Any special requests or requirements? (Optional)" rows="4"></textarea>
-                        </div>
-                    </form>
-                </div>
+                    </div>
 
-                <!-- Booking Details Form -->
-                <div class="form-section">
-                    <h2><i class="fas fa-calendar-alt"></i> Booking Details</h2>
-                    <form class="booking-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Check In Date *</label>
-                                <input type="date" value="2026-02-15" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Check Out Date *</label>
-                                <input type="date" value="2026-02-18" required>
-                            </div>
+                    <!-- Special Requests -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-comment-dots"></i> Special Requests</h2>
+                        <div class="form-group">
+                            <label for="specialRequests">Do you have any special requests?</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Early check-in, late check-out, room preferences, dietary requirements, etc."></textarea>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Number of Rooms</label>
-                                <select>
-                                    <option>1 Room</option>
-                                    <option>2 Rooms</option>
-                                    <option>3 Rooms</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Number of Guests</label>
-                                <select>
-                                    <option>1 Adult</option>
-                                    <option>2 Adults</option>
-                                    <option>2 Adults, 1 Child</option>
-                                    <option>3 Adults</option>
-                                </select>
-                            </div>
+                        
+                        <div class="preferences-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="preferences" value="earlyCheckin">
+                                <span>Early Check-in</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="preferences" value="lateCheckout">
+                                <span>Late Check-out</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="preferences" value="airportPickup">
+                                <span>Airport Pickup</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="preferences" value="extraBed">
+                                <span>Extra Bed</span>
+                            </label>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-                <!-- Payment Details -->
-                <div class="form-section">
-                    <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
-                    <div class="payment-methods-selector">
-                        <label class="payment-option">
-                            <input type="radio" name="payment" checked>
-                            <span class="payment-icon"><i class="fas fa-credit-card"></i></span>
-                            <span class="payment-name">Credit/Debit Card</span>
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                        
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="card" checked>
+                                <div class="payment-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                    <div class="card-logos">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="mpesa">
+                                <div class="payment-card">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>M-Pesa</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <div class="payment-card">
+                                    <i class="fab fa-paypal"></i>
+                                    <span>PayPal</span>
+                                </div>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="onArrival">
+                                <div class="payment-card">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>Pay at Hotel</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Card Details (shown when card is selected) -->
+                        <div id="card-details" class="card-details">
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardExpiry">Expiry Date</label>
+                                    <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardCVV">CVV</label>
+                                    <input type="text" id="cardCVV" placeholder="123" maxlength="4">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="cardName">Cardholder Name</label>
+                                    <input type="text" id="cardName" placeholder="Name on card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <label class="checkbox-label terms">
+                            <input type="checkbox" name="terms" required>
+                            <span>
+                                I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Cancellation Policy</a>
+                            </span>
                         </label>
-                        <label class="payment-option">
-                            <input type="radio" name="payment">
-                            <span class="payment-icon"><i class="fab fa-paypal"></i></span>
-                            <span class="payment-name">PayPal</span>
-                        </label>
-                        <label class="payment-option">
-                            <input type="radio" name="payment">
-                            <span class="payment-icon"><i class="fas fa-university"></i></span>
-                            <span class="payment-name">Bank Transfer</span>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter">
+                            <span>Subscribe to newsletter for special offers</span>
                         </label>
                     </div>
-                    
-                    <form class="card-form">
-                        <div class="form-group full-width">
-                            <label>Cardholder Name *</label>
-                            <input type="text" placeholder="JOHN DOE" required>
-                        </div>
-                        <div class="form-group full-width">
-                            <label>Card Number *</label>
-                            <input type="text" placeholder="1234 5678 9012 3456" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Expiry Date *</label>
-                                <input type="text" placeholder="MM/YY" required>
-                            </div>
-                            <div class="form-group">
-                                <label>CVV *</label>
-                                <input type="text" placeholder="123" required>
-                            </div>
-                        </div>
-                        <div class="card-icons">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-amex"></i>
-                        </div>
-                    </form>
-                </div>
 
-                <!-- Terms -->
-                <div class="terms-section">
-                    <label class="checkbox-label">
-                        <input type="checkbox" required>
-                        <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox">
-                        <span>I want to receive special offers and updates via email</span>
-                    </label>
-                </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-lock"></i> Complete Booking
+                    </button>
+
+                    <p class="secure-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        Your payment information is secure and encrypted
+                    </p>
+                </form>
             </div>
 
             <!-- Order Summary -->
-            <div class="order-summary">
-                <h3>Booking Summary</h3>
-                
-                <div class="summary-rooms">
-                    <div class="summary-room">
-                        <img src="assets/images/b2.jpg" alt="Deluxe Room">
-                        <div class="summary-room-info">
-                            <h4>Deluxe Ocean View Room</h4>
-                            <p>Feb 15 - Feb 18, 2026</p>
-                            <p>3 Nights • 2 Guests</p>
+            <div class="checkout-sidebar">
+                <div class="order-summary">
+                    <h3>Booking Summary</h3>
+                    
+                    <div id="checkout-summary">
+                        <!-- Summary will be loaded here -->
+                        <div class="summary-item">
+                            <img src="assets/images/b1.jpg" alt="Standard Room">
+                            <div class="item-details">
+                                <h4>Standard Room</h4>
+                                <p>3 nights • 2 Adults</p>
+                                <p class="dates">Feb 09 - Feb 12, 2026</p>
+                            </div>
+                            <span class="price">$69</span>
                         </div>
-                        <span class="summary-room-price">$111</span>
                     </div>
-                    <div class="summary-room">
-                        <img src="assets/images/a2.jpg" alt="Ocean Suite">
-                        <div class="summary-room-info">
-                            <h4>Ocean View Suite</h4>
-                            <p>Feb 20 - Feb 23, 2026</p>
-                            <p>3 Nights • 2 Guests</p>
-                        </div>
-                        <span class="summary-room-price">$150</span>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summary-subtotal">$69.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tax (16%)</span>
+                        <span id="summary-tax">$11.04</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Service Fee</span>
+                        <span id="summary-service">$5.00</span>
+                    </div>
+
+                    <div class="summary-row discount-row" id="discount-row" style="display: none;">
+                        <span>Discount</span>
+                        <span id="summary-discount">-$0.00</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summary-total">$85.04</span>
                     </div>
                 </div>
 
-                <div class="summary-divider"></div>
-
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span>$261</span>
-                </div>
-                <div class="summary-row">
-                    <span>Taxes & Fees (10%)</span>
-                    <span>$26</span>
-                </div>
-                <div class="summary-row">
-                    <span>Service Charge (5%)</span>
-                    <span>$13</span>
-                </div>
-                
-                <div class="summary-divider"></div>
-                
-                <div class="summary-row total">
-                    <span>Total</span>
-                    <span>$300</span>
+                <!-- Promo Code -->
+                <div class="promo-code-box">
+                    <h4>Have a Promo Code?</h4>
+                    <form class="promo-form" onsubmit="applyCheckoutPromo(event)">
+                        <input type="text" placeholder="Enter code" id="checkout-promo-input">
+                        <button type="submit">Apply</button>
+                    </form>
+                    <div id="checkout-promo-message"></div>
                 </div>
 
-                <button type="submit" class="btn-complete-booking">
-                    <i class="fas fa-lock"></i> Complete Booking
-                </button>
-
-                <div class="secure-notice">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Your booking is secured with SSL encryption</span>
+                <!-- Cancellation Policy -->
+                <div class="policy-box">
+                    <h4><i class="fas fa-info-circle"></i> Cancellation Policy</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Free cancellation up to 24 hours before check-in</li>
+                        <li><i class="fas fa-check"></i> 50% refund if cancelled within 24 hours</li>
+                        <li><i class="fas fa-check"></i> No refund for no-shows</li>
+                    </ul>
                 </div>
 
-                <div class="need-help">
-                    <h5>Need Help?</h5>
-                    <p><i class="fas fa-phone"></i> +41 22 345 67 88</p>
-                    <p><i class="fas fa-envelope"></i> reservation@coconutsaraih.com</p>
+                <!-- Contact Support -->
+                <div class="support-box">
+                    <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                    <p>Our team is available 24/7</p>
+                    <div class="support-buttons">
+                        <a href="tel:+254700000000" class="btn-support">
+                            <i class="fas fa-phone"></i> Call
+                        </a>
+                        <a href="https://wa.me/254700000000" class="btn-support">
+                            <i class="fab fa-whatsapp"></i> Chat
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Secure Payment</h4>
+                <p>SSL encrypted transactions</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-undo"></i>
+                <h4>Free Cancellation</h4>
+                <p>Cancel up to 24hrs before</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-star"></i>
+                <h4>Best Price Guarantee</h4>
+                <p>Lowest rates guaranteed</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>Always here to help</p>
             </div>
         </div>
     </section>
 
     <!-- NEWSLETTER SECTION -->
-    <section class="newsletter-section">
+    <section class="newsletter-section" style="background-image: url('assets/images/newsletter.jpg');">
         <div class="newsletter-overlay"></div>
         <div class="newsletter-content">
             <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
@@ -372,7 +403,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -381,7 +412,7 @@
             </div>
             <div class="footer-col">
                 <h5>PHONE</h5>
-                <p>+94 22 345 67 88</p>
+                <p>+254 700 000 000</p>
             </div>
             <div class="footer-col">
                 <h5>EMAIL</h5>
@@ -390,32 +421,31 @@
             <div class="footer-col">
                 <h5>SOCIAL</h5>
                 <div class="footer-socials">
-                    <a href="#">fb</a>
-                    <a href="#">tw</a>
-                    <a href="#">ig</a>
-                    <a href="#">yt</a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright Coconut Saraih Beach Resort.</p>
+            <p>© 2026 Coconut Saraih Beach Resort.</p>
             <div class="footer-links">
                 <a href="#">Privacy</a>
-                <a href="#">Terms of Use</a>
+                <a href="#">Terms</a>
                 <a href="#">Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp">
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/254700000000" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Main JavaScript -->
+    <!-- Scripts -->
     <script src="src/js/main.js"></script>
+    <script src="src/js/api.js"></script>
+    <script src="src/js/checkout.js"></script>
 </body>
 </html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed | The Coconut Saraih Hotel</title>
+    <meta name="description" content="Your booking has been confirmed at The Coconut Saraih Hotel.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/confirmation.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <header class="nav-wrapper" id="navbar">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Stay <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="rooms.html">Rooms</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="account.html">My Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🥥</span>
+                    <span>
+                        The Coconut Saraih
+                        <span class="logo-subtitle">Hotels & Restaurant</span>
+                    </span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <span class="nav-phone">Tel: +254 700 000 000</span>
+                <div class="nav-lang">
+                    <a href="#">EN</a> / <a href="#">FR</a>
+                </div>
+                <a href="rooms.html" class="nav-cta">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section">
+        <div class="confirmation-container">
+            
+            <!-- Success Animation -->
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h1>Booking Confirmed!</h1>
+                <p>Thank you for choosing The Coconut Saraih</p>
+            </div>
+
+            <!-- Booking Details -->
+            <div class="booking-details">
+                <div class="details-header">
+                    <h2>Booking Details</h2>
+                    <span class="booking-id" id="booking-id">BK-000000</span>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fas fa-user"></i>
+                        <h3>Guest Information</h3>
+                        <div id="guest-info">
+                            <p><strong>Name:</strong> <span id="guest-name">-</span></p>
+                            <p><strong>Email:</strong> <span id="guest-email">-</span></p>
+                            <p><strong>Phone:</strong> <span id="guest-phone">-</span></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Stay Details</h3>
+                        <div id="stay-info">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Payment Summary</h3>
+                        <div id="payment-info">
+                            <p><strong>Subtotal:</strong> $<span id="conf-subtotal">0.00</span></p>
+                            <p><strong>Tax:</strong> $<span id="conf-tax">0.00</span></p>
+                            <p><strong>Service Fee:</strong> $<span id="conf-service">0.00</span></p>
+                            <p class="total"><strong>Total Paid:</strong> $<span id="conf-total">0.00</span></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Confirmation Email</h3>
+                        <p>A confirmation email has been sent to your email address with all the details of your booking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="confirmation-actions">
+                <button onclick="window.print()" class="btn-action btn-primary">
+                    <i class="fas fa-print"></i> Print Confirmation
+                </button>
+                <button onclick="downloadReceipt()" class="btn-action btn-secondary">
+                    <i class="fas fa-download"></i> Download Receipt
+                </button>
+                <a href="index.html" class="btn-action btn-secondary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+
+            <!-- What's Next -->
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Check Your Email</h4>
+                        <p>You'll receive a confirmation email with your booking details</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Prepare for Check-in</h4>
+                        <p>Check-in time is 2:00 PM. Early check-in subject to availability</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Enjoy Your Stay</h4>
+                        <p>Our team is ready to make your stay memorable</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="support-banner">
+                <div class="support-content">
+                    <div>
+                        <h4>Need Help?</h4>
+                        <p>Our team is available 24/7 to assist you</p>
+                    </div>
+                    <div class="support-buttons">
+                        <a href="tel:+254700000000" class="btn-support">
+                            <i class="fas fa-phone"></i> Call Us
+                        </a>
+                        <a href="https://wa.me/254700000000" class="btn-support">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>ADDRESS</h5>
+                <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+            </div>
+            <div class="footer-col">
+                <h5>PHONE</h5>
+                <p>+254 700 000 000</p>
+            </div>
+            <div class="footer-col">
+                <h5>EMAIL</h5>
+                <p>reservation@coconutsaraih.com</p>
+            </div>
+            <div class="footer-col">
+                <h5>SOCIAL</h5>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Coconut Saraih Beach Resort.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/js/main.js"></script>
+    <script src="src/js/confirmation.js"></script>
+</body>
+</html>

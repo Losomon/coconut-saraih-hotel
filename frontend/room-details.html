@@ -36,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="rooms.html">Rooms Page</a></li>
                             <li><a href="room-details.html" class="active">Room Details</a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="cart.html">Cart <span class="cart-count" style="display:none;">0</span></a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="account.html">My Account</a></li>
                         </ul>
@@ -435,31 +435,31 @@
                         </div>
                     </div>
 
-                    <form class="booking-form">
+                    <form class="booking-form" onsubmit="handleBooking(event)">
                         <div class="bf-group">
                             <label>Check In</label>
-                            <input type="date" id="check-in" value="">
+                            <input type="date" id="check-in" value="" required>
                         </div>
                         <div class="bf-group">
                             <label>Check Out</label>
-                            <input type="date" id="check-out" value="">
+                            <input type="date" id="check-out" value="" required>
                         </div>
                         <div class="bf-group">
-                            <label>Rooms</label>
-                            <select>
-                                <option>1 Room</option>
-                                <option>2 Rooms</option>
-                                <option>3 Rooms</option>
+                            <label>Adults</label>
+                            <select id="adults">
+                                <option value="1">1 Adult</option>
+                                <option value="2" selected>2 Adults</option>
                             </select>
                         </div>
                         <div class="bf-group">
-                            <label>Guests</label>
-                            <select>
-                                <option>1 Adult</option>
-                                <option>2 Adults</option>
+                            <label>Children</label>
+                            <select id="children">
+                                <option value="0" selected>0 Children</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
                             </select>
                         </div>
-                        <button type="submit" class="booking-btn">Reserve Now →</button>
+                        <button type="submit" class="booking-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                     </form>
 
                     <p class="booking-note">
@@ -502,7 +502,7 @@
     </div>
 
      <!-- NEWSLETTER SECTION -->
-    <section class="newsletter-section">
+    <section class="newsletter-section" style="background-image: url('assets/images/newsletter.jpg');">
         <div class="newsletter-overlay"></div>
 
         <div class="newsletter-content">
@@ -578,6 +578,61 @@
     <!-- JavaScript -->
     <script src="src/js/rooms-data.js"></script>
     <script src="src/js/main.js"></script>
+    <script src="src/js/cart.js"></script>
     <script src="src/js/room-details-loader.js"></script>
+    <script>
+        // Handle booking form submission - Add to cart
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomId = urlParams.get('id') || 'standard-room';
+            
+            const checkIn = document.getElementById('check-in').value;
+            const checkOut = document.getElementById('check-out').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            
+            if (!checkIn || !checkOut) {
+                alert('Please select check-in and check-out dates');
+                return;
+            }
+            
+            // Validate dates
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (checkInDate < today) {
+                alert('Check-in date cannot be in the past');
+                return;
+            }
+            
+            if (checkOutDate <= checkInDate) {
+                alert('Check-out date must be after check-in date');
+                return;
+            }
+            
+            // Add to cart
+            const success = window.CartManager.addToCart(roomId, checkIn, checkOut, adults, children);
+            
+            if (success) {
+                // Update cart count in navigation
+                window.CartManager.updateCartCount();
+                
+                // Show confirmation
+                const btn = document.querySelector('.booking-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Added!';
+                btn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+        }
+    </script>
 </body>
 </html>
