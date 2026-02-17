@@ -1,0 +1,333 @@
+
+/* Midnight Gold Luxury Theme */
+:root {
+    --black: #0B0B0B;
+    --dark: #1A1A1A;
+    --dark-soft: #242424;
+    --gold: #C9A24D;
+    --gold-soft: #E6C77B;
+    --text-light: #EDEDED;
+    --text-muted: #9A9A9A;
+    --border-dark: #2F2F2F;
+}
+
+/* Split Layout Styles */
+.booking-split-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.booking-image-side {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+}
+
+.booking-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.booking-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.3)
+    );
+}
+
+.booking-image-content {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    color: white;
+    z-index: 2;
+}
+
+.booking-image-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.booking-image-content p {
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+.booking-content-side {
+    flex: 1;
+    padding: 60px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, #0B0B0B, #1A1A1A);
+    color: var(--text-light);
+}
+
+.booking-content-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.booking-page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.booking-page-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Dark Glass Luxury Cards */
+.booking-form-container,
+.booking-summary,
+.booking-features {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    border: 1px solid rgba(201, 162, 77, 0.15);
+}
+
+.booking-form-container {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-soft);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label i {
+    color: var(--gold);
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    background: var(--dark-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.2);
+}
+
+/* Gold Button */
+.btn-check-availability {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #C9A24D, #E6C77B);
+    color: #0B0B0B;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 30px rgba(201, 162, 77, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-check-availability:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(201, 162, 77, 0.6);
+}
+
+/* Summary Styles */
+.booking-summary-container {
+    margin-top: 20px;
+}
+
+.booking-summary {
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.booking-summary h3 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-dates, .summary-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.summary-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.summary-price {
+    background: var(--dark-soft);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.price-breakdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.price-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--gold);
+    color: #0B0B0B;
+}
+
+.booking-features {
+    padding: 25px;
+}
+
+.booking-features h4 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.booking-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.booking-features ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+}
+
+.booking-features ul li i {
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .booking-split-layout {
+        flex-direction: column;
+    }
+    
+    .booking-image-side {
+        min-height: 300px;
+    }
+    
+    .booking-image-content {
+        bottom: 30px;
+        left: 20px;
+    }
+    
+    .booking-image-content h2 {
+        font-size: 2rem;
+    }
+    
+    .booking-content-side {
+        padding: 40px 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

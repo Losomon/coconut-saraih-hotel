@@ -16,6 +16,7 @@ const contactRoutes = require('./contact');
 const spaRoutes = require('./spa.routes');
 const analyticsRoutes = require('./analytics.routes');
 const notificationRoutes = require('./notification.routes');
+const newsletterRoutes = require('./newsletter');
 
 // Define routes
 router.use('/auth', authRoutes);
@@ -32,6 +33,7 @@ router.use('/contact', contactRoutes);
 router.use('/spa', spaRoutes);
 router.use('/analytics', analyticsRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/newsletter', newsletterRoutes);
 
 // Health check
 router.get('/health', (req, res) => {

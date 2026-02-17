@@ -337,8 +337,8 @@ function setupCardFormatting() {
 // ==========================================
 async function processPayment() {
     // Simulate API call
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
+    return new Promise(async (resolve, reject) => {
+        setTimeout(async () => {
             // Get form data
             const formData = getFormData();
             
@@ -370,6 +370,19 @@ async function processPayment() {
             
             // Save guest info for future use
             saveGuestInfo(formData.guestInfo);
+            
+            // Handle newsletter subscription if checkbox is checked
+            const newsletterCheckbox = document.querySelector('input[name="newsletter"]');
+            if (newsletterCheckbox && newsletterCheckbox.checked && formData.guestInfo.email) {
+                try {
+                    await subscribeFromCheckout(
+                        formData.guestInfo.email, 
+                        `${formData.guestInfo.firstName} ${formData.guestInfo.lastName}`
+                    );
+                } catch (error) {
+                    console.log('Newsletter subscription skipped:', error);
+                }
+            }
             
             resolve(booking);
         }, 2000); // 2 second delay to simulate processing
@@ -486,6 +499,31 @@ function loadGuestInfo() {
         if (document.getElementById('email')) document.getElementById('email').value = info.email || '';
         if (document.getElementById('phone')) document.getElementById('phone').value = info.phone || '';
         if (document.getElementById('nationality')) document.getElementById('nationality').value = info.nationality || '';
+    }
+}
+
+// ==========================================
+// NEWSLETTER SUBSCRIPTION FROM CHECKOUT
+// ==========================================
+async function subscribeFromCheckout(email, name = null) {
+    try {
+        const response = await fetch('/api/v1/newsletter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                name: name,
+                source: 'checkout'
+            })
+        });
+        
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Checkout newsletter subscription error:', error);
+        return { success: true, message: 'Subscribed (Demo mode)' };
     }
 }
 

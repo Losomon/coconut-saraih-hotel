@@ -81,7 +81,7 @@
                 <a href="#">EN</a> / <a href="#">FR</a>
             </div>
 
-            <a href="booking.html" class="nav-cta">Book Now</a>
+            <a href="book.html" class="nav-cta">Book Now</a>
         </div>
 
     </nav>
@@ -112,7 +112,7 @@
             </p>
 
             <div class="hero-actions">
-                <a href="booking.html" class="btn-primary">Book Your Stay</a>
+                <a href="rooms.html" class="btn-primary">Book Your Stay</a>
                 <a href="rooms.html" class="btn-secondary">Explore Rooms</a>
             </div>
         </div>
@@ -120,35 +120,35 @@
         <!-- Booking Bar -->
         <div class="hero-booking">
             <div class="booking-container">
-                <form>
+                <form id="booking-form">
                     <div class="form-group">
                         <label>Check In</label>
-                        <input type="date" value="2026-02-09">
+                        <input type="date" id="check-in">
                     </div>
 
                     <div class="form-group">
                         <label>Check Out</label>
-                        <input type="date" value="2026-02-10">
+                        <input type="date" id="check-out">
                     </div>
 
                     <div class="form-group">
                         <label>Rooms</label>
-                        <select>
-                            <option>1 Room</option>
-                            <option>2 Rooms</option>
-                            <option>3 Rooms</option>
-                            <option>4+ Rooms</option>
+                        <select id="rooms-count">
+                            <option value="1">1 Room</option>
+                            <option value="2">2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4+ Rooms</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Guests</label>
-                        <select>
-                            <option>1 Adult, 0 Children</option>
-                            <option>2 Adults, 0 Children</option>
-                            <option>2 Adults, 1 Child</option>
-                            <option>2 Adults, 2 Children</option>
-                            <option>3+ Adults</option>
+                        <select id="guests-count">
+                            <option value="1,0">1 Adult, 0 Children</option>
+                            <option value="2,0" selected>2 Adults, 0 Children</option>
+                            <option value="2,1">2 Adults, 1 Child</option>
+                            <option value="2,2">2 Adults, 2 Children</option>
+                            <option value="3,0">3+ Adults</option>
                         </select>
                     </div>
 

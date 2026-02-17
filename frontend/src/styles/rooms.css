@@ -13,6 +13,51 @@
 }
 
 /* ============================================
+   FILTER INFO BANNER
+   ============================================ */
+.filter-info {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.5rem 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-left: 4px solid var(--primary-gold, #c9a227);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-info span {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.filter-info strong {
+    color: #212529;
+    font-weight: 600;
+}
+
+.filter-info .clear-filters {
+    background: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.filter-info .clear-filters:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* ============================================
    ROOM AMENITIES BANNER
    ============================================ */
 .amenities-banner {

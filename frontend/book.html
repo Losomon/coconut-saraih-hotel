@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | The Coconut Saraih Hotel</title>
+    <meta name="description" content="Book your beachfront getaway at The Coconut Saraih Hotel. Choose from our luxurious rooms, suites, and villas.">
+    <meta name="keywords" content="book hotel, reservation, beachfront hotel Kenya, accommodation booking">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="src/styles/i.css">
+    <link rel="stylesheet" href="src/styles/book.css">
+    
+</head>
+<body>
+    
+    <!-- Split Layout: Image Side and Content Side -->
+    <div class="booking-split-layout">
+        <!-- Image Side -->
+        <div class="booking-image-side">
+            <img src="https://cozystay.loftocean.com/apartment/wp-content/uploads/sites/6/2023/03/img-32.jpg" alt="The Coconut Saraih Hotel">
+            <div class="booking-image-overlay"></div>
+            <div class="booking-image-content">
+                <h2>Reserve Your Stay</h2>
+                <p>Experience beachfront luxury at The Coconut Saraih</p>
+            </div>
+        </div>
+        
+        <!-- Content Side -->
+        <div class="booking-content-side">
+            <div class="booking-content-inner">
+                <h1 class="booking-page-title"><em>Book Your Stay</em></h1>
+                <p class="booking-page-subtitle">Choose your check-in and check-out dates to see available rooms</p>
+                
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="check-in"><i class="fas fa-sign-in-alt"></i> Check-In Date</label>
+                                <input type="date" id="check-in" name="checkIn" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="check-out"><i class="fas fa-sign-out-alt"></i> Check-Out Date</label>
+                                <input type="date" id="check-out" name="checkOut" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rooms-count"><i class="fas fa-bed"></i> Rooms</label>
+                                <select id="rooms-count" name="rooms">
+                                    <option value="1">1 Room</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests-count"><i class="fas fa-user-friends"></i> Guests</label>
+                                <select id="guests-count" name="guests">
+                                    <option value="1,0">1 Adult</option>
+                                    <option value="2,0" selected>2 Adults</option>
+                                    <option value="2,1">2 Adults, 1 Child</option>
+                                    <option value="2,2">2 Adults, 2 Children</option>
+                                    <option value="3,0">3 Adults</option>
+                                    <option value="4,0">4 Adults</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-check-availability">
+                            <i class="fas fa-search"></i> Check Availability
+                        </button>
+                    </form>
+                    
+                    <!-- Room Results Container -->
+                    <div id="room-results" class="room-results" style="display: none;">
+                        <div class="results-header">
+                            <h3><i class="fas fa-door-open"></i> Available Rooms</h3>
+                            <span id="results-count">0 rooms found</span>
+                        </div>
+                        <div id="available-rooms" class="available-rooms-list">
+                            <!-- Rooms will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Summary -->
+                <div class="booking-summary-container">
+                    <div class="booking-summary">
+                        <h3><i class="fas fa-info-circle"></i> Your Booking</h3>
+                        
+                        <div class="summary-dates">
+                            <div class="summary-item">
+                                <span class="summary-label">Check-In</span>
+                                <span class="summary-value" id="summary-checkin">Select date</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Check-Out</span>
+                                <span class="summary-value" id="summary-checkout">Select date</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Nights</span>
+                                <span class="summary-value" id="summary-nights">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span class="summary-label">Rooms</span>
+                                <span class="summary-value" id="summary-rooms">1</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Guests</span>
+                                <span class="summary-value" id="summary-guests">2 Adults</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-price" id="summary-price-container" style="display: none;">
+                            <div class="price-breakdown">
+                                <span>Starting from</span>
+                                <span class="price-amount" id="summary-total">$0</span>
+                            </div>
+                            <p class="price-note">*Final price will be calculated at checkout</p>
+                        </div>
+                        
+                        <div class="summary-actions">
+                            <a href="rooms.html" class="btn-secondary">
+                                <i class="fas fa-list"></i> View All Rooms
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hotel Features -->
+                    <div class="booking-features">
+                        <h4><i class="fas fa-star"></i> Why Book Direct?</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Best price guarantee</li>
+                            <li><i class="fas fa-check"></i> Free cancellation up to 24h</li>
+                            <li><i class="fas fa-check"></i> Early check-in / Late check-out</li>
+                            <li><i class="fas fa-check"></i> Welcome drink & fruit basket</li>
+                            <li><i class="fas fa-check"></i> Exclusive member discounts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+    <div class="newsletter-overlay"></div>
+
+    <div class="newsletter-content">
+        <span class="newsletter-eyebrow">STAY TUNED WITH COCONUT SARIHAI</span>
+
+        <h2>
+            Sign up for our newsletter<br>
+            to receive our news, deals<br>
+            and special offers.
+        </h2>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe →</button>
+        </form>
+
+        <label class="newsletter-check">
+            <input type="checkbox" required>
+            <span>I agree to the <a href="#">Privacy Policy</a></span>
+        </label>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h5>ADDRESS</h5>
+            <p>Beach Road, Coconut Saraih<br>Island Resort</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>PHONE</h5>
+            <p>+94 22 345 67 88</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>EMAIL</h5>
+            <p>reservation@coconutsaraih.com</p>
+        </div>
+
+        <div class="footer-col">
+            <h5>SOCIAL</h5>
+            <div class="footer-socials">
+                <a href="#">fb</a>
+                <a href="#">tw</a>
+                <a href="#">ig</a>
+                <a href="#">yt</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© Copyright Coconut Saraih Beach Resort.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Policy</a>
+        </div>
+    </div>
+</footer>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20The%20Coconut%20Grill%20Hotels" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="src/js/main.js"></script>
+    <script src="src/js/booking.js"></script>
+</body>
+</html>
