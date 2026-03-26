@@ -1,14 +1,14 @@
-# Saraih Hotel
+# Coconut Saraih Hotel
 
 A comprehensive hotel management system for Coconut Saraih Hotel.
 
 ## Project Overview
 
-**Project Name:** Saraih Hotel  
+**Project Name:** Coconut Saraih Hotel  
 **Version:** 1.0.0  
 **Type:** Full-stack Web Application
 
-Saraih Hotel is a complete hotel management solution featuring room bookings, restaurant reservations, event management, spa services, and comprehensive administrative controls.
+Coconut Saraih Hotel is a complete hotel management solution featuring room bookings, restaurant reservations, event management, spa services, and comprehensive administrative controls.
 
 ## Technology Stack
 
